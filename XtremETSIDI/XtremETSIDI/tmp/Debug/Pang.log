@@ -1,2 +1,9 @@
-﻿  Pang.cpp
-  Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\Prueba FINAL\bin\Pang.exe
+﻿  Menu.cpp
+  Pang.cpp
+  Generando código...
+Pang.obj : error LNK2019: símbolo externo "public: __thiscall Menu::~Menu(void)" (??1Menu@@QAE@XZ) sin resolver al que se hace referencia en la función "void __cdecl `dynamic atexit destructor for 'XtremETSIDI''(void)" (??__FXtremETSIDI@@YAXXZ)
+Pang.obj : error LNK2019: símbolo externo "public: void __thiscall Menu::teclaEspecial(unsigned char)" (?teclaEspecial@Menu@@QAEXE@Z) sin resolver al que se hace referencia en la función "void __cdecl onSpecialKeyboardDown(int,int,int)" (?onSpecialKeyboardDown@@YAXHHH@Z)
+Pang.obj : error LNK2019: símbolo externo "public: void __thiscall Menu::tecla(unsigned char)" (?tecla@Menu@@QAEXE@Z) sin resolver al que se hace referencia en la función "void __cdecl onKeyboardDown(unsigned char,int,int)" (?onKeyboardDown@@YAXEHH@Z)
+Pang.obj : error LNK2019: símbolo externo "public: void __thiscall Menu::mueve(void)" (?mueve@Menu@@QAEXXZ) sin resolver al que se hace referencia en la función "void __cdecl onTimer(int)" (?onTimer@@YAXH@Z)
+Pang.obj : error LNK2019: símbolo externo "public: void __thiscall Menu::dibuja(void)" (?dibuja@Menu@@QAEXXZ) sin resolver al que se hace referencia en la función "void __cdecl onDraw(void)" (?onDraw@@YAXXZ)
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe : fatal error LNK1120: 5 externos sin resolver

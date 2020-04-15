@@ -1,88 +1,69 @@
-#include "Mundo.h"
-#include <iostream>
+#include "Menu.h"
 #include "glut.h"
-#include "ETSIDI.h"
-
-void main() {
-
-	printf("Hola mundo");
-	ETSIDI::playMusica("bso/intro.mp3", true);
-	while (1){
-		
-	}
-
-}
 
 
+Menu XtremETSIDI;
 
-/*Mundo mundo;
+//Las siguientes son funciones que serán llamadas automáticamente por la glut cuando sucedan eventos, no es necesario llamarlas explícitamente
+void onDraw(void); //esta funcion sera llamada para dibujar
+void onTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
+void onKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
+void onSpecialKeyboardDown(int key, int x, int y); //cuando se pulse una tecla especial	
 
-//los callback, funciones que seran llamadas automaticamente por la glut
-//cuando sucedan eventos
-//NO HACE FALTA LLAMARLAS EXPLICITAMENTE
-void OnDraw(void); //esta funcion sera llamada para dibujar
-void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
-void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-
-int main(int argc,char* argv[])
+int main(int argc, char* argv[])
 {
-	//Inicializar el gestor de ventanas GLUT
-	//y crear la ventana
+	//Funciones para inicializar el gestor de ventanas GLUT y crear la ventana
 	glutInit(&argc, argv);
-	glutInitWindowSize(800,600);
+	glutInitWindowSize(1456, 720);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutCreateWindow("MiJuego");
+	glutCreateWindow("XtremETSIDI");
+	glutFullScreen(); // PANTALLA COMPLETA
 
-	//habilitar luces y definir perspectiva
+	//Funciones para habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_COLOR_MATERIAL);	
+	glEnable(GL_COLOR_MATERIAL);
 	glMatrixMode(GL_PROJECTION);
-	gluPerspective( 40.0, 800/600.0f, 0.1, 150);
+	gluPerspective(40.0, 1456 / 720.0f, 0.1, 150);
 
 	//Registrar los callbacks
-	glutDisplayFunc(OnDraw);
-	glutTimerFunc(25,OnTimer,0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
-	glutKeyboardFunc(OnKeyboardDown);
+	glutDisplayFunc(onDraw);
+	glutTimerFunc(25, onTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	glutKeyboardFunc(onKeyboardDown);
+	glutSpecialFunc(onSpecialKeyboardDown);
 
-	mundo.Inicializa();
-		
 	//pasarle el control a GLUT,que llamara a los callbacks
-	glutMainLoop();	
+	glutMainLoop();
 
-	return 0;   
+	return 0;
 }
 
-void OnDraw(void)
+void onDraw(void)
 {
-	//Borrado de la pantalla	
-   	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //Función para borrar la pantalla
 
-	//Para definir el punto de vista
-	glMatrixMode(GL_MODELVIEW);	
+	glMatrixMode(GL_MODELVIEW);	 //Función para definir el punto de vista
 	glLoadIdentity();
-	
-	mundo.Dibuja();
 
-	//no borrar esta linea ni poner nada despues
+	XtremETSIDI.dibuja();
+
 	glutSwapBuffers();
 }
-void OnKeyboardDown(unsigned char key, int x_t, int y_t)
+void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el teclado (Disparar con el espacio)
 {
-	//poner aqui el código de teclado
-	mundo.Tecla(key);
-
+	XtremETSIDI.tecla(key);
+	glutPostRedisplay();
+}
+void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover la nave)
+{
+	XtremETSIDI.teclaEspecial(key);
+}
+void onTimer(int value) //Funciones de animación (movimiento de los objetos)
+{
+	XtremETSIDI.mueve();
+	glutTimerFunc(25, onTimer, 0);
 	glutPostRedisplay();
 }
 
-void OnTimer(int value)
-{
-//poner aqui el código de animacion
-	mundo.Mueve();
 
-	//no borrar estas lineas
-	glutTimerFunc(25,OnTimer,0);
-	glutPostRedisplay();
-}
-*/
