@@ -6,12 +6,12 @@ class Menu
 public:
 	//Métodos
 	Menu();
-	~Menu();
-	void teclaEspecial(unsigned char key);
-	void tecla(unsigned char key);
-	void mueve();
-	void dibuja();
-	void musica();
+	virtual ~Menu();
+	void TeclaEspecial(unsigned char key);
+	void Tecla(unsigned char key);
+	void Mueve();
+	void Dibuja();
+	void Musica();
 
 protected:
 	//Miembros

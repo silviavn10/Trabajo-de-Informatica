@@ -46,22 +46,22 @@ void onDraw(void)
 	glMatrixMode(GL_MODELVIEW);	 //Función para definir el punto de vista
 	glLoadIdentity();
 
-	XtremETSIDI.dibuja();
+	XtremETSIDI.Dibuja();
 
 	glutSwapBuffers();
 }
 void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el teclado (Disparar con el espacio)
 {
-	XtremETSIDI.tecla(key);
+	XtremETSIDI.Tecla(key);
 	glutPostRedisplay();
 }
 void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover la nave)
 {
-	XtremETSIDI.teclaEspecial(key);
+	XtremETSIDI.TeclaEspecial(key);
 }
 void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 {
-	XtremETSIDI.mueve();
+	XtremETSIDI.Mueve();
 	glutTimerFunc(25, onTimer, 0);
 	glutPostRedisplay();
 }
