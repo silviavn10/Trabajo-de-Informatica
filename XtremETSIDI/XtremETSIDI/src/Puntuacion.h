@@ -1,5 +1,5 @@
 #pragma once
-#define MAX_BONUS 100
+#define MAX_BONUS 240
 #include "Creditos.h"
 
 class Puntuacion

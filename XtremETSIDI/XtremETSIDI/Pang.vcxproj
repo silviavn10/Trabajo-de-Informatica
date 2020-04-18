@@ -85,7 +85,6 @@
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\Menu.cpp" />
-    <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Puntuacion.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
@@ -95,7 +94,6 @@
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\Menu.h" />
-    <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Puntuacion.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vida.h" />

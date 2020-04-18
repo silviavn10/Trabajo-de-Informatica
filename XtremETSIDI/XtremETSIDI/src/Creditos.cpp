@@ -1,5 +1,7 @@
 #include "Creditos.h"
+#include "ETSIDI.h"
 #include "glut.h"
+
 
 Creditos::Creditos() : sprite_c("imagenes/credito.png", 8) //Constructor
 {
