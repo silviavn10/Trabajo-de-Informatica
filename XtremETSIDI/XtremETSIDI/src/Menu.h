@@ -1,12 +1,12 @@
 #pragma once
 
 
-class Menu
+class MenuXtremETSIDI
 {
 public:
 	//Métodos
-	Menu();
-	virtual ~Menu();
+	MenuXtremETSIDI();
+	~MenuXtremETSIDI();
 	void TeclaEspecial(unsigned char key);
 	void Tecla(unsigned char key);
 	void Mueve();
@@ -15,12 +15,13 @@ public:
 
 protected:
 	//Miembros
-	
+	Espacio espacio;
 
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{
-		START, MENU, ESCOGE, ESCOGE_A, ESCOGE_B, CONTROLES, JUEGO_N1, JUEGO_N2, JUEGO_N3, JUEGO2,
-		GAMEOVER, CORTINILLA1, CORTINILLA2, CORTINILLA3, CORTINILLA4, LEVELUP1, LEVELUP2, LEVELUP3,
+		START, MENU, ESCOGE_CARRERA, ESCOGE_A, ESCOGE_E, ESCOGE_M, ESCOGE_D, ESCOGE_Q, ESCOGE_SEXO, ESCOGE_F, ESCOGE_V,
+		CONTROLES, //JUEGO_N1, JUEGO_N2, JUEGO_N3, JUEGO2,
+		GAMEOVER, CARATULA, M_PRINCIPAL, COMENZAR, SALIR, CARTA, SUERTE, //LEVELUP1, LEVELUP2, LEVELUP3,
 		VICTORIA, FIN
 	};
 	Estado estado; //Se define una variable del tipo de la enumeración anterior

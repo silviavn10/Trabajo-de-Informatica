@@ -1,8 +1,9 @@
-#include "Menu.h"
+#include "Vida.h"
+#include "ETSIDI.h"
 #include "glut.h"
 
 
-Menu XtremETSIDI;
+MenuXtremETSIDI XtremETSIDI;
 
 //Las siguientes son funciones que serán llamadas automáticamente por la glut cuando sucedan eventos, no es necesario llamarlas explícitamente
 void onDraw(void); //esta funcion sera llamada para dibujar
@@ -27,6 +28,7 @@ int main(int argc, char* argv[])
 	glMatrixMode(GL_PROJECTION);
 	gluPerspective(40.0, 1456 / 720.0f, 0.1, 150);
 
+	
 	//Registrar los callbacks
 	glutDisplayFunc(onDraw);
 	glutTimerFunc(25, onTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
@@ -35,7 +37,7 @@ int main(int argc, char* argv[])
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
-
+	*/
 	return 0;
 }
 
@@ -65,5 +67,8 @@ void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 	glutTimerFunc(25, onTimer, 0);
 	glutPostRedisplay();
 }
+
+
+
 
 

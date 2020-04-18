@@ -1,2 +1,21 @@
-﻿  Pang.cpp
-  Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+﻿  Menu.cpp
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.h(18,17): error C3646: 'espacio': especificador de invalidación desconocido
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.h(18,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(32,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(33,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(34,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(35,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(43,1): error C2601: 'MenuXtremETSIDI::Tecla': las definiciones de funciones locales no son válidas
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(18): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(18): fatal error C1075: "{": no se encontró ningún token coincidente
+  Pang.cpp
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(6,28): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(6,17): error C2146: error de sintaxis: falta ';' delante del identificador 'XtremETSIDI'
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(40,2): warning C4138: '*/' se encontró fuera del comentario
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(40,3): error C2059: error de sintaxis: '/'
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(51,2): error C2065: 'XtremETSIDI': identificador no declarado
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(57,2): error C2065: 'XtremETSIDI': identificador no declarado
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(62,2): error C2065: 'XtremETSIDI': identificador no declarado
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Pang.cpp(66,2): error C2065: 'XtremETSIDI': identificador no declarado
+  Vida.cpp
+  Generando código...
