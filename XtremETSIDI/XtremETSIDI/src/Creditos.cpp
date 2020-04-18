@@ -25,4 +25,6 @@ Creditos::Creditos(float rad, float x, float y, float vx, float vy) : SpriteCred
 	velocidad.x = vx;
 	velocidad.y = vy;
 
+	SpriteCreditos.setCenter(0.5, 0.5);  //Centro del sprite para la vida
+	SpriteCreditos.setSize(1, 1);  //Tamaño del sprite para la vida
 }

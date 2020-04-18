@@ -11,7 +11,7 @@ public:
 	
 
 private:
-	Creditos* lista[MAX_BONUS];
+	int ilista[MAX_BONUS];
 	int inicio;  
 };
 

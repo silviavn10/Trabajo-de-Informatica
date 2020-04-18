@@ -4,7 +4,13 @@
 Puntuacion::Puntuacion() //Constructor
 {
 	inicio = 0;
-	for (int i = 0; i < MAX_BONUS; i++) lista[i] = 0;  //No se más de 100 créditos
+	if (choque == true)
+	{
+
+	}
+ //No se puede más de 240 créditos
+
+
 }
 
 

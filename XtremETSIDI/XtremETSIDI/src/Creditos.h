@@ -14,7 +14,6 @@ public:
 	Vector2D velocidad;
 	Vector2D posicion;
 	float radio;
-protected:
 private:
 	SpriteSequence SpriteCreditos;
 };
