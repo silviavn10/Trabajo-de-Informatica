@@ -1,4 +1,5 @@
 #include "Vida.h"
+#include "Menu.h"
 #include "ETSIDI.h"
 #include "glut.h"
 
@@ -37,7 +38,6 @@ int main(int argc, char* argv[])
 
 	//pasarle el control a GLUT,que llamara a los callbacks
 	glutMainLoop();
-	*/
 	return 0;
 }
 
@@ -52,22 +52,22 @@ void onDraw(void)
 
 	glutSwapBuffers();
 }
+
 void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el teclado (Disparar con el espacio)
 {
-	XtremETSIDI.Tecla(key);
+	//XtremETSIDI.Tecla(key);
 	glutPostRedisplay();
 }
 void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover la nave)
 {
-	XtremETSIDI.TeclaEspecial(key);
+	//XtremETSIDI.TeclaEspecial(key);
 }
 void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 {
-	XtremETSIDI.Mueve();
+	//XtremETSIDI.Mueve();
 	glutTimerFunc(25, onTimer, 0);
 	glutPostRedisplay();
 }
-
 
 
 
