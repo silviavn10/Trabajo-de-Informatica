@@ -1,6 +1,2 @@
 ﻿  Menu.cpp
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(32,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(33,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(34,47): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(35,48): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
   Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe

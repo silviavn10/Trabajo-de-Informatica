@@ -86,6 +86,7 @@
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
+    <ClCompile Include="src\Nivel1.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Puntuacion.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Muñeco.h" />
+    <ClInclude Include="src\Nivel1.h" />
     <ClInclude Include="src\Puntuacion.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vida.h" />

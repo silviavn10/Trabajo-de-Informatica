@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutCreateWindow("XtremETSIDI");
 	glutFullScreen(); // PANTALLA COMPLETA
+	
 
 	//Funciones para habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
@@ -55,7 +56,7 @@ void onDraw(void)
 
 void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el teclado (Disparar con el espacio)
 {
-	//XtremETSIDI.Tecla(key);
+	XtremETSIDI.Tecla(key);
 	glutPostRedisplay();
 }
 void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover la nave)
@@ -68,7 +69,5 @@ void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 	glutTimerFunc(25, onTimer, 0);
 	glutPostRedisplay();
 }
-
-
 
 
