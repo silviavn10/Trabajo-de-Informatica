@@ -11,7 +11,7 @@ MenuXtremETSIDI::MenuXtremETSIDI()  //Construyo el Menu
 
 MenuXtremETSIDI::~MenuXtremETSIDI() //Destructor
 {
-
+	
 }
 
 void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
