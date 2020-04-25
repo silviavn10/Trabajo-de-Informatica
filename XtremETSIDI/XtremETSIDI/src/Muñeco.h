@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Vector2D.h"
 class Muñeco
 {
@@ -18,3 +18,4 @@ private:
 	friend class Interaccion;
 };
 
+*/

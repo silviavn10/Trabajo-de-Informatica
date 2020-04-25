@@ -1,4 +1,4 @@
-#include "Muñeco.h"
+/*#include "Muñeco.h"
 #include "glut.h"
 
 Muñeco::Muñeco()
@@ -14,3 +14,4 @@ void Muñeco::Mueve(float){}
 Vector2D Muñeco::GetPos(){}
 void Muñeco::SetVel(float vx, float vy){}
 float Muñeco::GetAltura(){}
+*/

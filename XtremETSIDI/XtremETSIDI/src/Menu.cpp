@@ -24,7 +24,7 @@ void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 
 		glEnable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/start.jpg").id);
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/start.jpg").id);
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
@@ -38,6 +38,7 @@ void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 	}
+}
 
 /*void MenuXtremETSIDI::Tecla(unsigned char key)
 {

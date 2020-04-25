@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 
 class Vector2D
@@ -12,3 +12,4 @@ protected:
 
 };
 
+*/

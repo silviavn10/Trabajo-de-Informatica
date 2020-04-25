@@ -1,4 +1,4 @@
-#include "Creditos.h"
+/*#include "Creditos.h"
 #include "ETSIDI.h"
 #include "glut.h"
 
@@ -28,3 +28,4 @@ Creditos::Creditos(float rad, float x, float y, float vx, float vy) : SpriteCred
 	SpriteCreditos.setCenter(0.5, 0.5);  //Centro del sprite para la vida
 	SpriteCreditos.setSize(1, 1);  //Tamaño del sprite para la vida
 }
+*/

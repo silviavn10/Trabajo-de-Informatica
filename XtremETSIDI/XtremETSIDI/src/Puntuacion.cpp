@@ -1,4 +1,4 @@
-#include "Puntuacion.h"
+/*#include "Puntuacion.h"
 #include "Interaccion.h"
 
 Puntuacion::Puntuacion() //Constructor
@@ -19,3 +19,4 @@ Puntuacion::~Puntuacion() //Destructor
 
 }
 
+*/

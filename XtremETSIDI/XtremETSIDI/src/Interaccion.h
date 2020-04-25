@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Creditos.h"
 class Interaccion
 {
@@ -8,3 +8,4 @@ public:
 	static bool choque (Creditos& c, Muñeco& m); //Definir muñeco
 	//FALTAN MUCHAS INTERACCIONES
 };
+*/

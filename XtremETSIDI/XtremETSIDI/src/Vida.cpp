@@ -1,4 +1,4 @@
-#include "Vida.h"
+/*#include "Vida.h"
 #include "Vector2D.h"
 #include "ETSIDI.h"
 #include "glut.h"
@@ -39,4 +39,4 @@ void Vida::Dibuja(float x1, float y1, float x2, float y2, float x3, float y3, fl
 	glDisable(GL_TEXTURE_2D);
 }
 
-
+*/

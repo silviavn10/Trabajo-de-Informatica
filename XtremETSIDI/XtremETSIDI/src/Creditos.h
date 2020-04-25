@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Vector2D.h"
 #include "ETSIDI.h"
 
@@ -18,3 +18,4 @@ private:
 	SpriteSequence SpriteCreditos;
 };
 
+*/

@@ -7,15 +7,15 @@ public:
 	//Métodos
 	MenuXtremETSIDI();
 	~MenuXtremETSIDI();
-	void TeclaEspecial(unsigned char key);
+	/*void TeclaEspecial(unsigned char key);
 	void Tecla(unsigned char key);
-	void Mueve();
+	void Mueve();*/
 	void Dibuja();
-	void Musica();
+	//void Musica();
 
 protected:
 	//Miembros
-	Espacio espacio;
+	//Espacio espacio;
 
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{

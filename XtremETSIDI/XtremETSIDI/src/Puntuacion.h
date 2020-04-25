@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #define MAX_BONUS 240
 #include "Creditos.h"
 
@@ -15,3 +15,4 @@ private:
 	int inicio;  
 };
 
+*/
