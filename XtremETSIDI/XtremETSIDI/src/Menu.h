@@ -8,17 +8,15 @@ public:
 	//Métodos
 	MenuXtremETSIDI();
 	~MenuXtremETSIDI();
-	//void TeclaEspecial(unsigned char key);
+	void TeclaEspecial(unsigned char key);
 	void Tecla(unsigned char key);
 	//void Mueve();
 	void Dibuja();
 	void Musica();
-	
+	Muñeco muñeco;
 
 private:
 	friend class Muñeco;
-
-
 protected:
 	//Miembros
 	//Espacio espacio;

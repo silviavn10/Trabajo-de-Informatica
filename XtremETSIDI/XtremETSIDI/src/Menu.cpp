@@ -16,6 +16,8 @@ MenuXtremETSIDI::~MenuXtremETSIDI() //Destructor
 {
 }
 
+Muñeco muñeco;
+
 void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 {
 	switch (estado) {
@@ -318,24 +320,46 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = MENU;
 		if (key == 'F' || key == 'f')
+		{
 			estado = ESCOGE_CARRERAF;
+			muñeco.SetSexo(0);
+		}
 		if (key == 'V' || key == 'v')
+		{
 			estado = ESCOGE_CARRERAV;
+			muñeco.SetSexo(1);
+		}
 		break;
 
 	case ESCOGE_CARRERAF: //Hacer ifs en otras pantallas (flags) con valores
 		if (key == 27)
 			estado = ESCOGE_SEXO;
 		if (key == 'Q' || key == 'q')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(0);
+		}
 		if (key == 'D' || key == 'd')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(1);
+		}	
 		if (key == 'E' || key == 'e')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(2);
+		}
 		if (key == 'M' || key == 'm')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(3);
+		}	
 		if (key == 'A' || key == 'a')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(4);
+		}
+			
 		Musica();
 		break;
 
@@ -343,15 +367,31 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = ESCOGE_SEXO;
 		if (key == 'Q' || key == 'q')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(0);
+		}	
 		if (key == 'D' || key == 'd')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(1);
+		}	
 		if (key == 'E' || key == 'e')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(2);
+		}	
 		if (key == 'M' || key == 'm')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(3);
+		}	
 		if (key == 'A' || key == 'a')
+		{
 			estado = CARTA;
+			muñeco.SetCarrera(4);
+		}
+		
 		Musica();
 		break;
 
@@ -396,3 +436,9 @@ void MenuXtremETSIDI::Musica()
 	}
 	
 }
+
+/*void MenuXtremETSIDI::TeclaEspecial(unsigned char key)
+{
+
+}
+*/

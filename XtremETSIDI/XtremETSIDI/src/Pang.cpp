@@ -5,6 +5,7 @@
 
 
 MenuXtremETSIDI XtremETSIDI;
+Muñeco muñeco;
 
 //Las siguientes son funciones que serán llamadas automáticamente por la glut cuando sucedan eventos, no es necesario llamarlas explícitamente
 void onDraw(void); //esta funcion sera llamada para dibujar
@@ -59,9 +60,10 @@ void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el te
 	XtremETSIDI.Tecla(key);
 	glutPostRedisplay();
 }
-void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover la nave)
+void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover el muñeco)
 {
 	//XtremETSIDI.TeclaEspecial(key);
+	muñeco.TeclaEspecial(key);
 }
 void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 {

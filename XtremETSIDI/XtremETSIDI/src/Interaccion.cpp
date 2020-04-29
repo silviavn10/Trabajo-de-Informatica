@@ -1,4 +1,4 @@
-/*#include "Interaccion.h"
+#include "Interaccion.h"
 #include <math.h>
 
 Interaccion::Interaccion() //Constructor
@@ -19,4 +19,3 @@ bool Interaccion::choque (Creditos c, Muñeco& m)
         return true;
     else return false;
 }
-*/
