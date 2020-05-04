@@ -193,7 +193,7 @@ void Muñeco::TeclaEspecial(unsigned char key)
 		SetVel(5.0f, 0.0f);
 		break;
 	case GLUT_KEY_UP:
-		SetAceleracion()
+		SetAceleracion();
 
 	}
 }
