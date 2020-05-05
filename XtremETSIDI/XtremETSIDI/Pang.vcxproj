@@ -84,11 +84,14 @@
   <ItemGroup>
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaProbetas.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
     <ClCompile Include="src\Nivel1.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
+    <ClCompile Include="src\Probeta.cpp" />
+    <ClCompile Include="src\Proyectiles.cpp" />
     <ClCompile Include="src\Puntuacion.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
     <ClCompile Include="src\Vida.cpp" />
@@ -96,10 +99,13 @@
   <ItemGroup>
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaProbetas.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Muñeco.h" />
     <ClInclude Include="src\Nivel1.h" />
     <ClInclude Include="src\Plataformas.h" />
+    <ClInclude Include="src\Probeta.h" />
+    <ClInclude Include="src\Proyectiles.h" />
     <ClInclude Include="src\Puntuacion.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vida.h" />

@@ -8,6 +8,7 @@ class Muñeco
 {
 public:
 	Muñeco();
+	Muñeco(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0);
 	virtual ~Muñeco();
 	void Dibuja();
 	void Mueve(float);
@@ -31,7 +32,8 @@ public:
 	void setfm() { activo = &sprite_fm; }
 	void setva() { activo = &sprite_va; }
 	void setfa() { activo = &sprite_fa; }
-
+	void setRadio(float r);
+	float getRadio() { return radio; }
 
 private:
 	Vector2D posicion;
@@ -40,6 +42,7 @@ private:
 	float altura;
 	int sexo;
 	int carrera;
+	float radio;
 	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm,
 		sprite_va, sprite_fa;
 	SpriteSequence* activo;
