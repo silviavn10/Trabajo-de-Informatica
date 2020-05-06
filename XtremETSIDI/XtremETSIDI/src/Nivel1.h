@@ -22,6 +22,9 @@ public:
 
 private: 
 	Plataformas Plataforma;
+	Plataformas Plataforma2;
+	Plataformas Plataforma3;
+	Plataformas Plataforma4;
 	//Muñeco Muñeco;
 	//Creditos Creditos;
 	Suelo Suelo;

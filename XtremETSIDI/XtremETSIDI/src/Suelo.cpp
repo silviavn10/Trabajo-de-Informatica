@@ -1,8 +1,11 @@
 #include "Suelo.h"
+#include"glut.h"
 
 Suelo::Suelo()
 {
-	rojo = azul = verde = 0;
+	rojo = 100;
+	azul = 237;
+	verde = 149;
 }
 Suelo:: ~Suelo()
 {

@@ -1,6 +1,6 @@
 #pragma once
 //#include "Muñeco.h"
-
+#include"Nivel1.h"
 
 class MenuXtremETSIDI
 {
@@ -16,10 +16,10 @@ public:
 	//Muñeco muñeco;
 
 private:
-	friend class Muñeco;
+	//friend class Muñeco;
 protected:
 	//Miembros
-	//Espacio espacio;
+	Nivel1 Nivel1;
 
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{

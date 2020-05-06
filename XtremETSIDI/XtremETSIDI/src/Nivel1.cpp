@@ -1,6 +1,6 @@
 #include "Nivel1.h"
-
-
+#include "ETSIDI.h"
+#include "glut.h"
 Nivel1::Nivel1()
 {
 	//DE MOMENTO NADA
@@ -20,7 +20,7 @@ void Nivel1::Mueve(float)
 void Nivel1::Inicializa()
 {
 	Plataforma.SetColor(148, 26, 28);
-	Plataforma.SetPos(2, 4);//Hay que poner mas plataformas y mirar su posicion
+	Plataforma.SetPos(2, 3);//Hay que poner mas plataformas y mirar su posicion
 	//Plataforma.SetVel(5, 15); DE MOMENTO NO SE MUEVEN
 	x_ojo = 0;
 	y_ojo = 7.5;
@@ -32,12 +32,29 @@ void Nivel1::Inicializa()
 
 void Nivel1::Dibuja()
 {
-	gluLookAt(x_ojo, y_ojo, z_ojo,
-		0.0, y_ojo, 0.0, //NOTESE QUE HEMOS CAMBIADO ESTO
-		0.0, 1.0, 0.0); //PARA MIRAR AL CENTRO DE LA ESCENA
+	gluLookAt(0, 4.5, 13,   // Posición del ojo
+		0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+		0.0, 1.0, 0.0);
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto pasillo
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+
+
+	glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
+	glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
+	glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
+	glTexCoord2d(0, 0);		glVertex3f(-9.7, 9.25, -0.1);
+	glEnd();
+
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
 	//Vida.Dibuja();
 	//Muñeco.Dibuja();
 	Plataforma.Dibuja();
 	Suelo.Dibuja();
 	//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 }
+

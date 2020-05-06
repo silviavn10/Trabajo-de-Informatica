@@ -1,5 +1,5 @@
 #pragma once
-#include "glut.h"
+//#include "glut.h"
 #include "Vector2D.h"
 
 class Suelo
@@ -9,7 +9,7 @@ public:
 	virtual ~Suelo();
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
-	void SetPos(float x1 = -10.0f, float y1 = 0, float x2 = 10.0f, float y2 = 0); //Cambiar valores
+	void SetPos(float x1 = -10.0f, float y1 = 1.25f, float x2 = 10.0f, float y2 = 1.25f); //Cambiar valores
 	float distancia(Vector2D punto, Vector2D* direccion=0);
 	friend class Interaccion;
 

@@ -1,11 +1,8 @@
 #include "Plataformas.h"
-
+#include"glut.h"
 Plataformas::Plataformas()
 {
-	lado = 0.1f;//Pendiente de cambio
-	//rojo = 148;
-	//verde = 26;
-	//azul = 28;
+	lado = 1.50f;
 }
 Plataformas:: ~Plataformas() 
 {

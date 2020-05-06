@@ -1,6 +1,6 @@
 #include "Creditos.h"
 #include "ETSIDI.h"
-#include "glut.h"
+//#include "glut.h"
 
 
 Creditos::Creditos() : SpriteCreditos("imagenes/credito.png", 8) //Constructor

@@ -1,6 +1,2 @@
 ﻿  Suelo.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h(52,48): error C2381: 'exit': nueva definición; __declspec(noreturn) o '[[noreturn]]' es diferente
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\lib\glut.h(146): message : vea la declaración de 'exit'
-  Vector2D.cpp
-  Vida.cpp
-  Generando código...
+  Pang.vcxproj -> C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe

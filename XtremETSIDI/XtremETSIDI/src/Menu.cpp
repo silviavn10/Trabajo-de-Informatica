@@ -2,7 +2,7 @@
 #include "ETSIDI.h"
 //#include "Muñeco.h"
 #include <iostream>
-#include "glut.h"
+//#include "glut.h"
  
 MenuXtremETSIDI::MenuXtremETSIDI()  //Construyo el Menu
 {
@@ -218,26 +218,8 @@ void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 
 	case NIVEL1: //Comenzamos el juego
 
-		gluLookAt(0, 4.5, 13,   // Posición del ojo
-			0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
-			0.0, 1.0, 0.0);
-
-		glEnable(GL_TEXTURE_2D);
-
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto animo
-		glDisable(GL_LIGHTING);
-		glBegin(GL_POLYGON);
-		glColor3f(1, 1, 1);
-
-
-		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
-		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
-		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
-		glTexCoord2d(0, 0);		glVertex3f(-9.7, 9.25, -0.1);
-		glEnd();
-
-		glEnable(GL_LIGHTING);
-		glDisable(GL_TEXTURE_2D);
+		Nivel1.Inicializa();
+		Nivel1.Dibuja();
 		break;
 
 	case VICTORIA: //Has ganado
@@ -443,6 +425,7 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		break;
 
 	case NIVEL1:
+		
 		if (key == 27)
 		{
 			estado = MENU;

@@ -1,6 +1,6 @@
 #pragma once
 #include "Vector2D.h"
-#include <glut.h>
+//#include "glut.h"
 #define MAX_PLATAFORMAS 15//pENDIENTE DE REVISAR
 class Plataformas
 {
