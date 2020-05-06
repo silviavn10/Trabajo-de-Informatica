@@ -1,4 +1,4 @@
-#include "Creditos.h"
+/*#include "Creditos.h"
 #include "ETSIDI.h"
 //#include "glut.h"
 
@@ -51,4 +51,4 @@ float Creditos::distancia(Vector2D punto, Vector2D* direccion)
 	if (direccion != 0)
 		*direccion = dir.Unitario();
 	return distancia;
-}
+}*/

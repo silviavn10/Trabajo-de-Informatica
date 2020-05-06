@@ -8,12 +8,13 @@ public:
 	Vida();
 	~Vida();
 	void Dibuja();
-	Vector2D posicion;
 	float getRadio() { return radio; }
+	void SetPos(float x1, float y1 );
 	friend class Interaccion;
 
 protected:
-	float lado;
+	float radio;
+	Vector2D posicion;
 };
 
 

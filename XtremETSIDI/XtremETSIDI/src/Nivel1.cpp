@@ -28,6 +28,7 @@ void Nivel1::Inicializa()
 	//Creditos.SetPos(5.0f, 5.0f);
 	//Proyectil.SetPos(-5.0f, 0.0f);
 	Suelo.SetPos();
+	Vida.SetPos(2,6);
 }
 
 void Nivel1::Dibuja()
@@ -38,6 +39,7 @@ void Nivel1::Dibuja()
 	glEnable(GL_TEXTURE_2D);
 
 	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto pasillo
+
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -49,12 +51,13 @@ void Nivel1::Dibuja()
 	glTexCoord2d(0, 0);		glVertex3f(-9.7, 9.25, -0.1);
 	glEnd();
 
-	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
+	
 	//Vida.Dibuja();
 	//Muñeco.Dibuja();
 	Plataforma.Dibuja();
 	Suelo.Dibuja();
+	Vida.Dibuja();
 	//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 }
 

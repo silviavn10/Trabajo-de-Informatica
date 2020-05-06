@@ -3,7 +3,7 @@
 #include "Vector2D.h"
 //#include "Muñeco.h"
 //#include "Creditos.h"
-//#include "Vida.h"
+#include "Vida.h"
 //#include "Interaccion.h"
 #include "Suelo.h"
 
@@ -25,6 +25,7 @@ private:
 	Plataformas Plataforma2;
 	Plataformas Plataforma3;
 	Plataformas Plataforma4;
+	Vida Vida;
 	//Muñeco Muñeco;
 	//Creditos Creditos;
 	Suelo Suelo;
