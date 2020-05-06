@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Vector2D.h"
 #include "Menu.h"
 
@@ -47,3 +47,4 @@ private:
 		sprite_va, sprite_fa;
 	SpriteSequence* activo;
 };
+*/

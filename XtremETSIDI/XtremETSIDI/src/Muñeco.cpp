@@ -1,4 +1,4 @@
-#include "Muñeco.h"
+/*#include "Muñeco.h"
 #include <math.h>
 #include "glut.h"
 #include "ETSIDI.h"
@@ -29,7 +29,7 @@ sprite_va("bin/imagenes/sprite_va.png", 3), sprite_fa("bin/imagenes/sprite_fa.pn
 	setfm();
 	setva();
 	setfa();
-	*/
+	
 }
 
 Muñeco::Muñeco(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0) :sprite_vq("bin/imagenes/sprite_vq.png", 3), sprite_fq("bin/imagenes/sprite_fq.png", 3),
@@ -216,3 +216,4 @@ void Muñeco::TeclaEspecial(unsigned char key)
 
 Vector2D Muñeco::GetPos() {}
 float Muñeco::GetAltura() {}
+*/

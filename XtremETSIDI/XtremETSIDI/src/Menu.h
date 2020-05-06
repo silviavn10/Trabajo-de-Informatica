@@ -1,5 +1,5 @@
 #pragma once
-#include "Muñeco.h"
+//#include "Muñeco.h"
 
 
 class MenuXtremETSIDI
@@ -13,7 +13,7 @@ public:
 	//void Mueve();
 	void Dibuja();
 	void Musica();
-	Muñeco muñeco;
+	//Muñeco muñeco;
 
 private:
 	friend class Muñeco;

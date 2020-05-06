@@ -1,6 +1,6 @@
 #include "Menu.h"
 #include "ETSIDI.h"
-#include "Muñeco.h"
+//#include "Muñeco.h"
 #include <iostream>
 #include "glut.h"
  
@@ -16,7 +16,7 @@ MenuXtremETSIDI::~MenuXtremETSIDI() //Destructor
 {
 }
 
-Muñeco muñeco;
+//Muñeco muñeco;
 
 void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 {
@@ -216,6 +216,30 @@ void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_TEXTURE_2D);
 		break;
 
+	case NIVEL1: //Comenzamos el juego
+
+		gluLookAt(0, 4.5, 13,   // Posición del ojo
+			0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);
+
+		glEnable(GL_TEXTURE_2D);
+
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto animo
+		glDisable(GL_LIGHTING);
+		glBegin(GL_POLYGON);
+		glColor3f(1, 1, 1);
+
+
+		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
+		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
+		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
+		glTexCoord2d(0, 0);		glVertex3f(-9.7, 9.25, -0.1);
+		glEnd();
+
+		glEnable(GL_LIGHTING);
+		glDisable(GL_TEXTURE_2D);
+		break;
+
 	case VICTORIA: //Has ganado
 
 		gluLookAt(0, 4.5, 13,   // Posición del ojo
@@ -322,12 +346,12 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		if (key == 'F' || key == 'f')
 		{
 			estado = ESCOGE_CARRERAF;
-			muñeco.SetSexo(0);
+			//muñeco.SetSexo(0);
 		}
 		if (key == 'V' || key == 'v')
 		{
 			estado = ESCOGE_CARRERAV;
-			muñeco.SetSexo(1);
+			//muñeco.SetSexo(1);
 		}
 		break;
 
@@ -337,27 +361,27 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		if (key == 'Q' || key == 'q')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(0);
+			//muñeco.SetCarrera(0);
 		}
 		if (key == 'D' || key == 'd')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(1);
+			//muñeco.SetCarrera(1);
 		}	
 		if (key == 'E' || key == 'e')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(2);
+			//muñeco.SetCarrera(2);
 		}
 		if (key == 'M' || key == 'm')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(3);
+			//muñeco.SetCarrera(3);
 		}	
 		if (key == 'A' || key == 'a')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(4);
+			//muñeco.SetCarrera(4);
 		}
 			
 		Musica();
@@ -369,27 +393,27 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		if (key == 'Q' || key == 'q')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(0);
+			//muñeco.SetCarrera(0);
 		}	
 		if (key == 'D' || key == 'd')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(1);
+			//muñeco.SetCarrera(1);
 		}	
 		if (key == 'E' || key == 'e')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(2);
+			//muñeco.SetCarrera(2);
 		}	
 		if (key == 'M' || key == 'm')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(3);
+			//muñeco.SetCarrera(3);
 		}	
 		if (key == 'A' || key == 'a')
 		{
 			estado = CARTA;
-			muñeco.SetCarrera(4);
+			//muñeco.SetCarrera(4);
 		}
 		
 		Musica();
@@ -407,10 +431,23 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 
 	case SUERTE:
 		if (key == 27)
+		{
 			estado = MENU;
-		Musica();
+			Musica();
+		}
 		if (key == 13)
+		{
 			estado = NIVEL1;
+			Musica();
+		}
+		break;
+
+	case NIVEL1:
+		if (key == 27)
+		{
+			estado = MENU;
+			Musica();
+		}
 		break;
 	}
 
@@ -433,6 +470,11 @@ void MenuXtremETSIDI::Musica()
 		ETSIDI::stopMusica();
 		ETSIDI::playMusica("bin/bso/intro.mp3", true);
 		break;
+
+		case NIVEL1:
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("bin/bso/nivel1.mp3", true);
+			break;
 	}
 	
 }

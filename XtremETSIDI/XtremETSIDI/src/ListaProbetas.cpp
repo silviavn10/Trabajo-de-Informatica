@@ -1,4 +1,4 @@
-#include "ListaProbetas.h"
+/*#include "ListaProbetas.h"
 #include "Interaccion.h"
 
 
@@ -39,14 +39,18 @@ void ListaProbetas::Dibuja()
 	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();
 }
-void ListaProbetas::Colision(Muñeco m)
+int ListaProbetas::Colision(Muñeco m)
 {
-	for (int i = 0; i < numero; i++)
-		if (Interaccion::Colision(*(lista[i]), p))
-			lista[i]->SetVel(0, 0);
+	for (int i = 0; i < numero; i++) //Recorre la lista de probetas
+	{
+		if (Interaccion::Colision(*(lista[i]), m)) //Detecta la colisión entre la plataforma y un elemento de la lista de probetas
+			return i; //Si hay colisión devuelve el número de elemento de la lista que ha colisionado
+	}
+	return -1; // No hay colisión 
+	//HAY QUE HACER COMO SALTAR A JULIO 
 }
 
-void ListaProbetas::Eliminar(int index)  //Envía destruir el meteorito de la lista indicado
+void ListaProbetas::Eliminar(int index)  //Envía destruir las probetas de la lista indicado
 {
 	if ((index < 0) || (index >= numero))  //Comprueba que el número de la lista indicado tenga sentido
 		return;
@@ -54,43 +58,43 @@ void ListaProbetas::Eliminar(int index)  //Envía destruir el meteorito de la lis
 	delete lista[index];
 	numero--;  //Hay un elemento menos en la lista
 	for (int i = index; i < numero; i++)
-		lista[i] = lista[i + 1];  //Elimina ese elemento de la lista de meteoritos
+		lista[i] = lista[i + 1];  //Elimina ese elemento de la lista de probetas
 
 }
 
 
-void ListaProbetas::Eliminar(Probeta * p) //Borra los meteoritos, pero tiene que recibir un meteorito en concreto
+void ListaProbetas::Eliminar(Probeta * p) //Borra las probetas, pero tiene que recibir una probeta en concreto
 {
-	for (int i = 0; i < numero; i++)  //Recorre la lista hasta encontrar el meteorito que le hemos indicado
+	for (int i = 0; i < numero; i++)  //Recorre la lista hasta encontrar la probeta que le hemos indicado
 		if (lista[i] == p)
 		{
-			Eliminar(i); //Envía ese meteorito a la función eliminar (anterior)
+			Eliminar(i); //Envía esa probeta a la función eliminar (anterior)
 			return;
 		}
 }
 
 
-int ListaProbetas:: Colision(Plataformas f)  //Colisión entre un meteorito y la nave
+int ListaProbetas:: Colision(Plataformas f)  //Colisión entre la probeta y la plataforma
 {
-	for (int i = 0; i < numero; i++) //Recorre la lista de meteoritos
+	for (int i = 0; i < numero; i++) //Recorre la lista de probetas
 	{
-		if (Interaccion::colision(*(lista[i]), f)) //Detecta la colisión entre la nave y un elemento de la lista de meteoritos
+		if (Interaccion::Colision(*(lista[i]), f)) //Detecta la colisión entre la plataforma y un elemento de la lista de probetas
 			return i; //Si hay colisión devuelve el número de elemento de la lista que ha colisionado
 	}
 	return -1; // No hay colisión
 }
-bool ListaProbetas::Agregar(Probeta* m) //Función para agregar un meteorito
+bool ListaProbetas::Agregar(Probeta* m) //Función para agregar una plataforma
 {
-	for (int i = 0; i < numero; i++) // Evitamos meteoritos ya existentes
+	for (int i = 0; i < numero; i++) // Evitamos plataformas ya existentes
 		if (lista[i] == m)
 			return false;
-	if (numero < MAX_PROBETAS)  //Si no se ha llegado al máximo de meteoritos permitidos
+	if (numero < MAX_PROBETAS)  //Si no se ha llegado al máximo de plataformas permitidas
 		lista[numero++] = m;  //se añade uno
 	else
 		return false;
 	return true;
 }
-Probeta* ListaProbetas::operator [](int i) //Sobrecarga del operador [] para escoger un meteorito de toda la lista
+Probeta* ListaProbetas::operator [](int i) //Sobrecarga del operador [] para escoger una plataforma de toda la lista
 {
 	if (i >= numero)
 		i = numero - 1;
@@ -99,3 +103,4 @@ Probeta* ListaProbetas::operator [](int i) //Sobrecarga del operador [] para esc
 
 	return lista[i];
 }
+*/
