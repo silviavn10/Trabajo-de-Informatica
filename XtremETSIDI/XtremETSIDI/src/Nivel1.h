@@ -1,7 +1,7 @@
 #pragma once
 #include "Plataformas.h"
 #include "Vector2D.h"
-//#include "Muñeco.h"
+#include "Muñeco.h"
 //#include "Creditos.h"
 #include "Vida.h"
 //#include "Interaccion.h"
@@ -26,11 +26,10 @@ private:
 	Plataformas Plataforma3;
 	Plataformas Plataforma4;
 	Vida Vida;
-	//Muñeco Muñeco;
+	Muñeco muñeco;
 	//Creditos Creditos;
 	Suelo Suelo;
 	//Proyectiles Proyectiles;//Cuando la hagamos
-	//Vida Vida;
 	//Interaccion Interaccion;
 	float x_ojo;
 	float y_ojo;

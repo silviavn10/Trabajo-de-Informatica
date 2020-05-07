@@ -26,10 +26,10 @@ void Vida::Dibuja()
 	glColor3f(1, 1, 1);
 	
 
-	glTexCoord2d(0, 1);		glVertex3f(-5, -0.25, -0.1);
-	glTexCoord2d(1, 1);		glVertex3f(5, -0.25, -0.1);
-	glTexCoord2d(1, 0);		glVertex3f(5, 9.25, -0.1);
-	glTexCoord2d(0, 0);		glVertex3f(-5, 9.25, -0.1);
+	glTexCoord2d(0, 1);		glVertex3f(-5, -0.25, 0.1);
+	glTexCoord2d(1, 1);		glVertex3f(5, -0.25, 0.1);
+	glTexCoord2d(1, 0);		glVertex3f(5, 9.25, 0.1);
+	glTexCoord2d(0, 0);		glVertex3f(-5, 9.25, 0.1);
 	glEnd();
 	
 	glEnable(GL_LIGHTING);

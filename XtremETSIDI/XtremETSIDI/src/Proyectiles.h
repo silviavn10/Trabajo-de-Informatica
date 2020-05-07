@@ -7,7 +7,7 @@ class Proyectiles //CLASE PADRE
 public:
 	Proyectiles();
 	virtual ~Proyectiles();
-	void mueve(float t);
+	virtual void mueve(float t);
 	Vector2D getPos();
 	void setVel(float vx, float vy);
 	void setVel(Vector2D vel);

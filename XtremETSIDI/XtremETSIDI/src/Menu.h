@@ -1,6 +1,8 @@
 #pragma once
-//#include "Muñeco.h"
 #include"Nivel1.h"
+#include "Muñeco.h"
+#include "ETSIDI.h"
+
 
 class MenuXtremETSIDI
 {
@@ -13,18 +15,19 @@ public:
 	//void Mueve();
 	void Dibuja();
 	void Musica();
-	//Muñeco muñeco;
-
+	
 private:
-	//friend class Muñeco;
+	friend class Muñeco;
+	Muñeco muñeco;
+	Nivel1 nivel1;
+
 protected:
 	//Miembros
-	Nivel1 Nivel1;
 
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{
 		START, MENU, CONTROLES, ESCOGE_SEXO, ESCOGE_CARRERAF, ESCOGE_CARRERAV, CARTA, SUERTE,
-		 NIVEL1, VICTORIA, GAMEOVER, FIN/* JUEGO_N2, JUEGO_N3, JUEGO2,
+		NIVEL1, VICTORIA, GAMEOVER, FIN/* JUEGO_N2, JUEGO_N3, JUEGO2,
 		GAMEOVER, SALIR,  //LEVELUP1, LEVELUP2, LEVELUP3,
 		VICTORIA, FIN*/
 	};

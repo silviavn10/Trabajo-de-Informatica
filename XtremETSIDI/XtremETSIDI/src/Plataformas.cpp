@@ -1,5 +1,6 @@
 #include "Plataformas.h"
 #include"glut.h"
+
 Plataformas::Plataformas()
 {
 	lado = 1.50f;

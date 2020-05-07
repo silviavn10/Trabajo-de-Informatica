@@ -1,6 +1,7 @@
 #include "Nivel1.h"
 #include "ETSIDI.h"
 #include "glut.h"
+
 Nivel1::Nivel1()
 {
 	//DE MOMENTO NADA
@@ -12,7 +13,7 @@ Nivel1:: ~Nivel1()
 
 void Nivel1::Mueve(float)
 {
-	//Muñeco.Mueve(0.025f);
+	muñeco.Mueve(0.025f);
 	//Proyectil.Mueve() falta por hacer
 	//AQUI FALTAN TODAS LAS INTERACCIONES
 }
@@ -45,16 +46,16 @@ void Nivel1::Dibuja()
 	glColor3f(1, 1, 1);
 
 
-	glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
-	glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
-	glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
-	glTexCoord2d(0, 0);		glVertex3f(-9.7, 9.25, -0.1);
+	glTexCoord2d(0, 1);		glVertex3f(-19.9, -0.25, -0.1);
+	glTexCoord2d(1, 1);		glVertex3f(19.9, -0.25, -0.1);
+	glTexCoord2d(1, 0);		glVertex3f(19.9, 9.25, -0.1);
+	glTexCoord2d(0, 0);		glVertex3f(-19.9, 9.25, -0.1);
 	glEnd();
 
 	glDisable(GL_TEXTURE_2D);
 	
-	//Vida.Dibuja();
-	//Muñeco.Dibuja();
+	
+	muñeco.Dibuja();
 	Plataforma.Dibuja();
 	Suelo.Dibuja();
 	Vida.Dibuja();

@@ -1,13 +1,14 @@
 //#include "Vida.h"
 #include "Menu.h"
+#include "Muñeco.h"
 #include "Nivel1.h"
 #include "ETSIDI.h"
 #include "glut.h"
 
 
 MenuXtremETSIDI XtremETSIDI;
-Nivel1 Nivel1;
-//Muñeco muñeco;
+Muñeco muñeco;
+Nivel1 nivel1;
 
 //Las siguientes son funciones que serán llamadas automáticamente por la glut cuando sucedan eventos, no es necesario llamarlas explícitamente
 void onDraw(void); //esta funcion sera llamada para dibujar
@@ -53,7 +54,7 @@ void onDraw(void)
 	glLoadIdentity();
 
 	XtremETSIDI.Dibuja();
-	Nivel1.Dibuja();
+	nivel1.Dibuja();
 
 	glutSwapBuffers();
 }
@@ -66,7 +67,7 @@ void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el te
 void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover el muñeco)
 {
 	//XtremETSIDI.TeclaEspecial(key);
-	//muñeco.TeclaEspecial(key);
+	muñeco.TeclaEspecial(key);
 }
 void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 {

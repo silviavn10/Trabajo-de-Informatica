@@ -1,22 +1,42 @@
-/*#include "Muñeco.h"
+#include "Muñeco.h"
 #include <math.h>
 #include "glut.h"
-#include "ETSIDI.h"
 
-Muñeco::Muñeco() :sprite_vq("bin/imagenes/sprite_vq.png", 3), sprite_fq("bin/imagenes/sprite_fq.png", 3),
-sprite_vd("bin/imagenes/sprite_vd.png", 3), sprite_fd("bin/imagenes/sprite_fd.png", 3),
-sprite_ve("bin/imagenes/sprite_ve.png", 3), sprite_fe("bin/imagenes/sprite_fe.png", 3),
-sprite_vm("bin/imagenes/sprite_vm.png", 3), sprite_fm("bin/imagenes/sprite_fm.png", 3),
-sprite_va("bin/imagenes/sprite_va.png", 3), sprite_fa("bin/imagenes/sprite_fa.png", 3)
+Muñeco::Muñeco() :sprite_vq("bin/imagenes/muñeco_vq.png", 2), sprite_fq("bin/imagenes/muñeco_fq.png", 2),
+sprite_vd("bin/imagenes/muñeco_vd.png", 2), sprite_fd("bin/imagenes/muñeco_fd.png", 2),
+sprite_ve("bin/imagenes/muñeco_ve.png", 2), sprite_fe("bin/imagenes/muñeco_fe.png", 2),
+sprite_vm("bin/imagenes/muñeco_vm.png", 2), sprite_fm("bin/imagenes/muñeco_fm.png", 2),
+sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.png", 2)
 
 {
 	//VALORES AUN POR DEFINIR
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
-	posicion.y = 0;  //Posición inicial del muñeco en el eje vertical (suelo)
-	radio = 1.8f;  //Tamaño del muñeco (por definir)
+	posicion.y = 1.5;  //Posición inicial del muñeco en el eje vertical (suelo)
+	altura = 3.0f;  //Tamaño del muñeco (por definir)
 	velocidad.x = 0.5;  //Velocidad en el eje horizontal
-	velocidad.y = 0;  //Velocidad en el eje vertical
+	velocidad.y = 0;//Velocidad en el eje vertical
+	aceleracion.y = -20.0f; //Gravedad para que caiga
 	
+	sprite_vq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco vq 
+	sprite_vq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco vq
+	sprite_fq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco fq
+	sprite_fq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco fq
+	sprite_vd.setCenter(0.9, 0.9);
+	sprite_vd.setSize(1.8, 1.8);
+	sprite_fd.setCenter(0.9, 0.9);
+	sprite_fd.setSize(1.8, 1.8);
+	sprite_ve.setCenter(0.9, 0.9);
+	sprite_ve.setSize(1.8, 1.8);
+	sprite_fe.setCenter(0.9, 0.9);
+	sprite_fe.setSize(1.8, 1.8);
+	sprite_vm.setCenter(0.9, 0.9);
+	sprite_vm.setSize(1.8, 1.8);
+	sprite_fm.setCenter(0.9, 0.9);
+	sprite_fm.setSize(1.8, 1.8);
+	sprite_va.setCenter(0.9, 0.9);
+	sprite_va.setSize(1.8, 1.8);
+	sprite_fa.setCenter(0.9, 0.9);
+	sprite_fa.setSize(1.8, 1.8);
 
 	//No sabemos si hay que ponerlo aqui tambien o no 
 	/*setvq();  //Funcion para activar el vq
@@ -29,10 +49,10 @@ sprite_va("bin/imagenes/sprite_va.png", 3), sprite_fa("bin/imagenes/sprite_fa.pn
 	setfm();
 	setva();
 	setfa();
-	
+	*/
 }
 
-Muñeco::Muñeco(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0) :sprite_vq("bin/imagenes/sprite_vq.png", 3), sprite_fq("bin/imagenes/sprite_fq.png", 3),
+/*Muñeco::Muñeco(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0) :sprite_vq("bin/imagenes/sprite_vq.png", 3), sprite_fq("bin/imagenes/sprite_fq.png", 3),
 sprite_vd("bin/imagenes/sprite_vd.png", 3), sprite_fd("bin/imagenes/sprite_fd.png", 3),
 sprite_ve("bin/imagenes/sprite_ve.png", 3), sprite_fe("bin/imagenes/sprite_fe.png", 3),
 sprite_vm("bin/imagenes/sprite_vm.png", 3), sprite_fm("bin/imagenes/sprite_fm.png", 3),
@@ -65,10 +85,11 @@ sprite_va("bin/imagenes/sprite_va.png", 3), sprite_fa("bin/imagenes/sprite_fa.pn
 	sprite_fa.setCenter(0.9, 0.9);
 	sprite_fa.setSize(1.8, 1.8);
 }
-
+*/
 Muñeco::~Muñeco()
 {
 }
+
 void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 {
 	activo->loop(); //Funcion interna de los sprites
@@ -177,18 +198,17 @@ void Muñeco::SetVel(float vx, float vy)
 	velocidad.y = vy;
 }
 
-void Muñeco::SetAceleracion(float ax, float ay)
+void Muñeco::SetVel(Vector2D vel)
 {
-	aceleracion.x = ax;
-	aceleracion.y = ay;
+	velocidad = vel;
 }
 
-float Muñeco::SetSalto(float h, float v0 = 0.0, float g = 9.8)
+/*float Muñeco::SetSalto(float h, float v0 = 0.0, float g = 9.8)
 {
 	float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
 	return v0 + g * t;
 }
-
+*/
 void Muñeco::SetSexo(int x) 
 {
 	sexo = x;
@@ -209,11 +229,13 @@ void Muñeco::TeclaEspecial(unsigned char key)
 		SetVel(5.0f, 0.0f);
 		break;
 	case GLUT_KEY_UP:
-		SetAceleracion();
-
+		for (int i = 0; i < MAX_PLATAFORMAS; i++) {
+			if (-0.1 < (getPosY() - (plataformas.GetLimiteY2())) < 0.1) setVelY(15.0f);
+		}
+		if (-0.1 < (getPosY() - (plataformas.GetLimiteY2())) < 0.1) setVelY(15.0f);
+		if ((getPosY() - suelo.GetSueloLimiteY2()) < 0.05) {
+			setVelY(15.0f);
+		}
+		break;
 	}
 }
-
-Vector2D Muñeco::GetPos() {}
-float Muñeco::GetAltura() {}
-*/
