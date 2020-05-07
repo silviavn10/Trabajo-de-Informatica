@@ -46,10 +46,10 @@ void Nivel1::Dibuja()
 	glColor3f(1, 1, 1);
 
 
-	glTexCoord2d(0, 1);		glVertex3f(-19.9, -0.25, -0.1);
-	glTexCoord2d(1, 1);		glVertex3f(19.9, -0.25, -0.1);
-	glTexCoord2d(1, 0);		glVertex3f(19.9, 9.25, -0.1);
-	glTexCoord2d(0, 0);		glVertex3f(-19.9, 9.25, -0.1);
+	glTexCoord2d(0, 1);		glVertex3f(-95, -0.25, -0.1);
+	glTexCoord2d(1, 1);		glVertex3f(95, -0.25, -0.1);
+	glTexCoord2d(1, 0);		glVertex3f(95, 9.25, -0.1);
+	glTexCoord2d(0, 0);		glVertex3f(-95, 9.25, -0.1);
 	glEnd();
 
 	glDisable(GL_TEXTURE_2D);

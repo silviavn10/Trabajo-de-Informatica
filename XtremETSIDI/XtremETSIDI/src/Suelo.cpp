@@ -3,9 +3,9 @@
 
 Suelo::Suelo()
 {
-	rojo = 100;
-	azul = 237;
-	verde = 149;
+	rojo = 70;
+	azul = 180;
+	verde = 130;
 }
 Suelo:: ~Suelo()
 {

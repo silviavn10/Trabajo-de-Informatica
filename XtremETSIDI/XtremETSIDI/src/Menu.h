@@ -15,12 +15,11 @@ public:
 	//void Mueve();
 	void Dibuja();
 	void Musica();
-	
+
 private:
 	friend class Muñeco;
 	Muñeco muñeco;
 	Nivel1 nivel1;
-
 protected:
 	//Miembros
 

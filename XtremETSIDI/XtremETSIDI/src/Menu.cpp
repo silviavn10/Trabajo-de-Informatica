@@ -1,6 +1,8 @@
 #include "Menu.h"
 #include "ETSIDI.h"
 #include <iostream>
+
+using namespace std;
 //#include "glut.h"
  
 MenuXtremETSIDI::MenuXtremETSIDI()  //Construyo el Menu
@@ -342,26 +344,31 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(0);
+			muñeco.setfq();
 		}
 		if (key == 'D' || key == 'd')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(1);
+			muñeco.setfd();
 		}	
 		if (key == 'E' || key == 'e')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(2);
+			muñeco.setfe();
 		}
 		if (key == 'M' || key == 'm')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(3);
+			muñeco.setfm();
 		}	
 		if (key == 'A' || key == 'a')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(4);
+			muñeco.setfa();
 		}
 			
 		Musica();
@@ -374,26 +381,31 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(0);
+			muñeco.setvq();
 		}	
 		if (key == 'D' || key == 'd')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(1);
+			muñeco.setvd();
 		}	
 		if (key == 'E' || key == 'e')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(2);
+			muñeco.setve();
 		}	
 		if (key == 'M' || key == 'm')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(3);
+			muñeco.setvm();
 		}	
 		if (key == 'A' || key == 'a')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(4);
+			muñeco.setva();
 		}
 		
 		Musica();

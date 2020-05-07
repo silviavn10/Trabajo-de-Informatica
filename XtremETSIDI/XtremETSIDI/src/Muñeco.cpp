@@ -1,6 +1,9 @@
 #include "Muñeco.h"
 #include <math.h>
+#include <iostream>
 #include "glut.h"
+
+using namespace std;
 
 Muñeco::Muñeco() :sprite_vq("bin/imagenes/muñeco_vq.png", 2), sprite_fq("bin/imagenes/muñeco_fq.png", 2),
 sprite_vd("bin/imagenes/muñeco_vd.png", 2), sprite_fd("bin/imagenes/muñeco_fd.png", 2),
@@ -11,8 +14,8 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 {
 	//VALORES AUN POR DEFINIR
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
-	posicion.y = 1.5;  //Posición inicial del muñeco en el eje vertical (suelo)
-	altura = 3.0f;  //Tamaño del muñeco (por definir)
+	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
+	altura = 1.8f;  //Tamaño del muñeco (por definir)
 	velocidad.x = 0.5;  //Velocidad en el eje horizontal
 	velocidad.y = 0;//Velocidad en el eje vertical
 	aceleracion.y = -20.0f; //Gravedad para que caiga
@@ -36,10 +39,10 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	sprite_va.setCenter(0.9, 0.9);
 	sprite_va.setSize(1.8, 1.8);
 	sprite_fa.setCenter(0.9, 0.9);
-	sprite_fa.setSize(1.8, 1.8);
+	sprite_fa.setSize(2.3, 2.3);
 
 	//No sabemos si hay que ponerlo aqui tambien o no 
-	/*setvq();  //Funcion para activar el vq
+	setvq();  //Funcion para activar el vq
 	setfq();  //Funcion para activar el fq
 	setvd();
 	setfd();
@@ -49,43 +52,8 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	setfm();
 	setva();
 	setfa();
-	*/
 }
 
-/*Muñeco::Muñeco(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0) :sprite_vq("bin/imagenes/sprite_vq.png", 3), sprite_fq("bin/imagenes/sprite_fq.png", 3),
-sprite_vd("bin/imagenes/sprite_vd.png", 3), sprite_fd("bin/imagenes/sprite_fd.png", 3),
-sprite_ve("bin/imagenes/sprite_ve.png", 3), sprite_fe("bin/imagenes/sprite_fe.png", 3),
-sprite_vm("bin/imagenes/sprite_vm.png", 3), sprite_fm("bin/imagenes/sprite_fm.png", 3),
-sprite_va("bin/imagenes/sprite_va.png", 3), sprite_fa("bin/imagenes/sprite_fa.png", 3) 
-{
-	posicion.x = x;
-	posicion.y = y;
-	radio = rad;  //Radio del icono de vida
-	velocidad.x = vx;  //Velocidad en el eje horizontal
-	velocidad.y = vy;  //Velocidad en el eje vertical
-
-	sprite_vq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco vq 
-	sprite_vq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco vq
-	sprite_fq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco fq
-	sprite_fq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco fq
-	sprite_vd.setCenter(0.9, 0.9);
-	sprite_vd.setSize(1.8, 1.8);
-	sprite_fd.setCenter(0.9, 0.9);
-	sprite_fd.setSize(1.8, 1.8);
-	sprite_ve.setCenter(0.9, 0.9);
-	sprite_ve.setSize(1.8, 1.8);
-	sprite_fe.setCenter(0.9, 0.9);
-	sprite_fe.setSize(1.8, 1.8);
-	sprite_vm.setCenter(0.9, 0.9);
-	sprite_vm.setSize(1.8, 1.8);
-	sprite_fm.setCenter(0.9, 0.9);
-	sprite_fm.setSize(1.8, 1.8);
-	sprite_va.setCenter(0.9, 0.9);
-	sprite_va.setSize(1.8, 1.8);
-	sprite_fa.setCenter(0.9, 0.9);
-	sprite_fa.setSize(1.8, 1.8);
-}
-*/
 Muñeco::~Muñeco()
 {
 }
@@ -97,8 +65,19 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 	velocidad = velocidad + aceleracion * t;
 }
 
-void Muñeco::Dibuja()
+void Muñeco::SetSexo(int x)
 {
+	sexo = x;
+	cout << "sexo:" << sexo;
+}
+void Muñeco::SetCarrera(int x)
+{
+	carrera = x;
+	cout << "carrera:" << carrera;
+}
+
+void Muñeco::Dibuja()
+{	
 	if (sexo == 0) //Escogemos chico
 	{
 		switch (carrera)
@@ -192,6 +171,14 @@ void Muñeco::Dibuja()
 	}
 }
 
+/*void Muñeco::Dibuja()
+{
+	glPushMatrix();
+	glTranslatef(posicion.x, posicion.y, 0.5);
+	activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
+	glPopMatrix();
+}*/
+
 void Muñeco::SetVel(float vx, float vy)
 {
 	velocidad.x = vx;
@@ -209,14 +196,7 @@ void Muñeco::SetVel(Vector2D vel)
 	return v0 + g * t;
 }
 */
-void Muñeco::SetSexo(int x) 
-{
-	sexo = x;
-}
-void Muñeco::SetCarrera(int x)
-{
-	carrera = x;
-}
+
 
 void Muñeco::TeclaEspecial(unsigned char key)
 {

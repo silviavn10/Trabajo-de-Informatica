@@ -1,8 +1,9 @@
 #pragma once 
 #include "Vector2D.h"
 #include "Suelo.h"
-#include "Menu.h"
+#include "Plataformas.h"
 #include "ETSIDI.h"
+
 
 using ETSIDI::SpriteSequence;
 
