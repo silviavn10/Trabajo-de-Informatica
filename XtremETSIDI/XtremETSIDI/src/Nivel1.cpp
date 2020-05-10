@@ -63,14 +63,14 @@ void Nivel1::Dibuja()
 }
 
 void Nivel1::TeclaEspecial(unsigned char key)
-	{
+{
 		switch (key)
 		{
 		case GLUT_KEY_LEFT:
-			SetVel(-5.0f, 0.0f);
+			muñeco.SetVel(-5.0f, 0.0f);
 			break;
 		case GLUT_KEY_RIGHT:
-			SetVel(5.0f, 0.0f);
+			muñeco.SetVel(5.0f, 0.0f);
 			break;
 		case GLUT_KEY_UP:
 			for (int i = 0; i < MAX_PLATAFORMAS; i++) {
@@ -82,4 +82,4 @@ void Nivel1::TeclaEspecial(unsigned char key)
 			}
 			break;
 		}
-	}
+}

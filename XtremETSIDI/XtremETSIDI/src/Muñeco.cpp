@@ -62,9 +62,9 @@ Muñeco::~Muñeco()
 
 void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 {
-	activo->loop(); //Funcion interna de los sprites
 	posicion = posicion + velocidad * t + aceleracion*(0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
+	//activo->loop(); //Funcion interna de los sprites
 }
 
 void Muñeco::SetSexo(int x)
@@ -194,6 +194,3 @@ void Muñeco::SetVel(Vector2D vel)
 	return v0 + g * t;
 }
 */
-
-
-

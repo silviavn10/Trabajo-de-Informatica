@@ -17,7 +17,7 @@ public:
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
 	Vector2D GetPos();
-	void SetVel(float vx, float vy);
+	//void SetVel(float vx, float vy);
 	
 
 private: 

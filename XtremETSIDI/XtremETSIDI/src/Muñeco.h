@@ -2,7 +2,6 @@
 #include "Vector2D.h"
 #include "ETSIDI.h"
 
-
 using ETSIDI::SpriteSequence;
 
 class Muñeco
