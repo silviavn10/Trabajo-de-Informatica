@@ -15,24 +15,24 @@ public:
 	void Inicializa();
 	void Dibuja();
 	void TeclaEspecial(unsigned char key);
-	void Mueve(float);
+	void Mueve();
 	Vector2D GetPos();
 	void SetVel(float vx, float vy);
 	
 
 private: 
 	Plataformas Plataforma;
-	Plataformas Plataforma2;
-	Plataformas Plataforma3;
-	Plataformas Plataforma4;
+	//Plataformas Plataforma2;
+	//Plataformas Plataforma3;
+	//Plataformas Plataforma4;
 	Vida Vida;
 	Muñeco muñeco;
 	//Creditos Creditos;
 	Suelo Suelo;
 	//Proyectiles Proyectiles;//Cuando la hagamos
 	//Interaccion Interaccion;
-	float x_ojo;
-	float y_ojo;
-	float z_ojo;
+	//float x_ojo;
+	//float y_ojo;
+	//float z_ojo;
 };
 

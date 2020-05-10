@@ -1,9 +1,6 @@
 #include "Menu.h"
 #include "ETSIDI.h"
-#include <iostream>
 
-using namespace std;
-//#include "glut.h"
  
 MenuXtremETSIDI::MenuXtremETSIDI()  //Construyo el Menu
 {
@@ -218,7 +215,6 @@ void MenuXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 
 	case NIVEL1: //Comenzamos el juego
 
-		nivel1.Inicializa();
 		nivel1.Dibuja();
 		break;
 
@@ -344,31 +340,31 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(0);
-			muñeco.setfq();
+			
 		}
 		if (key == 'D' || key == 'd')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(1);
-			muñeco.setfd();
+			
 		}	
 		if (key == 'E' || key == 'e')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(2);
-			muñeco.setfe();
+			
 		}
 		if (key == 'M' || key == 'm')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(3);
-			muñeco.setfm();
+			
 		}	
 		if (key == 'A' || key == 'a')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(4);
-			muñeco.setfa();
+			
 		}
 			
 		Musica();
@@ -381,31 +377,31 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(0);
-			muñeco.setvq();
+			
 		}	
 		if (key == 'D' || key == 'd')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(1);
-			muñeco.setvd();
+			
 		}	
 		if (key == 'E' || key == 'e')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(2);
-			muñeco.setve();
+			
 		}	
 		if (key == 'M' || key == 'm')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(3);
-			muñeco.setvm();
+			
 		}	
 		if (key == 'A' || key == 'a')
 		{
 			estado = CARTA;
 			muñeco.SetCarrera(4);
-			muñeco.setva();
+			
 		}
 		
 		Musica();
@@ -430,6 +426,7 @@ void MenuXtremETSIDI::Tecla(unsigned char key)
 		if (key == 13)
 		{
 			estado = NIVEL1;
+			nivel1.Inicializa();
 			Musica();
 		}
 		break;
@@ -472,8 +469,12 @@ void MenuXtremETSIDI::Musica()
 	
 }
 
-/*void MenuXtremETSIDI::TeclaEspecial(unsigned char key)
+void MenuXtremETSIDI::TeclaEspecial(unsigned char key)
 {
-
+	nivel1.TeclaEspecial(key);
 }
-*/
+ 
+void MenuXtremETSIDI::Mueve()
+{
+	nivel1.Mueve();
+}

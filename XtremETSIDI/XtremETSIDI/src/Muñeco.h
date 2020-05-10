@@ -1,7 +1,5 @@
 #pragma once 
 #include "Vector2D.h"
-#include "Suelo.h"
-#include "Plataformas.h"
 #include "ETSIDI.h"
 
 
@@ -11,11 +9,10 @@ class Muñeco
 {
 public:
 	Muñeco(); 
-	//Muñeco(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0);
+	Muñeco(float altura);
 	virtual ~Muñeco();
 	void Dibuja();
 	void Mueve(float);
-	void TeclaEspecial(unsigned char key);
 	void SetVel(float vx, float vy);
 	void SetVel(Vector2D vel);
 	void SetSexo(int x);
@@ -44,8 +41,6 @@ private:
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
-	Plataformas plataformas;
-	Suelo suelo;
 	float altura;
 	int sexo;
 	int carrera;

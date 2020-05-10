@@ -11,7 +11,7 @@ Nivel1:: ~Nivel1()
 
 }
 
-void Nivel1::Mueve(float)
+void Nivel1::Mueve()
 {
 	muñeco.Mueve(0.025f);
 	//Proyectil.Mueve() falta por hacer
@@ -23,9 +23,9 @@ void Nivel1::Inicializa()
 	Plataforma.SetColor(148, 26, 28);
 	Plataforma.SetPos(2, 3);//Hay que poner mas plataformas y mirar su posicion
 	//Plataforma.SetVel(5, 15); DE MOMENTO NO SE MUEVEN
-	x_ojo = 0;
-	y_ojo = 7.5;
-	z_ojo = 30;
+	//x_ojo = 0;
+	//y_ojo = 7.5;
+	//z_ojo = 30;
 	//Creditos.SetPos(5.0f, 5.0f);
 	//Proyectil.SetPos(-5.0f, 0.0f);
 	Suelo.SetPos();
@@ -62,3 +62,24 @@ void Nivel1::Dibuja()
 	//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 }
 
+void Nivel1::TeclaEspecial(unsigned char key)
+	{
+		switch (key)
+		{
+		case GLUT_KEY_LEFT:
+			SetVel(-5.0f, 0.0f);
+			break;
+		case GLUT_KEY_RIGHT:
+			SetVel(5.0f, 0.0f);
+			break;
+		case GLUT_KEY_UP:
+			for (int i = 0; i < MAX_PLATAFORMAS; i++) {
+				if (-0.1 < (muñeco.getPosY() - (Plataforma.GetLimiteY2())) < 0.1) muñeco.setVelY(15.0f);
+			}
+			if (-0.1 < (muñeco.getPosY() - (Plataforma.GetLimiteY2())) < 0.1) muñeco.setVelY(15.0f);
+			if ((muñeco.getPosY() - Suelo.GetSueloLimiteY2()) < 0.05) {
+				muñeco.setVelY(15.0f);
+			}
+			break;
+		}
+	}

@@ -12,6 +12,7 @@ sprite_vm("bin/imagenes/muñeco_vm.png", 2), sprite_fm("bin/imagenes/muñeco_fm.pn
 sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.png", 2)
 
 {
+	
 	//VALORES AUN POR DEFINIR
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
 	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
@@ -40,9 +41,10 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	sprite_va.setSize(1.8, 1.8);
 	sprite_fa.setCenter(0.9, 0.9);
 	sprite_fa.setSize(2.3, 2.3);
+	
 
 	//No sabemos si hay que ponerlo aqui tambien o no 
-	setvq();  //Funcion para activar el vq
+	/*setvq();  //Funcion para activar el vq
 	setfq();  //Funcion para activar el fq
 	setvd();
 	setfd();
@@ -51,7 +53,7 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	setvm();
 	setfm();
 	setva();
-	setfa();
+	setfa();*/
 }
 
 Muñeco::~Muñeco()
@@ -67,8 +69,7 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 
 void Muñeco::SetSexo(int x)
 {
-	sexo = x;
-	cout << "sexo:" << sexo;
+	sexo = x;	
 }
 void Muñeco::SetCarrera(int x)
 {
@@ -78,106 +79,103 @@ void Muñeco::SetCarrera(int x)
 
 void Muñeco::Dibuja()
 {	
-	if (sexo == 0) //Escogemos chico
+
+	if (sexo == 1) //Escogemos chico
 	{
 		switch (carrera)
 		{
 		case 0://Escogemos quimica
 			setvq();
-			glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5); 
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
-			break;
-
-		case 1: //Diseño
-			setvd();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
+			break;
+			
+		case 1: //Diseño
+			setvd();
+			/*glPushMatrix();
+			glTranslatef(posicion.x, posicion.y, 0.5);
+			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
+			glPopMatrix();*/
 			break;
 
 		case 2: //Electrica
 			setve();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 
 		case 3: //Mecanica
 			setvm();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 
 		case 4: //Electronica
 			setva();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 		}
 	}
 
-	if (sexo == 1) //Escogemos chica
+	if (sexo == 0) //Escogemos chica
 	{
 		switch (carrera)
 		{
 		case 0://Escogemos quimica
 			setfq();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 
 		case 1: //Diseño
 			setfd();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 
 		case 2: //Electrica
 			setfe();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 
 		case 3: //Mecanica
 			setfm();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 
 		case 4: //Electronica
 			setfa();
-			glPushMatrix();
+			/*glPushMatrix();
 			glTranslatef(posicion.x, posicion.y, 0.5);
 			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();
+			glPopMatrix();*/
 			break;
 		}
 	}
-}
-
-/*void Muñeco::Dibuja()
-{
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0.5);
 	activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
 	glPopMatrix();
-}*/
+}
 
 void Muñeco::SetVel(float vx, float vy)
 {
@@ -198,24 +196,4 @@ void Muñeco::SetVel(Vector2D vel)
 */
 
 
-void Muñeco::TeclaEspecial(unsigned char key)
-{
-	switch (key)
-	{
-	case GLUT_KEY_LEFT:
-		SetVel(-5.0f, 0.0f);
-		break;
-	case GLUT_KEY_RIGHT:
-		SetVel(5.0f, 0.0f);
-		break;
-	case GLUT_KEY_UP:
-		for (int i = 0; i < MAX_PLATAFORMAS; i++) {
-			if (-0.1 < (getPosY() - (plataformas.GetLimiteY2())) < 0.1) setVelY(15.0f);
-		}
-		if (-0.1 < (getPosY() - (plataformas.GetLimiteY2())) < 0.1) setVelY(15.0f);
-		if ((getPosY() - suelo.GetSueloLimiteY2()) < 0.05) {
-			setVelY(15.0f);
-		}
-		break;
-	}
-}
+
