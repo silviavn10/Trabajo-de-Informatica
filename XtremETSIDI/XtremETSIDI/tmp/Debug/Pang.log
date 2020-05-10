@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Menu.cpp
 C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(36,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
 C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(37,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
@@ -50,3 +51,9 @@ C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\
   Generando código...
 Nivel1.obj : error LNK2019: símbolo externo "public: void __thiscall Nivel1::SetVel(float,float)" (?SetVel@Nivel1@@QAEXMM@Z) sin resolver al que se hace referencia en la función "public: void __thiscall Nivel1::TeclaEspecial(unsigned char)" (?TeclaEspecial@Nivel1@@QAEXE@Z)
 C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe : fatal error LNK1120: 1 externos sin resolver
+=======
+﻿  Muñeco.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Muñeco.cpp(213,62): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Muñeco.cpp(215,61): warning C4804: '<': uso no seguro del tipo 'bool' en la operación
+  Pang.vcxproj -> C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+>>>>>>> ce170398f1da14b859c324d0226b9f652ff9296f
