@@ -14,6 +14,7 @@ public:
     ~Muñeco();
 	void Dibuja();
 	void Mueve(float);
+	void MueveArmonico(float t, float Amp);
 	void SetVel(float vx, float vy);
 	int SetSexo(unsigned char key);
 	void SetPersonaje(void);

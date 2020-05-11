@@ -18,9 +18,19 @@ MundoXtremETSIDI::~MundoXtremETSIDI() //Destructor
 
 void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 {
-	gluLookAt(muñeco.posicion.x, 4.5, 13,   // Posición del ojo
-		muñeco.posicion.x, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
-		0.0, 1.0, 0.0);
+	if (muñeco.posicion.x >= 0)
+	{
+		gluLookAt(muñeco.posicion.x, 4.5, 13,   // Posición del ojo
+			muñeco.posicion.x, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);
+	}
+	else
+	{
+		gluLookAt(0.0, 4.5, 13,   // Posición del ojo
+			0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);
+	}
+
 	switch (estado) {
 
 	case START:  //Estado de INICIO

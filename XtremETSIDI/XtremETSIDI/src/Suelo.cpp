@@ -30,9 +30,9 @@ void Suelo::Dibuja()
 }
 void Suelo::SetPos(float x1, float y1, float x2, float y2)
 {
-	limite1.x = x1;
+	limite1.x = -9.7;
 	limite1.y = y1;
-	limite2.x = x2;
+	limite2.x = 180;
 	limite2.y = y2;
 }
 float Suelo::distancia(Vector2D punto, Vector2D* direccion)

@@ -138,7 +138,14 @@ void Muñeco::Dibuja()
 	
 		glPushMatrix();
 		glTranslatef(posicion.x, posicion.y, 0.5);
-		activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
+		if (velocidad.x > 0.035)activo->flip(false, false);
+		if (velocidad.x < -0.035)activo->flip(true, false);
+		if ((velocidad.x < 0.035) && (velocidad.x > -0.035))
+			activo->setState(0);
+		else if (activo->getState() == 0)
+			activo->setState(1, false);
+		activo->draw();
+
 		glPopMatrix();
 	
 }
@@ -151,7 +158,8 @@ void Muñeco::TeclaEspecial(unsigned char key) {
 	case GLUT_KEY_RIGHT:
 		Muñeco::SetVel(5.0f, 0.0f);
 		break;
-	/*case GLUT_KEY_UP:
+	case GLUT_KEY_UP:
+
 		for (int i = 0; i < MAX_PLATAFORMAS; i++) {
 			if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
 		}
@@ -159,15 +167,17 @@ void Muñeco::TeclaEspecial(unsigned char key) {
 		if ((Muñeco::getPosY() - Suelo.GetSueloLimiteY2()) < 0.05) {
 			Muñeco::setVelY(15.0f);
 		}
-		break;*/
+		break;
 	}
 }
+
 void Muñeco::SetVel(float vx, float vy)
 {
-	Muñeco::velocidad.x = vx;
-	Muñeco::velocidad.y = vy;
+		velocidad.x = vx;
+		velocidad.y = vy;
 	
 }
+
 /*float Muñeco::SetSalto(float h, float v0 = 0.0, float g = 9.8)
 {
 	float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
