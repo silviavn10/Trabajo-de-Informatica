@@ -21,7 +21,7 @@ Creditos::~Creditos() //Destructor
 
 }
 
-Creditos::Creditos(float rad, float x, float y, float vx, float vy) : SpriteCreditos("imagenes/credito.png", 8) 
+Creditos::Creditos(float rad, float x, float y, float vx, float vy) : SpriteCreditos("imagenes/credito.png", 8)
 {
 	radio = rad;
 	posicion.x = x;

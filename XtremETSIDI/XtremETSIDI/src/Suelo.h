@@ -10,7 +10,7 @@ public:
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
 	void SetPos(float x1 = -10.0f, float y1 = 1.25f, float x2 = 10.0f, float y2 = 1.25f); //Cambiar valores
-	float distancia(Vector2D punto, Vector2D* direccion=0);
+	float distancia(Vector2D punto, Vector2D* direccion = 0);
 	float GetSueloLimiteY2() { return limite2.y; };
 	friend class Interaccion;
 

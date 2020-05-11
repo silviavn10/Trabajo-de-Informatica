@@ -8,11 +8,11 @@ public:
 	Puntuacion();
 	~Puntuacion();
 
-	
+
 
 private:
 	int ilista[MAX_BONUS];
-	int inicio;  
+	int inicio;
 };
 
 */

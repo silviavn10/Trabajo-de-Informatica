@@ -1,46 +1,16 @@
-﻿  Menu.cpp
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(36,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(37,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(38,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(39,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(60,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(61,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(62,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(63,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(85,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(86,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(87,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(88,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(109,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(110,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(111,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(112,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(133,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(134,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(135,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(136,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(157,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(158,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(159,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(160,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(181,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(182,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(183,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(184,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(206,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(207,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(208,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(209,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(235,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(236,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(237,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(238,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(259,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(260,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(261,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(262,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(283,52): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(284,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(285,50): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Menu.cpp(286,51): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
-  Pang.vcxproj -> C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+﻿  Creditos.cpp
+  Interaccion.cpp
+  ListaProbetas.cpp
+  Mundo.cpp
+  Muñeco.cpp
+  Nivel.cpp
+  Pang.cpp
+  Plataformas.cpp
+  Probeta.cpp
+  Proyectiles.cpp
+  Puntuacion.cpp
+  Suelo.cpp
+  Vector2D.cpp
+  Vida.cpp
+  Generando código...
+  Pang.vcxproj -> C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe

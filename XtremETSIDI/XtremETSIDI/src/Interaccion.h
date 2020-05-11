@@ -16,7 +16,7 @@ public:
 	static bool Colision(Proyectiles& pr, Muñeco& m);
 	static bool Colision(Suelo& s, Muñeco& m);
 	static bool Colision(Proyectiles& pr, Suelo& s);
-	
+
 	//FALTAN MUCHAS INTERACCIONES
 };
 */

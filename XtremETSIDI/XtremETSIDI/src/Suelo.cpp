@@ -50,7 +50,7 @@ float Suelo::distancia(Vector2D punto, Vector2D* direccion)
 	else
 		dir = u - v * valor;
 	distancia = dir.modulo();
-	if (direccion != 0) 
+	if (direccion != 0)
 		*direccion = dir.Unitario();
 	return distancia;
 }

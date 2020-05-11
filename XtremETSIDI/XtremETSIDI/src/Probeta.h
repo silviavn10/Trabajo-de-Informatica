@@ -14,7 +14,7 @@ public:
 	//Métodos
 	Probeta();
 	Probeta(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0);
-	virtual ~Probeta();
+    ~Probeta();
 	void Mueve(float t);
 	void Dibuja();
 	void setRadio(float r);

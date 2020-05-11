@@ -4,12 +4,12 @@
 
 
 class Vida {
-public: 
+public:
 	Vida();
 	~Vida();
 	void Dibuja();
 	float getRadio() { return radio; }
-	void SetPos(float x1, float y1 );
+	void SetPos(float x1, float y1);
 	friend class Interaccion;
 
 protected:

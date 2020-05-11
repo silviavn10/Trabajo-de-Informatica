@@ -14,6 +14,7 @@
     <ProjectGuid>{A1A2E73C-0D77-49EA-91DD-052F22CA7DC0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Pang</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -85,9 +86,9 @@
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaProbetas.cpp" />
-    <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
-    <ClCompile Include="src\Nivel1.cpp" />
+    <ClCompile Include="src\Nivel.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Probeta.cpp" />
@@ -101,9 +102,9 @@
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaProbetas.h" />
-    <ClInclude Include="src\Menu.h" />
+    <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Muñeco.h" />
-    <ClInclude Include="src\Nivel1.h" />
+    <ClInclude Include="src\Nivel.h" />
     <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Probeta.h" />
     <ClInclude Include="src\Proyectiles.h" />

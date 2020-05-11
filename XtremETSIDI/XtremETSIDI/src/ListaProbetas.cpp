@@ -46,8 +46,8 @@ int ListaProbetas::Colision(Muñeco m)
 		if (Interaccion::Colision(*(lista[i]), m)) //Detecta la colisión entre la plataforma y un elemento de la lista de probetas
 			return i; //Si hay colisión devuelve el número de elemento de la lista que ha colisionado
 	}
-	return -1; // No hay colisión 
-	//HAY QUE HACER COMO SALTAR A JULIO 
+	return -1; // No hay colisión
+	//HAY QUE HACER COMO SALTAR A JULIO
 }
 
 void ListaProbetas::Eliminar(int index)  //Envía destruir las probetas de la lista indicado

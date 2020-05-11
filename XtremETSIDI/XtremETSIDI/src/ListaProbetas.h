@@ -21,7 +21,7 @@ public:
 
 	//void Colision(Imag imag);
 
-	
+
 
 	int getNumero() { return numero; } //Para acceder al numero de elementos creados en la lista
 	Probeta* operator[] (int index);

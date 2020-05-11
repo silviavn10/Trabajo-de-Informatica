@@ -1,11 +1,9 @@
-//#include "Vida.h"
-#include "Menu.h"
+#include "Mundo.h"
 #include "glut.h"
 
 
-MenuXtremETSIDI XtremETSIDI;
-//Muñeco muñeco;
-//Nivel1 nivel1;
+MundoXtremETSIDI XtremETSIDI;
+
 
 //Las siguientes son funciones que serán llamadas automáticamente por la glut cuando sucedan eventos, no es necesario llamarlas explícitamente
 void onDraw(void); //esta funcion sera llamada para dibujar
@@ -21,7 +19,7 @@ int main(int argc, char* argv[])
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutCreateWindow("XtremETSIDI");
 	glutFullScreen(); // PANTALLA COMPLETA
-	
+
 
 	//Funciones para habilitar luces y definir perspectiva
 	glEnable(GL_LIGHT0);
@@ -31,7 +29,7 @@ int main(int argc, char* argv[])
 	glMatrixMode(GL_PROJECTION);
 	gluPerspective(40.0, 1456 / 720.0f, 0.1, 150);
 
-	
+
 	//Registrar los callbacks
 	glutDisplayFunc(onDraw);
 	glutTimerFunc(25, onTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
@@ -60,16 +58,16 @@ void onKeyboardDown(unsigned char key, int x_t, int y_t)  //Funciones para el te
 	XtremETSIDI.Tecla(key);
 	glutPostRedisplay();
 }
-void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover el muñeco)
-{
-	XtremETSIDI.TeclaEspecial(key);
 
-}
+
 void onTimer(int value) //Funciones de animación (movimiento de los objetos)
 {
 	XtremETSIDI.Mueve();
 	glutTimerFunc(25, onTimer, 0);
 	glutPostRedisplay();
 }
+void onSpecialKeyboardDown(int key, int x, int y)  //Funciones para teclas especiales (mover el muñeco)
+{
+	XtremETSIDI.TeclaEspecial(key);
 
-
+}

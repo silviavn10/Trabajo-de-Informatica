@@ -1,6 +1,6 @@
 #include "Proyectiles.h"
 
-Proyectiles::Proyectiles() 
+Proyectiles::Proyectiles()
 {
 	aceleracion.x = 0;
 	aceleracion.y = 0;
@@ -15,8 +15,8 @@ Proyectiles:: ~Proyectiles()
 
 void Proyectiles::mueve(float t)  //Funcion para definir el movimiento de los proyectiles
 {
-	posicion = posicion + velocidad * t + aceleracion*(0.5f * t * t);  
-	velocidad = velocidad + aceleracion * t;  
+	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+	velocidad = velocidad + aceleracion * t;
 }
 
 Vector2D Proyectiles::getPos()  //Función para obtener la posición del objeto, ya que es un atributo protected

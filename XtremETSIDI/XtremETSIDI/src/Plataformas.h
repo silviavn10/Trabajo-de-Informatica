@@ -6,7 +6,7 @@ class Plataformas
 {
 public:
 	Plataformas();
-	virtual ~Plataformas();
+   ~Plataformas();
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
 	void SetPos(float ix, float iy);

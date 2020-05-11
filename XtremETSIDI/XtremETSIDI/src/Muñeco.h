@@ -1,23 +1,24 @@
 #pragma once 
 #include "Vector2D.h"
+#include "Plataformas.h"
+#include "Suelo.h"
+#include"Vida.h"
 #include "ETSIDI.h"
-
 using ETSIDI::SpriteSequence;
 
 class Muñeco
 {
 public:
-	Muñeco(); 
-	Muñeco(float altura);
-	virtual ~Muñeco();
+	Muñeco();
+	//Muñeco(float altura);
+    ~Muñeco();
 	void Dibuja();
 	void Mueve(float);
 	void SetVel(float vx, float vy);
-	void SetVel(Vector2D vel);
-	void SetSexo(int x);
-	void SetCarrera(int x);
-	friend class Interaccion;
-	friend class Menu;
+	int SetSexo(unsigned char key);
+	void SetPersonaje(void);
+	void  TeclaEspecial(unsigned char key);
+	int SetCarrera(unsigned char key);
 	float getAltura() { return altura; }
 	float getPosX(void) { return posicion.x; };
 	float getPosY(void) { return posicion.y; };
@@ -35,14 +36,19 @@ public:
 	void setfm() { activo = &sprite_fm; }
 	void setva() { activo = &sprite_va; }
 	void setfa() { activo = &sprite_fa; }
-
-private:
+	friend class Interaccion;
+	friend class Nivel;
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
+	Plataformas Plataforma;
+	Vida Vida;
+	Suelo Suelo;
 	float altura;
-	int sexo;
+	int jugador;
+	int sexo;// 1:varon, 0:hembra
 	int carrera;
+
 	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm,
 		sprite_va, sprite_fa;
 	SpriteSequence* activo;

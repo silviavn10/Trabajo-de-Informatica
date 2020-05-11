@@ -28,11 +28,11 @@ bool Interaccion::Colision(Disparo d, Pared p)
 //FALTA definir muñeco
 bool Interaccion::Colision(Creditos c, Muñeco& m)
 {
-    
-    float dif1 = c.posicion.x - m.posicion.x; //MIRAR RANGO PORQUE EL BICHO ES MÁS GRANDE QUE EL MUÑECO
-    float dif2 = c.posicion.y - m.posicion.y;
-    if (dif1 <= 0 && dif2 <= 0)
-        return true;
-    else return false;
+
+	float dif1 = c.posicion.x - m.posicion.x; //MIRAR RANGO PORQUE EL BICHO ES MÁS GRANDE QUE EL MUÑECO
+	float dif2 = c.posicion.y - m.posicion.y;
+	if (dif1 <= 0 && dif2 <= 0)
+		return true;
+	else return false;
 }
 */

@@ -5,9 +5,8 @@ class Vector2D
 public: //atributos
     float x;
     float y;
-
-    Vector2D(float xv = 0.0f, float yv = 0.0f); // (1)
-    virtual ~Vector2D();
+	Vector2D(float xv = 0.0f, float yv = 0.0f); // (1)
+    ~Vector2D();
     float modulo(); // (2) modulo del vector
     float argumento(); // (3) argumento del vector
     Vector2D Unitario(); // (4) devuelve un vector unitario

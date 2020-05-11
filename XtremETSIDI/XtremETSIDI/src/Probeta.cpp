@@ -46,6 +46,6 @@ void Probeta::setRadio(float r)  //Funcion para inicializar al radio de la probe
 
 void Probeta::Mueve(float t)  //Funcion para que la probeta tenga movimiento
 {
-    Proyectiles::mueve(t);  //La probeta deriva de proyectiles, por lo que para generar movimiento accede a la funcion mueve de la clase base
+	Proyectiles::mueve(t);  //La probeta deriva de proyectiles, por lo que para generar movimiento accede a la funcion mueve de la clase base
 	sprite.loop();
 }

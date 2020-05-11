@@ -2,7 +2,6 @@
 #include <math.h>
 #include <iostream>
 #include "glut.h"
-
 using namespace std;
 
 Muñeco::Muñeco() :sprite_vq("bin/imagenes/muñeco_vq.png", 2), sprite_fq("bin/imagenes/muñeco_fq.png", 2),
@@ -12,15 +11,12 @@ sprite_vm("bin/imagenes/muñeco_vm.png", 2), sprite_fm("bin/imagenes/muñeco_fm.pn
 sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.png", 2)
 
 {
-	
+
 	//VALORES AUN POR DEFINIR
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
 	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
 	altura = 1.8f;  //Tamaño del muñeco (por definir)
-	velocidad.x = 0.5;  //Velocidad en el eje horizontal
-	velocidad.y = 0;//Velocidad en el eje vertical
-	aceleracion.y = -20.0f; //Gravedad para que caiga
-	
+	aceleracion.y = -9.8f; //Gravedad para que caiga
 	sprite_vq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco vq 
 	sprite_vq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco vq
 	sprite_fq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco fq
@@ -41,7 +37,7 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	sprite_va.setSize(1.8, 1.8);
 	sprite_fa.setCenter(0.9, 0.9);
 	sprite_fa.setSize(2.3, 2.3);
-	
+
 
 	//No sabemos si hay que ponerlo aqui tambien o no 
 	/*setvq();  //Funcion para activar el vq
@@ -62,135 +58,119 @@ Muñeco::~Muñeco()
 
 void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 {
-	posicion = posicion + velocidad * t + aceleracion*(0.5f * t * t);
+	
+	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
 	//activo->loop(); //Funcion interna de los sprites
+	
 }
 
-void Muñeco::SetSexo(int x)
+int Muñeco::SetSexo(unsigned char key)
 {
-	sexo = x;	
+	sexo = 2;
+	if (key == 'F' || key == 'f')
+			sexo = 0;
+				
+	if (key == 'V' || key == 'v')
+		sexo = 1;
+	cout << sexo<< endl;
+	return sexo;
 }
-void Muñeco::SetCarrera(int x)
+int Muñeco::SetCarrera(unsigned char key)
 {
-	carrera = x;
-	cout << "carrera:" << carrera;
-}
+	  carrera = 5;
+	if (key == 'Q' || key == 'q')
+		carrera = 0;
+		
+	if (key == 'D' || key == 'd')
+		carrera = 1;
+		
+	if (key == 'E' || key == 'e')
+		carrera = 2;
 
+	if (key == 'M' || key == 'm')
+		carrera = 3;
+
+	if (key == 'A' || key == 'a')
+	   carrera = 4;
+	
+	Muñeco::SetPersonaje();
+	cout << carrera<<endl;
+	
+	if(carrera==5)
+		return 0;
+	else return 1;
+}
+void Muñeco::SetPersonaje() {
+	switch (carrera)
+	{
+	case 0://Escogemos quimica
+		if (sexo == 1)  setvq();
+		else setfq();
+		break;
+
+	case 1: //Diseño
+		if (sexo == 1)  setvd();
+		else setfd();
+		break;
+
+	case 2: //Electrica
+		if (sexo == 1)  setve();
+		else setfe();
+
+		break;
+
+	case 3: //Mecanica
+		if (sexo == 1)  setvm();
+		else setfm();
+
+		break;
+
+	case 4: //Electronica
+		if (sexo == 1)  setva();
+		else setfa();
+		break;
+	}
+}
 void Muñeco::Dibuja()
-{	
-
-	if (sexo == 1) //Escogemos chico
-	{
-		switch (carrera)
-		{
-		case 0://Escogemos quimica
-			setvq();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-			
-		case 1: //Diseño
-			setvd();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 2: //Electrica
-			setve();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 3: //Mecanica
-			setvm();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 4: //Electronica
-			setva();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-		}
-	}
-
-	if (sexo == 0) //Escogemos chica
-	{
-		switch (carrera)
-		{
-		case 0://Escogemos quimica
-			setfq();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 1: //Diseño
-			setfd();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 2: //Electrica
-			setfe();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 3: //Mecanica
-			setfm();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-
-		case 4: //Electronica
-			setfa();
-			/*glPushMatrix();
-			glTranslatef(posicion.x, posicion.y, 0.5);
-			activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-			glPopMatrix();*/
-			break;
-		}
-	}
-	glPushMatrix();
-	glTranslatef(posicion.x, posicion.y, 0.5);
-	activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
-	glPopMatrix();
+{
+	
+		glPushMatrix();
+		glTranslatef(posicion.x, posicion.y, 0.5);
+		activo->draw(); //Se dibuja el muñeco vq, es una funcion interna de los sprites
+		glPopMatrix();
+	
 }
-
+void Muñeco::TeclaEspecial(unsigned char key) {
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+		Muñeco::SetVel(-5.0f, 0.0f);
+		break;
+	case GLUT_KEY_RIGHT:
+		Muñeco::SetVel(5.0f, 0.0f);
+		break;
+	/*case GLUT_KEY_UP:
+		for (int i = 0; i < MAX_PLATAFORMAS; i++) {
+			if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
+		}
+		if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
+		if ((Muñeco::getPosY() - Suelo.GetSueloLimiteY2()) < 0.05) {
+			Muñeco::setVelY(15.0f);
+		}
+		break;*/
+	}
+}
 void Muñeco::SetVel(float vx, float vy)
 {
-	velocidad.x = vx;
-	velocidad.y = vy;
+	Muñeco::velocidad.x = vx;
+	Muñeco::velocidad.y = vy;
+	
 }
-
-void Muñeco::SetVel(Vector2D vel)
-{
-	velocidad = vel;
-}
-
 /*float Muñeco::SetSalto(float h, float v0 = 0.0, float g = 9.8)
 {
 	float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
 	return v0 + g * t;
 }
 */
+

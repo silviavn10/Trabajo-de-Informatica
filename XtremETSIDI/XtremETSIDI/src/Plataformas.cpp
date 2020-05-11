@@ -5,11 +5,11 @@ Plataformas::Plataformas()
 {
 	lado = 1.50f;
 }
-Plataformas:: ~Plataformas() 
+Plataformas:: ~Plataformas()
 {
 
 }
-void Plataformas::Dibuja() 
+void Plataformas::Dibuja()
 {
 	glColor3ub(rojo, verde, azul);
 	//glRotatef(30, 1, 1, 1); //CAMBIAR POR SI SALE DE LADO
@@ -26,7 +26,7 @@ void Plataformas::SetPos(float ix, float iy)
 {
 	posicion.x = ix;
 	posicion.y = iy;
-	limite1.x = posicion.x - (lado/2);
+	limite1.x = posicion.x - (lado / 2);
 	limite1.y = posicion.y + (lado / 2);
 	limite2.x = posicion.x + (lado / 2);
 	limite2.y = posicion.y + (lado / 2);
