@@ -18,8 +18,8 @@ MundoXtremETSIDI::~MundoXtremETSIDI() //Destructor
 
 void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 {
-	gluLookAt(0, 4.5, 13,   // Posición del ojo
-		0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+	gluLookAt(muñeco.posicion.x, 4.5, 13,   // Posición del ojo
+		muñeco.posicion.x, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);
 	switch (estado) {
 
@@ -40,6 +40,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		break;
 
 	case MENU: //Menu princupal (comenzar, controles, salir)
+		muñeco.posicion.x = 0.0;
 
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/menu.png").id);
@@ -160,6 +161,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		break;
 
 	case NIVEL1: //Comenzamos el juego
+	
 		muñeco.Dibuja();
 		nivel1.Dibuja();
 		

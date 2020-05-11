@@ -7,6 +7,7 @@
 class MundoXtremETSIDI
 {
 	int aux=0;
+	float x_ojo=0.0;
 public:
 
 	//Métodos

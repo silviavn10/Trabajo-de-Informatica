@@ -42,7 +42,7 @@ public:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	Plataformas Plataforma;
-	Vida Vida;
+	//Vida Vida;
 	Suelo Suelo;
 	float altura;
 	int jugador;

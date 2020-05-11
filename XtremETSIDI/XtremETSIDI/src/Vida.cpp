@@ -1,4 +1,4 @@
-#include "Vida.h"
+/*#include "Vida.h"
 #include "glut.h"
 
 Vida::Vida() //Constructor
@@ -13,7 +13,7 @@ Vida::~Vida() //Destructor
 
 void Vida::Dibuja()
 {
-	gluLookAt(0, 4.5, 13,   // Posición del ojo
+	/*gluLookAt(0, 4.5, 13,   // Posición del ojo
 		0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
 		0.0, 1.0, 0.0);
 	//CAMBIAR LAS COORDENADAS
@@ -40,4 +40,4 @@ void Vida::SetPos(float ix, float iy)
 	posicion.x = ix;
 	posicion.y = iy;
 }
-
+*/

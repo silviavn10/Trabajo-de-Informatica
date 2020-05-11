@@ -18,23 +18,23 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	altura = 1.8f;  //Tamaño del muñeco (por definir)
 	aceleracion.y = -9.8f; //Gravedad para que caiga
 	sprite_vq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco vq 
-	sprite_vq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco vq
+	sprite_vq.setSize(2.3, 2.3);  //Tamaño del sprite para el muñeco vq
 	sprite_fq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco fq
-	sprite_fq.setSize(1.8, 1.8);  //Tamaño del sprite para el muñeco fq
+	sprite_fq.setSize(2.3, 2.3);  //Tamaño del sprite para el muñeco fq
 	sprite_vd.setCenter(0.9, 0.9);
-	sprite_vd.setSize(1.8, 1.8);
+	sprite_vd.setSize(2.3, 2.3);
 	sprite_fd.setCenter(0.9, 0.9);
-	sprite_fd.setSize(1.8, 1.8);
+	sprite_fd.setSize(2.3, 2.3);
 	sprite_ve.setCenter(0.9, 0.9);
-	sprite_ve.setSize(1.8, 1.8);
+	sprite_ve.setSize(2.3, 2.3);
 	sprite_fe.setCenter(0.9, 0.9);
-	sprite_fe.setSize(1.8, 1.8);
+	sprite_fe.setSize(2.3, 2.3);
 	sprite_vm.setCenter(0.9, 0.9);
-	sprite_vm.setSize(1.8, 1.8);
+	sprite_vm.setSize(2.3, 2.3);
 	sprite_fm.setCenter(0.9, 0.9);
-	sprite_fm.setSize(1.8, 1.8);
+	sprite_fm.setSize(2.3, 2.3);
 	sprite_va.setCenter(0.9, 0.9);
-	sprite_va.setSize(1.8, 1.8);
+	sprite_va.setSize(2.3, 2.3);
 	sprite_fa.setCenter(0.9, 0.9);
 	sprite_fa.setSize(2.3, 2.3);
 
@@ -61,6 +61,7 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 	
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
+	
 	//activo->loop(); //Funcion interna de los sprites
 	
 }

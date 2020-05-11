@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "ETSIDI.h"
 #include "Vector2D.h"
 
@@ -17,4 +17,4 @@ protected:
 	Vector2D posicion;
 };
 
-
+*/

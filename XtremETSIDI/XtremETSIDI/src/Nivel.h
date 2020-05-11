@@ -22,12 +22,12 @@ public:
 	//Plataformas Plataforma2;
 	//Plataformas Plataforma3;
 	//Plataformas Plataforma4;
-	Vida Vida;
+	//Vida Vida;
 	//Creditos Creditos;
 	Suelo Suelo;
 	//Proyectiles Proyectiles;//Cuando la hagamos
 	//Interaccion Interaccion;
-	//float x_ojo;
+	
 	//float y_ojo;
 	//float z_ojo;
 };

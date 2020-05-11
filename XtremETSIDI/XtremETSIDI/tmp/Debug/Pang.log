@@ -1,16 +1,2 @@
-﻿  Creditos.cpp
-  Interaccion.cpp
-  ListaProbetas.cpp
-  Mundo.cpp
-  Muñeco.cpp
-  Nivel.cpp
-  Pang.cpp
-  Plataformas.cpp
-  Probeta.cpp
-  Proyectiles.cpp
-  Puntuacion.cpp
-  Suelo.cpp
-  Vector2D.cpp
-  Vida.cpp
-  Generando código...
+﻿  Nivel.cpp
   Pang.vcxproj -> C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
