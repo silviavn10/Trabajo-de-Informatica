@@ -1,9 +1,9 @@
-/*#include "Vida.h"
+#include "Vida.h"
 #include "glut.h"
 
 Vida::Vida() //Constructor
 {
-	radio = 0.6f;
+	//radio = 0.6f;
 }
 
 Vida::~Vida() //Destructor
@@ -11,12 +11,18 @@ Vida::~Vida() //Destructor
 
 }
 
+float Vida::GetMov(float x) //Funcion para obtener los valores de muñeco.posicion.x a traves del mundo.cpp
+{
+	Mov = x;
+	if (Mov < 0)
+	{
+		return Mov = 0;
+	}
+		return Mov;
+}
+
 void Vida::Dibuja()
 {
-	/*gluLookAt(0, 4.5, 13,   // Posición del ojo
-		0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
-		0.0, 1.0, 0.0);
-	//CAMBIAR LAS COORDENADAS
 
 	glEnable(GL_TEXTURE_2D);
 
@@ -25,17 +31,16 @@ void Vida::Dibuja()
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
 
-
-	glTexCoord2d(0, 1);		glVertex3f(-5, -0.25, 0.1);
-	glTexCoord2d(1, 1);		glVertex3f(5, -0.25, 0.1);
-	glTexCoord2d(1, 0);		glVertex3f(5, 9.25, 0.1);
-	glTexCoord2d(0, 0);		glVertex3f(-5, 9.25, 0.1);
+	glTexCoord2d(0, 1);		glVertex3f(Mov - 8.5, 8, 0.1);
+	glTexCoord2d(1, 1);		glVertex3f(Mov - 6.5, 8, 0.1);
+	glTexCoord2d(1, 0);		glVertex3f(Mov - 6.5, 9, 0.1);
+	glTexCoord2d(0, 0);		glVertex3f(Mov - 8.5, 9, 0.1);
 	glEnd();
 
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 }
-void Vida::SetPos(float ix, float iy)
+/*void Vida::SetPos(float ix, float iy)
 {
 	posicion.x = ix;
 	posicion.y = iy;

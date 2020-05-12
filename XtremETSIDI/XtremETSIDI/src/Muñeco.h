@@ -1,9 +1,11 @@
 #pragma once 
 #include "Vector2D.h"
 #include "Plataformas.h"
-#include "Suelo.h"
+//#include "Suelo.h"
 #include"Vida.h"
 #include "ETSIDI.h"
+#include "Caja.h"
+
 using ETSIDI::SpriteSequence;
 
 class Muñeco
@@ -14,11 +16,11 @@ public:
     ~Muñeco();
 	void Dibuja();
 	void Mueve(float);
-	void MueveArmonico(float t, float Amp);
 	void SetVel(float vx, float vy);
 	int SetSexo(unsigned char key);
+	float SetSalto(float h, float v0, float g);
 	void SetPersonaje(void);
-	void  TeclaEspecial(unsigned char key);
+	void TeclaEspecial(unsigned char key);
 	int SetCarrera(unsigned char key);
 	float getAltura() { return altura; }
 	float getPosX(void) { return posicion.x; };
@@ -44,7 +46,9 @@ public:
 	Vector2D aceleracion;
 	Plataformas Plataforma;
 	//Vida Vida;
+	Caja caja;
 	Suelo Suelo;
+	Caja Pared_izq;
 	float altura;
 	int jugador;
 	int sexo;// 1:varon, 0:hembra

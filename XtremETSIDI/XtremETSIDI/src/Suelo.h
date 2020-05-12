@@ -9,9 +9,9 @@ public:
 	virtual ~Suelo();
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
-	void SetPos(float x1 = -10.0f, float y1 = 1.25f, float x2 = 10.0f, float y2 = 1.25f); //Cambiar valores
-	float distancia(Vector2D punto, Vector2D* direccion = 0);
-	float GetSueloLimiteY2() { return limite2.y; };
+	void SetPos(float x1, float y1, float x2, float y2);
+	float Distancia(Vector2D punto, Vector2D* direccion = 0);
+	float GetLimiteY2() { return limite2.y; };
 	friend class Interaccion;
 
 private:

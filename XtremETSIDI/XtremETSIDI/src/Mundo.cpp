@@ -18,16 +18,17 @@ MundoXtremETSIDI::~MundoXtremETSIDI() //Destructor
 
 void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 {
-	if (muñeco.posicion.x >= 0)
+	ojo = muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo
+	if (ojo >= 0)
 	{
-		gluLookAt(muñeco.posicion.x, 4.5, 13,   // Posición del ojo
-			muñeco.posicion.x, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+		gluLookAt(ojo, 4.5, 13,   // Posición del ojo si esta jugando
+			ojo, 4.5, 0.0,
 			0.0, 1.0, 0.0);
 	}
 	else
 	{
-		gluLookAt(0.0, 4.5, 13,   // Posición del ojo
-			0.0, 4.5, 0.0,      // Hacia qué punto mira  (0,0,0) 
+		gluLookAt(0.0, 4.5, 13,   // Posición del ojo si esta en el menu
+			0.0, 4.5, 0.0,
 			0.0, 1.0, 0.0);
 	}
 
@@ -65,7 +66,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-	
+
 		break;
 
 
@@ -124,7 +125,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		
+
 		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
 		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
@@ -141,7 +142,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		
+
 		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
 		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
@@ -159,7 +160,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		
+
 		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
 		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
@@ -171,10 +172,12 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		break;
 
 	case NIVEL1: //Comenzamos el juego
-	
+
 		muñeco.Dibuja();
 		nivel1.Dibuja();
-		
+		vida1.GetMov(ojo);
+		vida1.Dibuja();
+
 		break;
 
 	case VICTORIA: //Has ganado
@@ -183,7 +186,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		
+
 		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
 		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
@@ -201,7 +204,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		
+
 		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
 		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
@@ -218,7 +221,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		glDisable(GL_LIGHTING);
 		glBegin(GL_POLYGON);
 		glColor3f(1, 1, 1);
-		
+
 		glTexCoord2d(0, 1);		glVertex3f(-9.7, -0.25, -0.1);
 		glTexCoord2d(1, 1);		glVertex3f(9.7, -0.25, -0.1);
 		glTexCoord2d(1, 0);		glVertex3f(9.7, 9.25, -0.1);
@@ -261,9 +264,10 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = MENU;
 		else {
-			if (muñeco.SetSexo(key)==1 && key!=13 )
+			if (muñeco.SetSexo(key) == 1 && key != 13)
 				estado = ESCOGE_CARRERAV;
-			else if (muñeco.SetSexo(key) == 0 && key != 13) estado = ESCOGE_CARRERAF;
+			else if (muñeco.SetSexo(key) == 0 && key != 13)
+				estado = ESCOGE_CARRERAF;
 		}
 		break;
 
@@ -271,20 +275,24 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = ESCOGE_SEXO;
 		else {
-			if (muñeco.SetCarrera(key)&& aux==0 && key != 13)
+			if (muñeco.SetCarrera(key) && aux == 0 && key != 13)
 				estado = CARTA;
-			else if (muñeco.SetCarrera(key) && key != 13)estado = NIVEL1;
+			else if (muñeco.SetCarrera(key) && key != 13)
+				estado = NIVEL1;  // en el caso de que ya se haya pasado por el estado NIVEL1 anteriormente 
+								 //y vuelve al menu, no pasaría por los estados CARTA ni SUERTE
 		}
 		Musica();
 		break;
 
-	case ESCOGE_CARRERAV:  
+	case ESCOGE_CARRERAV:
 		if (key == 27)
 			estado = ESCOGE_SEXO;
 		else {
-			if(muñeco.SetCarrera(key) && aux == 0 && key != 13)
+			if (muñeco.SetCarrera(key) && aux == 0 && key != 13)
 				estado = CARTA;
-		else if (muñeco.SetCarrera(key) && key != 13)estado = NIVEL1;
+			else if (muñeco.SetCarrera(key) && key != 13)
+				estado = NIVEL1;   // en el caso de que ya se haya pasado por el estado NIVEL1 anteriormente 
+								  //y vuelve al menu, no pasaría por los estados CARTA ni SUERTE
 		}
 		Musica();
 		break;
@@ -359,6 +367,5 @@ void MundoXtremETSIDI::TeclaEspecial(unsigned char key)
 
 void MundoXtremETSIDI::Mueve()
 {
-	
 	muñeco.Mueve(0.025f);
 }

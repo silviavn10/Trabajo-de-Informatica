@@ -159,12 +159,13 @@ void Muñeco::TeclaEspecial(unsigned char key) {
 		Muñeco::SetVel(5.0f, 0.0f);
 		break;
 	case GLUT_KEY_UP:
-
+		/*Muñeco::SetSalto(posicion.y,0.0, 9.8);
+		*/
 		for (int i = 0; i < MAX_PLATAFORMAS; i++) {
 			if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
 		}
-		if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
-		if ((Muñeco::getPosY() - Suelo.GetSueloLimiteY2()) < 0.05) {
+		if (-0.1 < (Muñeco::getPosY() - (Suelo.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
+		if ((Muñeco::getPosY() - Suelo.GetLimiteY2()) < 0.05) {
 			Muñeco::setVelY(15.0f);
 		}
 		break;
@@ -178,10 +179,21 @@ void Muñeco::SetVel(float vx, float vy)
 	
 }
 
-/*float Muñeco::SetSalto(float h, float v0 = 0.0, float g = 9.8)
+/*float Muñeco::SetSalto(float h, float v0, float g)
 {
-	float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
-	return v0 + g * t;
+	if (h < 3)
+	{
+		float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
+		velocidad.y = v0 + g * t;
+		return velocidad.y;
+	}
+
+	if (h >= 3)
+	{
+		float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
+		velocidad.y = v0 - g * t;
+		return velocidad.y;
+	}
 }
 */
 

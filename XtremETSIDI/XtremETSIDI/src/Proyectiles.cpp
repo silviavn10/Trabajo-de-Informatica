@@ -1,8 +1,8 @@
-#include "Proyectiles.h"
+/*#include "Proyectiles.h"
 
 Proyectiles::Proyectiles()
 {
-	aceleracion.x = 0;
+	/*aceleracion.x = 0;
 	aceleracion.y = 0;
 	velocidad.x = 0;
 	velocidad.y = -2.0f;
@@ -35,7 +35,7 @@ void Proyectiles::setVel(Vector2D vel)  //Función para definir un vector con las
 	velocidad = vel;
 }
 
-void Proyectiles::setPos(float x, float y)  //Función para definir la posición del objeto en el eje horizontal y en el vertical
+void Proyectiles::SetPos(float x, float y)  //Función para definir la posición del objeto en el eje horizontal y en el vertical
 {
 	posicion.x = x;
 	posicion.y = y;
@@ -45,3 +45,4 @@ void Proyectiles::setPos(Vector2D pos)  //Función para definir un vector con las
 {
 	posicion = pos;
 }
+*/

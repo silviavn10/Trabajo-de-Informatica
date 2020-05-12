@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 #include "ETSIDI.h"
 #include "Vector2D.h"
 
@@ -8,13 +8,13 @@ public:
 	Vida();
 	~Vida();
 	void Dibuja();
-	float getRadio() { return radio; }
-	void SetPos(float x1, float y1);
+	//float getRadio() { return radio; }
+	//void SetPos(float x1, float y1);
 	friend class Interaccion;
+	float Mov;
+	float GetMov(float x);
 
 protected:
-	float radio;
-	Vector2D posicion;
+	//float radio;
+	//Vector2D posicion;
 };
-
-*/

@@ -1,13 +1,14 @@
 #pragma once
 #include"Nivel.h"
 #include "Muñeco.h"
+#include "Vida.h"
 #include "ETSIDI.h"
 
 
 class MundoXtremETSIDI
 {
-	int aux=0;
-	float x_ojo=0.0;
+	int aux = 0;
+	float x_ojo = 0.0;
 public:
 
 	//Métodos
@@ -20,7 +21,9 @@ public:
 	void Musica();
 	Muñeco muñeco;
 	Nivel nivel1;
-	
+	Vida vida1;
+	float ojo;
+
 protected:
 	//Miembros
 
