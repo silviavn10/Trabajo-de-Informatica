@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Suelo.h"
 
 class Caja
@@ -15,3 +15,4 @@ private:
 	Suelo pared_dcha;
 
 };
+*/

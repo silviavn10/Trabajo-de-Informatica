@@ -159,17 +159,10 @@ void Muñeco::TeclaEspecial(unsigned char key) {
 		Muñeco::SetVel(5.0f, 0.0f);
 		break;
 	case GLUT_KEY_UP:
-		/*Muñeco::SetSalto(posicion.y,0.0, 9.8);
-		*/
-		for (int i = 0; i < MAX_PLATAFORMAS; i++) {
-			if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
-		}
-		if (-0.1 < (Muñeco::getPosY() - (Suelo.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
-		if ((Muñeco::getPosY() - Suelo.GetLimiteY2()) < 0.05) {
-			Muñeco::setVelY(15.0f);
-		}
+		Muñeco::SetSalto();
 		break;
 	}
+		
 }
 
 void Muñeco::SetVel(float vx, float vy)
@@ -179,7 +172,16 @@ void Muñeco::SetVel(float vx, float vy)
 	
 }
 
-/*float Muñeco::SetSalto(float h, float v0, float g)
+float Muñeco::SetSalto()
+{
+	velocidad.y = 5;
+	velocidad.x = 0;
+	//posicion.y = posicion.y + velocidad.y * t + aceleracion.y * (0.5f * t * t);
+	//velocidad.y = velocidad.y + aceleracion.y * t;
+	return velocidad.y;
+}
+
+/*float Muñeco::SetSalto(float h, float v0, float g) INTENTO 2
 {
 	if (h < 3)
 	{
@@ -197,3 +199,13 @@ void Muñeco::SetVel(float vx, float vy)
 }
 */
 
+//float Muñeco::SetSalto(float h, float v0, float g)INTENTO 3
+/*for (int i = 0; i < MAX_PLATAFORMAS; i++) {
+			if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
+		}
+		if (-0.1 < (Muñeco::getPosY() - (Suelo.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
+		if ((Muñeco::getPosY() - Suelo.GetLimiteY2()) < 0.05) {
+			Muñeco::setVelY(15.0f);
+		}
+		break;
+	}*/

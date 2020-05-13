@@ -5,9 +5,9 @@
 
 MundoXtremETSIDI::MundoXtremETSIDI()  //Construyo el Menu
 {
-	estado = START; //Comienza el juego y estamos en START
+	//estado = START; //Comienza el juego y estamos en START
 
-	ETSIDI::playMusica("bin/bso/intro.mp3", true); //Al empezar el juego se activa la múscia de inicio
+	//ETSIDI::playMusica("bin/bso/intro.mp3", true); //Al empezar el juego se activa la múscia de inicio
 
 }
 
@@ -243,10 +243,12 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			exit(0);
 		if (key == 13)  //Pulsa el enter para continuar
-			estado = MENU;
+			//estado = MENU;
+			estado = NIVEL1;
+			muñeco.setfq();
 		break;
 
-	case MENU:
+	/*case MENU:
 		if (key == 27)
 			exit(0);
 		if (key == 'C' || key == 'c')
@@ -319,15 +321,16 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			nivel1.Inicializa();
 			Musica();
 		}
-		break;
+		break;*/
 
 	case NIVEL1:
 
 		if (key == 27)
 		{
-			estado = MENU;
+			//estado = MENU;
 			aux++;
-			Musica();
+			exit(0);
+			//Musica();
 		}
 		break;
 	}
@@ -338,7 +341,7 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		 || (estado == VICTORIA) //FALTAN NIVELES Y PANTALLA DE NIVEl*/
 }
 
-void MundoXtremETSIDI::Musica()
+/*void MundoXtremETSIDI::Musica()
 {
 	switch (estado)
 	{
@@ -359,7 +362,7 @@ void MundoXtremETSIDI::Musica()
 	}
 
 }
-
+*/
 void MundoXtremETSIDI::TeclaEspecial(unsigned char key)
 {
 	muñeco.TeclaEspecial(key);

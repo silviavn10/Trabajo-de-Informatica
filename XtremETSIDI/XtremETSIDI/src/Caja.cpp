@@ -1,4 +1,4 @@
-#include "Caja.h"
+/*#include "Caja.h"
 #include "ETSIDI.h"
 
 
@@ -30,3 +30,4 @@ void Caja::Dibuja()
 	pared_izq.Dibuja();
 	pared_dcha.Dibuja();
 }
+*/

@@ -1,10 +1,10 @@
 #pragma once 
 #include "Vector2D.h"
 #include "Plataformas.h"
-//#include "Suelo.h"
+#include "Suelo.h"
 #include"Vida.h"
 #include "ETSIDI.h"
-#include "Caja.h"
+//#include "Caja.h"
 
 using ETSIDI::SpriteSequence;
 
@@ -18,7 +18,7 @@ public:
 	void Mueve(float);
 	void SetVel(float vx, float vy);
 	int SetSexo(unsigned char key);
-	float SetSalto(float h, float v0, float g);
+	float SetSalto();
 	void SetPersonaje(void);
 	void TeclaEspecial(unsigned char key);
 	int SetCarrera(unsigned char key);
@@ -46,9 +46,9 @@ public:
 	Vector2D aceleracion;
 	Plataformas Plataforma;
 	//Vida Vida;
-	Caja caja;
+	//Caja caja;
 	Suelo Suelo;
-	Caja Pared_izq;
+	//Caja Pared_izq;
 	float altura;
 	int jugador;
 	int sexo;// 1:varon, 0:hembra

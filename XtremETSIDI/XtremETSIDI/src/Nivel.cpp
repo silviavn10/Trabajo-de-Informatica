@@ -51,8 +51,8 @@ void Nivel::Dibuja()
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 	Plataforma.Dibuja();
-	//Suelo.Dibuja();
-	Caja.Dibuja();
+	Suelo.Dibuja();
+	//Caja.Dibuja();
 	//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 }
 

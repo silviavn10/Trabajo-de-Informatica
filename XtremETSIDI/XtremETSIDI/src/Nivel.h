@@ -2,8 +2,8 @@
 //#include "Creditos.h"
 #include "Vida.h"
 //#include "Interaccion.h"
-//#include "Suelo.h"
-#include "Caja.h"
+#include "Suelo.h"
+//#include "Caja.h"
 
 class Nivel
 {
@@ -22,8 +22,8 @@ public:
 	//Plataformas Plataforma4;
 	//Vida Vida;
 	//Creditos Creditos;
-	//Suelo Suelo;
-	Caja Caja;
+	Suelo Suelo;
+	//Caja Caja;
 	//Proyectiles Proyectiles;//Cuando la hagamos
 	//Interaccion Interaccion;
 
