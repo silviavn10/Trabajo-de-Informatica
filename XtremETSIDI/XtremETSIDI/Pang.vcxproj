@@ -83,9 +83,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaProbetas.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
@@ -100,9 +100,9 @@
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaProbetas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Muñeco.h" />

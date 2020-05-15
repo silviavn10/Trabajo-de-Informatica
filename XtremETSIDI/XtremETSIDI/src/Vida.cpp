@@ -18,7 +18,7 @@ float Vida::GetMov(float x) //Funcion para obtener los valores de muñeco.posicio
 	{
 		return Mov = 0;
 	}
-		return Mov;
+	return Mov;
 }
 
 void Vida::Dibuja()
@@ -39,6 +39,8 @@ void Vida::Dibuja()
 
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
+	
+	
 }
 /*void Vida::SetPos(float ix, float iy)
 {

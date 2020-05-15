@@ -29,24 +29,27 @@ Vector2D Vector2D::Unitario() {// (4) devuelve un vector unitario
 }
 Vector2D Vector2D::operator - (Vector2D& v) {// (5) resta de vectores
     
-    this->x = x - v.x;
-	this->y = y - v.y;
-    return *this;
+	Vector2D retu;
+	retu.x = x - v.x;
+	retu.y = y - v.y;
+	return retu;
 }
 Vector2D Vector2D::operator + (Vector2D& v) {// (6) suma de vectores
-	this->x = x + v.x;
-	this->y = y + v.y;
-	return *this;
+	Vector2D retu;
+	retu.x = x + v.x;
+	retu.y = y + v.y;
+	return retu;
 }
 float Vector2D::operator *(Vector2D& v) {// (7) producto escalar
 	float esca;
 	esca = (x * v.x) + (y * v.y);
 	return esca;
 }
-Vector2D Vector2D::operator *(float a) {// (8) producto por un escalar
-	this->x = x*a;
-	this->y = y*a;
-	return *this;
+Vector2D Vector2D::operator *(float escalar) {// (8) producto por un escalar
+	Vector2D retu;
+	retu.x = escalar * x;
+	retu.y = escalar * y;
+	return retu;
 
 }
 

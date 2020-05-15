@@ -3,7 +3,7 @@
 #include "Muñeco.h"
 #include "Vida.h"
 #include "ETSIDI.h"
-
+#include "Interaccion.h"
 
 class MundoXtremETSIDI
 {
@@ -21,7 +21,12 @@ public:
 	void Musica();
 	Muñeco muñeco;
 	Nivel nivel1;
+	//Plataformas plataforma, plataforma2;
+	//
+	Suelo suelo;
+	Creditos creditos;
 	Vida vida1;
+	Proyectiles proyectil;
 	float ojo;
 
 protected:

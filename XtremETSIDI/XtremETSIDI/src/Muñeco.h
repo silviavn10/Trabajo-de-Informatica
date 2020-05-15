@@ -4,8 +4,6 @@
 #include "Suelo.h"
 #include"Vida.h"
 #include "ETSIDI.h"
-//#include "Caja.h"
-
 using ETSIDI::SpriteSequence;
 
 class Muñeco
@@ -18,9 +16,9 @@ public:
 	void Mueve(float);
 	void SetVel(float vx, float vy);
 	int SetSexo(unsigned char key);
-	float SetSalto();
 	void SetPersonaje(void);
-	void TeclaEspecial(unsigned char key);
+	void  TeclaEspecial(unsigned char key);
+	bool getDistancia(void);
 	int SetCarrera(unsigned char key);
 	float getAltura() { return altura; }
 	float getPosX(void) { return posicion.x; };
@@ -45,15 +43,13 @@ public:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	Plataformas Plataforma;
-	//Vida Vida;
-	//Caja caja;
+	Vida Vida;
 	Suelo Suelo;
-	//Caja Pared_izq;
 	float altura;
 	int jugador;
 	int sexo;// 1:varon, 0:hembra
 	int carrera;
-
+	int aux = 0;
 	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm,
 		sprite_va, sprite_fa;
 	SpriteSequence* activo;

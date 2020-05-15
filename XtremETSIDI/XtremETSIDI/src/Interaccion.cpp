@@ -1,4 +1,4 @@
-/*#include "Interaccion.h"
+#include "Interaccion.h"
 #include <math.h>
 
 Interaccion::Interaccion() //Constructor
@@ -8,31 +8,60 @@ Interaccion::Interaccion() //Constructor
 Interaccion::~Interaccion() //Destructor
 {
 }
-bool Interaccion::Colision(Proyectiles pr, Suelo s)
+void Interaccion::Colision(Plataformas p, Muñeco& m)
 {
-	Vector2D pos = h.GetPos(); //la posicion de la base del hombre
-	pos.y += h.GetAltura() / 2.0f; //posicion del centro
-	float distancia = (e.posicion - pos).modulo();
-	if (distancia < e.radio)
-		return true;
-	return false;
+	
+	float xlim1 = p.limite1.x;//punto abajo izq
+	float xlim2 = p.limite1.x+p.lado;//punto abajo derecha
+	float ylim1 = p.limite1.y;//punto arriba izq
+	float ylim2 = p.limite1.y + p.lado;//punto arriba dercha
+	if (m.posicion.x + 1.0 > xlim1 && m.posicion.y + m.altura >= ylim1) { //comprueba que la posicion x sea menor que el limite izq de la plataforma
+	                                                                    	//y que la posicion y sea mayor que el limite de abajo de la plataforam
+		if (m.posicion.x < xlim2 && m.posicion.y + 1 <= ylim2)//comprueba que el muñeco sigue en la parte izq de la plataforma 
+		{	                                                 //y que la posicion en y es menor que el limite y de la plataforma (no está todavia encima)
+			if (m.posicion.y == 2.5 || (m.posicion.y > 2.5 && m.posicion.y + m.altura < ylim2))//si el muñeco esta en el suelo o en una altura entre los limites de la plataforma 
+				m.posicion.x = xlim1 - 1.0;// se establece la posicion del muñeco justo antes de la plataforma 
+		}
+	}
+	if (m.posicion.x-1.0 < xlim2 && m.posicion.y + 1 <= ylim2){//igual pero en el lado derecho
+		if (m.posicion.y + m.altura >= ylim1 && m.posicion.x > xlim1)
+			if (m.posicion.y == 2.5 || (m.posicion.y > 2.5 && m.posicion.y + m.altura < ylim2))
+					m.posicion.x = xlim2 + 1.0;
+			}
+	if ((m.posicion.x + 1.0 > xlim1 && m.posicion.x - 1.0 < xlim2) && m.posicion.y +m.altura>ylim1  )//comprueba si esta entre los limites superiores de la plataforma (arriba de la plataforma)
+		if (m.posicion.y + 0.7 < ylim2 ) {//comprueba que la posicion en y sea menor al limite superior
+			m.posicion.y = (ylim2 - 0.7);// toma esa altura como suelo de la plataforma para el muñeco
+			m.aux = 1;
+		}
+	
+	if ((m.posicion.x + 1.0 > xlim1&& m.posicion.x - 1.0 < xlim2) && m.posicion.y + m.altura < ylim1)
+	{
+		Vector2D dir;
+
+		float dif = p.distancia(m.posicion, p, &dir) - (m.altura + 1.0);
+		if (dif <= 0.0f)
+		{
+			Vector2D v_inicial = m.velocidad;
+			m.velocidad = v_inicial - dir * 2.0 * (v_inicial * dir);
+			m.posicion = m.posicion - dir * dif;
+
+		}
+	}
+
 }
-bool Interaccion::Colision(Disparo d, Pared p)
-{
-	Vector2D pos = d.GetPos();
-	float dist = p.distancia(pos);
-	if (dist < d.GetRadio())
-		return true;
-	return false;
-}
-//FALTA definir muñeco
-bool Interaccion::Colision(Creditos c, Muñeco& m)
+void Interaccion::rebote(Plataformas p, Muñeco m)
 {
 
-	float dif1 = c.posicion.x - m.posicion.x; //MIRAR RANGO PORQUE EL BICHO ES MÁS GRANDE QUE EL MUÑECO
-	float dif2 = c.posicion.y - m.posicion.y;
-	if (dif1 <= 0 && dif2 <= 0)
-		return true;
-	else return false;
+	Vector2D dir;
+	
+	float dif = (m.posicion.y + 0.7) - p.limite1.x;
+	if (dif <= 0.0f)
+	{
+		Vector2D v_inicial = m.velocidad;
+		m.velocidad = v_inicial - dir * 2.0 * (v_inicial * dir);
+		m.posicion = m.posicion - dir * dif;
+		
+	}
+
 }
-*/
+

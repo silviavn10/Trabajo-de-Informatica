@@ -18,3 +18,5 @@ protected:
 	//float radio;
 	//Vector2D posicion;
 };
+
+

@@ -11,26 +11,39 @@ Nivel:: ~Nivel()
 
 }
 
-void Nivel::Mueve()
+void Nivel::Mueve(Muñeco& muñeco)
 {
+	
+	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
+		Interaccion::Colision(*ListaPlataformas[i], muñeco);
+	
 
 	//Proyectil.Mueve() falta por hacer
 	//AQUI FALTAN TODAS LAS INTERACCIONES
 }
 
-void Nivel::Inicializa()
+void Nivel::Inicializa( Suelo &s, Creditos &c, Proyectiles &pro, Vida &v)
 {
-	Plataforma.SetColor(148, 26, 28);
-	Plataforma.SetPos(2, 3);//Hay que poner mas plataformas y mirar su posicion
-	//Plataforma.SetVel(5, 15); DE MOMENTO NO SE MUEVEN
-	//x_ojo = 0;
-	//y_ojo = 7.5;
-	//z_ojo = 30;
+	//habria que hacerlo con vectores
 	//Creditos.SetPos(5.0f, 5.0f);
 	//Proyectil.SetPos(-5.0f, 0.0f);
-	//Suelo.SetPos();
+	s.SetPos();
 	//Vida.SetPos(2, 6);
-
+	Plataformas* e1 = new Plataformas(1.5f, 8, 2.5);
+	e1->SetColor(148, 26, 28);
+	ListaPlataformas.Agregar(e1); //esfera
+	Plataformas* e2 = new Plataformas(1.5f,15 , 3);
+	e2->SetColor(148, 26, 28);
+	ListaPlataformas.Agregar(e2); //esfera2
+	Plataformas* e3 = new Plataformas(1.2f, 17, 5);
+	e3->SetColor(148, 26, 28);
+	ListaPlataformas.Agregar(e3); //esfera3
+	/*for (int i = 0; i < 6; i++)
+	{
+		Plataformas aux = new Plataformas(0.75 + i  0.25, i, 1 + i, i, i);
+		esferas.Agregar(aux);
+	}
+	*/
 }
 
 void Nivel::Dibuja()
@@ -50,10 +63,8 @@ void Nivel::Dibuja()
 	glEnd();
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
-	Plataforma.Dibuja();
-	Suelo.Dibuja();
-	//Caja.Dibuja();
-	//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
+	
+	ListaPlataformas.Dibuja();
 }
 
 void Nivel::TeclaEspecial(unsigned char key)

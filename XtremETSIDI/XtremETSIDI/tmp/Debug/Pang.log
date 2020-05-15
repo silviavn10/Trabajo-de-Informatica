@@ -1,2 +1,30 @@
-﻿  Mundo.cpp
-  Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+﻿  Creditos.cpp
+  Interaccion.cpp
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(23,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(29,27): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(33,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(41,13): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(57,12): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  ListaPlataformas.cpp
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  ListaProbetas.cpp
+  Mundo.cpp
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Muñeco.cpp
+  Nivel.cpp
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Pang.cpp
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Plataformas.cpp
+  Probeta.cpp
+  Proyectiles.cpp
+  Puntuacion.cpp
+  Suelo.cpp
+  Vector2D.cpp
+  Vida.cpp
+  Generando código...
+  Pang.vcxproj -> C:\Users\Usuario\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe

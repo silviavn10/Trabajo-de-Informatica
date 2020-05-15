@@ -10,10 +10,9 @@ public:
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
 	void SetPos(float ix, float iy);
-	float distancia(Vector2D punto, Vector2D* direccion = 0);
+	float distancia(Vector2D punto, Plataformas p, Vector2D* direccion = 0);
 	float GetLimiteY2() { return limite2.y; };
-
-private:
+	Plataformas(float lad, float x = 0.0f, float y = 0.0f);
 	float lado;
 	unsigned char rojo;
 	unsigned char azul;

@@ -31,22 +31,31 @@ void Plataformas::SetPos(float ix, float iy)
 	limite2.x = posicion.x + (lado / 2);
 	limite2.y = posicion.y + (lado / 2);
 }
-float Plataformas::distancia(Vector2D punto, Vector2D* direccion)
+float Plataformas::distancia(Vector2D punto, Plataformas p, Vector2D* direccion)
 {
-	Vector2D u = (punto - limite1);
-	Vector2D v = (limite2 - limite1).Unitario();
-	float longitud = (limite1 - limite2).modulo();
+	Vector2D u = (punto - p.limite1);
+	Vector2D v = (p.limite2 - p.limite1).Unitario();
+	float longitud = (p.limite1 - p.limite2).modulo();
 	Vector2D dir;
 	float valor = u * v;
 	float distancia = 0;
 	if (valor < 0)
 		dir = u;
 	else if (valor > longitud)
-		dir = (punto - limite2);
+		dir = (punto - p.limite2);
 	else
 		dir = u - v * valor;
 	distancia = dir.modulo();
 	if (direccion != 0)
 		*direccion = dir.Unitario();
 	return distancia;
+}
+
+Plataformas::Plataformas(float lad, float x, float y)
+{
+	lado = lad;
+	posicion.x = x;
+	posicion.y = y;
+	rojo = verde = 255;
+	azul = 100; //color distinto
 }

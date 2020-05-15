@@ -35,8 +35,7 @@ void Suelo::SetPos(float x1, float y1, float x2, float y2)
 	limite2.x = x2;
 	limite2.y = y2;
 }
-
-float Suelo::Distancia(Vector2D punto, Vector2D* direccion)
+float Suelo::distancia(Vector2D punto, Vector2D* direccion)
 {
 	Vector2D u = (punto - limite1);
 	Vector2D v = (limite2 - limite1).Unitario();

@@ -15,7 +15,7 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	//VALORES AUN POR DEFINIR
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
 	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
-	altura = 1.8f;  //Tamaño del muñeco (por definir)
+	altura = 1.5;  //Tamaño del muñeco (por definir)
 	aceleracion.y = -9.8f; //Gravedad para que caiga
 	sprite_vq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco vq 
 	sprite_vq.setSize(2.3, 2.3);  //Tamaño del sprite para el muñeco vq
@@ -58,10 +58,12 @@ Muñeco::~Muñeco()
 
 void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 {
-	
+
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-	
+	if (posicion.x <= -8) posicion.x = -8; //si la posicion x es <=-8 (izq del todo) se limita la posicion
+	if (posicion.y <= 2.5) posicion.y = 2.5; //si la posicion y es menor que 2.5(suelo) se limita
+	if (posicion.y >= 7) posicion.y = 7; //si la posicion y es mayor que 7(techo) se limita
 	//activo->loop(); //Funcion interna de los sprites
 	
 }
@@ -70,22 +72,22 @@ int Muñeco::SetSexo(unsigned char key)
 {
 	sexo = 2;
 	if (key == 'F' || key == 'f')
-			sexo = 0;
-				
+		sexo = 0;
+
 	if (key == 'V' || key == 'v')
 		sexo = 1;
-	cout << sexo<< endl;
+	cout << sexo << endl;
 	return sexo;
 }
 int Muñeco::SetCarrera(unsigned char key)
 {
-	  carrera = 5;
+	carrera = 5;
 	if (key == 'Q' || key == 'q')
 		carrera = 0;
-		
+
 	if (key == 'D' || key == 'd')
 		carrera = 1;
-		
+
 	if (key == 'E' || key == 'e')
 		carrera = 2;
 
@@ -93,12 +95,12 @@ int Muñeco::SetCarrera(unsigned char key)
 		carrera = 3;
 
 	if (key == 'A' || key == 'a')
-	   carrera = 4;
-	
+		carrera = 4;
+
 	Muñeco::SetPersonaje();
-	cout << carrera<<endl;
-	
-	if(carrera==5)
+	cout << carrera << endl;
+
+	if (carrera == 5)
 		return 0;
 	else return 1;
 }
@@ -135,77 +137,58 @@ void Muñeco::SetPersonaje() {
 }
 void Muñeco::Dibuja()
 {
-	
-		glPushMatrix();
-		glTranslatef(posicion.x, posicion.y, 0.5);
-		if (velocidad.x > 0.035)activo->flip(false, false);
-		if (velocidad.x < -0.035)activo->flip(true, false);
-		if ((velocidad.x < 0.035) && (velocidad.x > -0.035))
-			activo->setState(0);
-		else if (activo->getState() == 0)
-			activo->setState(1, false);
-		activo->draw();
 
-		glPopMatrix();
-	
+	glPushMatrix();
+	glTranslatef(posicion.x, posicion.y, 0.5);
+	if (velocidad.x > 0.035)activo->flip(false, false);
+	if (velocidad.x < -0.035)activo->flip(true, false);
+	if ((velocidad.x < 0.035) && (velocidad.x > -0.035))
+		activo->setState(0);
+	else if (activo->getState() == 0)
+		activo->setState(1, false);
+	activo->draw();
+
+	glPopMatrix();
+
 }
 void Muñeco::TeclaEspecial(unsigned char key) {
+	
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
+		
 		Muñeco::SetVel(-5.0f, 0.0f);
+		
 		break;
 	case GLUT_KEY_RIGHT:
 		Muñeco::SetVel(5.0f, 0.0f);
 		break;
 	case GLUT_KEY_UP:
-		Muñeco::SetSalto();
+		if(Muñeco::getDistancia()) //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
+			Muñeco::SetVel(0.0f, 7.0f);//se mete si es true
 		break;
-	}
-		
-}
 
+
+	/*case GLUT_KEY_DOWN:
+		Muñeco::SetVel(0.0f, -5.0f);
+		break;*/
+	}
+}
 void Muñeco::SetVel(float vx, float vy)
 {
-		velocidad.x = vx;
-		velocidad.y = vy;
-	
-}
 
-float Muñeco::SetSalto()
+	velocidad.x = vx;
+	velocidad.y = vy;
+
+}
+bool  Muñeco::getDistancia(void)
 {
-	velocidad.y = 5;
-	velocidad.x = 0;
-	//posicion.y = posicion.y + velocidad.y * t + aceleracion.y * (0.5f * t * t);
-	//velocidad.y = velocidad.y + aceleracion.y * t;
-	return velocidad.y;
+	if (Muñeco::posicion.y == 2.5 || aux == 1) {//si el muñeco esta en el suelo o encima de una plataforma
+		aux = 0;//interaccion
+		return true;
+	}
+	return false;
 }
 
-/*float Muñeco::SetSalto(float h, float v0, float g) INTENTO 2
-{
-	if (h < 3)
-	{
-		float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
-		velocidad.y = v0 + g * t;
-		return velocidad.y;
-	}
 
-	if (h >= 3)
-	{
-		float t = (-v0 + sqrt(v0 * v0 + 2 * g * h)) / g; //ecuacion de la parabola para saltar
-		velocidad.y = v0 - g * t;
-		return velocidad.y;
-	}
-}
-*/
 
-//float Muñeco::SetSalto(float h, float v0, float g)INTENTO 3
-/*for (int i = 0; i < MAX_PLATAFORMAS; i++) {
-			if (-0.1 < (Muñeco::getPosY() - (Plataforma.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
-		}
-		if (-0.1 < (Muñeco::getPosY() - (Suelo.GetLimiteY2())) < 0.1) Muñeco::setVelY(15.0f);
-		if ((Muñeco::getPosY() - Suelo.GetLimiteY2()) < 0.05) {
-			Muñeco::setVelY(15.0f);
-		}
-		break;
-	}*/

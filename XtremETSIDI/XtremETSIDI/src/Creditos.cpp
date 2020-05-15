@@ -1,9 +1,9 @@
-/*#include "Creditos.h"
+#include "Creditos.h"
 #include "ETSIDI.h"
 //#include "glut.h"
 
 
-Creditos::Creditos() : SpriteCreditos("imagenes/credito.png", 8) //Constructor
+Creditos::Creditos() : SpriteCreditos("bin/imagenes/gameover.png", 8) //Constructor
 {
 	radio = 2.7f; //FALTAN VALORES BUENOS. Radio de la imagen del bonus
 	velocidad.x = -15;  //FALTAN VALORES BUENOS. Velocidad horizontal del bonus
@@ -33,7 +33,7 @@ Creditos::Creditos(float rad, float x, float y, float vx, float vy) : SpriteCred
 	SpriteCreditos.setSize(1, 1);  //Tamaño del sprite para la vida
 }
 
-float Creditos::distancia(Vector2D punto, Vector2D* direccion)
+/*float Creditos::distancia(Vector2D punto, Vector2D* direccion)
 {
 	Vector2D u = (punto - limite1);
 	Vector2D v = (limite2 - limite1).Unitario();

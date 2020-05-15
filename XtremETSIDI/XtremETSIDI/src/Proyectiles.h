@@ -1,5 +1,6 @@
-/*#pragma once
+#pragma once
 #include "Vector2D.h"
+
 
 class Proyectiles //CLASE PADRE
 {
@@ -10,7 +11,7 @@ public:
 	Vector2D getPos();
 	void setVel(float vx, float vy);
 	void setVel(Vector2D vel);
-	void SetPos(float x, float y);
+	void setPos(float x, float y);
 	void setPos(Vector2D pos);
 
 protected:
@@ -18,4 +19,4 @@ protected:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	int NUM_MAX;
-};*/
+};
