@@ -11,12 +11,15 @@ Nivel:: ~Nivel()
 
 }
 
-void Nivel::Mueve(Muñeco& muñeco)
+void Nivel::Mueve()
 {
 	
+	muñeco.Mueve(0.025f);
 	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
-		Interaccion::Colision(*ListaPlataformas[i], muñeco);
-	
+	{
+		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
+		//printf("Estoy entrando");
+	}
 
 	//Proyectil.Mueve() falta por hacer
 	//AQUI FALTAN TODAS LAS INTERACCIONES
@@ -29,12 +32,17 @@ void Nivel::Inicializa(Suelo& s, Creditos& c, Proyectiles& pro, Vida& v)
 	//Proyectil.SetPos(-5.0f, 0.0f);
 	s.SetPos();
 	//Vida.SetPos(2, 6);
-	for (int i = 1; i < MAX_PLATAFORMAS; i++)
+	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
-		ListaPlataformas += new Plataformas(1.5f, 21 * i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 27 * i, 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.2f, 28.5 * i, 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 33 * i, 2.9);
+		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.2f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.9);
+		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
+		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
+		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
+		l4 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite2.y
+		ListaPlataformas.lista[i]->SetPos(l1,l2,l3,l4);
 	}
 }
 
@@ -57,10 +65,11 @@ void Nivel::Dibuja()
 	glDisable(GL_TEXTURE_2D);
 	
 	ListaPlataformas.Dibuja();
+	muñeco.Dibuja();
 }
 
 void Nivel::TeclaEspecial(unsigned char key)
 {
-
+	muñeco.TeclaEspecial(key);
 
 }

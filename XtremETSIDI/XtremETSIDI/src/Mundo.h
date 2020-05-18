@@ -19,7 +19,6 @@ public:
 	void Mueve();
 	void Dibuja();
 	void Musica();
-	Muñeco muñeco;
 	Nivel nivel1;
 	//Plataformas plataforma, plataforma2;
 	//

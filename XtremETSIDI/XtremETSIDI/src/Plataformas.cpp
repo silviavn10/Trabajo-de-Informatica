@@ -3,10 +3,16 @@
 
 Plataformas::Plataformas()
 {
-	lado = 1.50f;
+
+}
+Plataformas::Plataformas(float lad, float x, float y)
+{
+	lado = lad;
+	posicion.x = x;
+	posicion.y = y;
 	rojo = 148;
-	verde = 28;
-	azul = 26;
+	verde = 26;
+	azul = 28; //color distinto
 }
 Plataformas:: ~Plataformas()
 {
@@ -25,7 +31,7 @@ void Plataformas::SetColor(unsigned char r, unsigned char v, unsigned char a) {
 	verde = v;
 	azul = a;
 }
-void Plataformas::SetPos(float ix, float iy)
+/*void Plataformas::SetPos(float ix, float iy)
 {
 	posicion.x = ix;
 	posicion.y = iy;
@@ -33,6 +39,14 @@ void Plataformas::SetPos(float ix, float iy)
 	limite1.y = posicion.y + (lado / 2);
 	limite2.x = posicion.x + (lado / 2);
 	limite2.y = posicion.y + (lado / 2);
+}*/
+void Plataformas::SetPos(float x1, float y1, float x2, float y2)
+{
+
+	limite1.x = x1;
+	limite1.y = y1;
+	limite2.x = x2;
+	limite2.y = y2;
 }
 float Plataformas::distancia(Vector2D punto, Plataformas p, Vector2D* direccion)
 {
@@ -54,11 +68,4 @@ float Plataformas::distancia(Vector2D punto, Plataformas p, Vector2D* direccion)
 	return distancia;
 }
 
-Plataformas::Plataformas(float lad, float x, float y)
-{
-	lado = lad;
-	posicion.x = x;
-	posicion.y = y;
-	rojo = verde = 255;
-	azul = 100; //color distinto
-}
+

@@ -9,7 +9,7 @@ public:
    ~Plataformas();
 	void Dibuja();
 	void SetColor(unsigned char r, unsigned char v, unsigned char a);
-	void SetPos(float ix, float iy);
+	void SetPos(float x1, float y1, float x2, float y2);
 	float distancia(Vector2D punto, Plataformas p, Vector2D* direccion = 0);
 	float GetLimiteY2() { return limite2.y; };
 	Plataformas(float lad, float x = 0.0f, float y = 0.0f);

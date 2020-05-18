@@ -8,7 +8,7 @@ Interaccion::Interaccion() //Constructor
 Interaccion::~Interaccion() //Destructor
 {
 }
-void Interaccion::Colision(Plataformas p, Muñeco& m)
+void Interaccion::Colision(Muñeco& m, Plataformas p)
 {
 	
 	float xlim1 = p.limite1.x;//punto abajo izq
@@ -49,7 +49,7 @@ void Interaccion::Colision(Plataformas p, Muñeco& m)
 	}
 
 }
-void Interaccion::rebote(Plataformas p, Muñeco m)
+/*void Interaccion::rebote(Plataformas p, Muñeco m)
 {
 
 	Vector2D dir;
@@ -63,5 +63,5 @@ void Interaccion::rebote(Plataformas p, Muñeco m)
 		
 	}
 
-}
+}*/
 

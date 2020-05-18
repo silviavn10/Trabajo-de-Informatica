@@ -15,12 +15,27 @@ public:
 	void Inicializa(Suelo &s, Creditos &c, Proyectiles &pro, Vida &v);
 	void Dibuja();
 	void TeclaEspecial(unsigned char key);
-	void Mueve(Muñeco & muñeco);
+	void Mueve();
 	Vector2D GetPos();
 	//void SetVel(float vx, float vy);
 	ListaPlataformas ListaPlataformas;
-	//Creditos Creditos;
+	Muñeco muñeco;
+	void setvq() { muñeco.setvq(); }
+	void setfq() { muñeco.setfq(); }
+	void setvd() { muñeco.setvd(); }
+	void setfd() { muñeco.setfd(); }
+	void setve() { muñeco.setve(); }
+	void setfe() { muñeco.setfe(); }
+	void setvm() { muñeco.setvm(); }
+	void setfm() { muñeco.setfm(); }
+	void setva() { muñeco.setva(); }
+	void setfa() { muñeco.setfa(); }
 
+private:
+	float l1;
+	float l2;
+	float l3;
+	float l4;
 	//Proyectiles Proyectiles;//Cuando la hagamos
 
 	//float y_ojo;

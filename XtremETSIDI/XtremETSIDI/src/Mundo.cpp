@@ -5,10 +5,10 @@
 
 MundoXtremETSIDI::MundoXtremETSIDI()  //Construyo el Menu
 {
-	//estado = START; //Comienza el juego y estamos en START
+	estado = START; //Comienza el juego y estamos en START
 	//ETSIDI::playMusica("bin/bso/intro.mp3", true); //Al empezar el juego se activa la múscia de inicio
-	nivel1.Inicializa( suelo, creditos, proyectil, vida1);//inicializa los valores de plataforma, plataforma2.....
-	
+	nivel1.Inicializa(suelo, creditos, proyectil, vida1);//inicializa los valores de plataforma, plataforma2.....
+
 }
 
 MundoXtremETSIDI::~MundoXtremETSIDI() //Destructor
@@ -18,8 +18,8 @@ MundoXtremETSIDI::~MundoXtremETSIDI() //Destructor
 
 void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 {
-	if(estado!=NIVEL1) //si no estas en nivel 1 se cambia la posicion del ojo a 0.0
-			gluLookAt(0.0, 4.5, 13,   // Posición del ojo si esta en el menu
+	if (estado != NIVEL1) //si no estas en nivel 1 se cambia la posicion del ojo a 0.0
+		gluLookAt(0.0, 4.5, 13,   // Posición del ojo si esta en el menu
 			0.0, 4.5, 0.0,
 			0.0, 1.0, 0.0);
 	switch (estado) {
@@ -160,12 +160,12 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		break;
 
 	case NIVEL1: //Comenzamos el juego
-		ojo = muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo
+		ojo = nivel1.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo MIRAR BIEN
 		if (ojo <= 0) ojo = 0;
 		gluLookAt(ojo, 4.5, 13,   // Posición del ojo si esta jugando
 			ojo, 4.5, 0.0,
 			0.0, 1.0, 0.0);
-		muñeco.Dibuja();
+		//muñeco.Dibuja();
 		nivel1.Dibuja();
 		//plataforma.Dibuja();
 		//plataforma2.Dibuja();
@@ -239,12 +239,16 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			exit(0);
 		if (key == 13)  //Pulsa el enter para continuar
-			//estado = MENU;
-			estado = NIVEL1; //Andrea luego quitalo
-		    muñeco.setfq();
+	
+		estado = NIVEL1; //Andrea luego quitalo
+		nivel1.setvq();
+	
+						
+						//estado = MENU;
+
 		break;
 
-	/*case MENU:
+	case MENU:
 		if (key == 27)
 			exit(0);
 		if (key == 'C' || key == 'c')
@@ -262,9 +266,9 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = MENU;
 		else {
-			if (muñeco.SetSexo(key) == 1 && key != 13)
+			if (nivel1.muñeco.SetSexo(key) == 1 && key != 13)
 				estado = ESCOGE_CARRERAV;
-			else if (muñeco.SetSexo(key) == 0 && key != 13)
+			else if (nivel1.muñeco.SetSexo(key) == 0 && key != 13)
 				estado = ESCOGE_CARRERAF;
 		}
 		break;
@@ -273,9 +277,9 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = ESCOGE_SEXO;
 		else {
-			if (muñeco.SetCarrera(key) && aux == 0 && key != 13)
+			if (nivel1.muñeco.SetCarrera(key) && aux == 0 && key != 13)
 				estado = CARTA;
-			else if (muñeco.SetCarrera(key) && key != 13)
+			else if (nivel1.muñeco.SetCarrera(key) && key != 13)
 				estado = NIVEL1;  // en el caso de que ya se haya pasado por el estado NIVEL1 anteriormente 
 								 //y vuelve al menu, no pasaría por los estados CARTA ni SUERTE
 		}
@@ -286,9 +290,9 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		if (key == 27)
 			estado = ESCOGE_SEXO;
 		else {
-			if (muñeco.SetCarrera(key) && aux == 0 && key != 13)
+			if (nivel1.muñeco.SetCarrera(key) && aux == 0 && key != 13)
 				estado = CARTA;
-			else if (muñeco.SetCarrera(key) && key != 13)
+			else if (nivel1.muñeco.SetCarrera(key) && key != 13)
 				estado = NIVEL1;   // en el caso de que ya se haya pasado por el estado NIVEL1 anteriormente 
 								  //y vuelve al menu, no pasaría por los estados CARTA ni SUERTE
 		}
@@ -316,7 +320,7 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			estado = NIVEL1;
 			Musica();
 		}
-		break;*/
+		break;
 
 	case NIVEL1:
 
@@ -332,10 +336,10 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 
 
 	/*
-		 || (estado == GAMEOVER) || (estado == FIN) || (estado == M_PRINCIPAL) ||
-		 || (estado == VICTORIA) //FALTAN NIVELES Y PANTALLA DE NIVEl*/
+			 || (estado == GAMEOVER) || (estado == FIN) || (estado == M_PRINCIPAL) ||
+			 || (estado == VICTORIA) //FALTAN NIVELES Y PANTALLA DE NIVEl*/
 }
-/*
+
 void MundoXtremETSIDI::Musica()
 {
 	switch (estado)
@@ -357,18 +361,19 @@ void MundoXtremETSIDI::Musica()
 	}
 
 }
-*/
+
 void MundoXtremETSIDI::TeclaEspecial(unsigned char key)
 {
-	
-	muñeco.TeclaEspecial(key);
 
+	//muñeco.TeclaEspecial(key);
+	nivel1.TeclaEspecial(key);
 }
 
 void MundoXtremETSIDI::Mueve()
 {
-	muñeco.Mueve(0.025f);
+	//muñeco.Mueve(0.025f);
 	//Interaccion::Colision(plataforma, muñeco);
 	//Interaccion::Colision(plataforma2, muñeco); //hacer interaccion por cada plataforma
-	nivel1.Mueve(muñeco);
+	nivel1.Mueve();
+
 }

@@ -94,3 +94,8 @@ bool ListaPlataformas::operator += (Plataformas* p) {
 	}
 	return false;
 }
+void ListaPlataformas::Colision(Muñeco& h, Plataformas* Lista)
+{
+	for (int i = 0; i < numero; i++)
+		Interaccion::Colision(h, *Lista);
+}
