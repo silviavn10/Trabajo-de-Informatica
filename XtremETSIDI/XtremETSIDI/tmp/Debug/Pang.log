@@ -1,4 +1,4 @@
 ﻿  Nivel.cpp
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
-C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
-  Pang.vcxproj -> C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe

@@ -1,7 +1,7 @@
 #pragma once
 #include "Plataformas.h"
 #include "Muñeco.h"
-#define MAX_PLATAFORMAS 10
+#define MAX_PLATAFORMAS 25
 
 class ListaPlataformas
 {
