@@ -4,6 +4,9 @@
 Plataformas::Plataformas()
 {
 	lado = 1.50f;
+	rojo = 148;
+	verde = 28;
+	azul = 26;
 }
 Plataformas:: ~Plataformas()
 {

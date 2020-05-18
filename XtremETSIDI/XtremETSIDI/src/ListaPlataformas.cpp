@@ -4,7 +4,7 @@
 ListaPlataformas::ListaPlataformas(void)
 {
 	numero = 0;
-	for (int i = 0; i < MAX_PLATAFORMAS; i++)lista[i] = 0;
+	lista = new Plataformas * [MAX_PLATAFORMAS];// reserva memoria dinámicamente para vector lista con una dimension maxima de MAX_PLATAFORMAS
 }
 
 
@@ -84,4 +84,13 @@ bool ListaPlataformas::Agregar(Plataformas* p)
 	else
 		return false;
 	return true;
+}
+
+bool ListaPlataformas::operator += (Plataformas* p) {
+
+	if (numero < MAX_PLATAFORMAS) {
+		lista[numero++] = p; //guarda la direccion 
+		return true;
+	}
+	return false;
 }

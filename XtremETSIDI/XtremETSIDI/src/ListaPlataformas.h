@@ -14,12 +14,15 @@ class ListaPlataformas
 	void DestruirContenido();
 	int getNumero() { return numero; };
 	bool Agregar(Plataformas* p);
+	bool ListaPlataformas::operator += (Plataformas* p);
+	friend class Nivel;
 	Plataformas* Colision(Muñeco m);
 
 	//int getNumero() { return numero; }
 	Plataformas* operator[] (int index);
 
 private:
-	Plataformas* lista[MAX_PLATAFORMAS];
+	Plataformas** lista;// hay que crear un plataforma* que apunte a la direccion de memoria que te devuelce la creacion de memoria dinámica. 
+						//el segundo puntero es para que lista sea un vector
 	int numero;
 };

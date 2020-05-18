@@ -22,28 +22,20 @@ void Nivel::Mueve(Muñeco& muñeco)
 	//AQUI FALTAN TODAS LAS INTERACCIONES
 }
 
-void Nivel::Inicializa( Suelo &s, Creditos &c, Proyectiles &pro, Vida &v)
+void Nivel::Inicializa(Suelo& s, Creditos& c, Proyectiles& pro, Vida& v)
 {
 	//habria que hacerlo con vectores
 	//Creditos.SetPos(5.0f, 5.0f);
 	//Proyectil.SetPos(-5.0f, 0.0f);
 	s.SetPos();
 	//Vida.SetPos(2, 6);
-	Plataformas* e1 = new Plataformas(1.5f, 8, 2.5);
-	e1->SetColor(148, 26, 28);
-	ListaPlataformas.Agregar(e1); //esfera
-	Plataformas* e2 = new Plataformas(1.5f,15 , 3);
-	e2->SetColor(148, 26, 28);
-	ListaPlataformas.Agregar(e2); //esfera2
-	Plataformas* e3 = new Plataformas(1.2f, 17, 5);
-	e3->SetColor(148, 26, 28);
-	ListaPlataformas.Agregar(e3); //esfera3
-	/*for (int i = 0; i < 6; i++)
+	for (int i = 1; i < MAX_PLATAFORMAS; i++)
 	{
-		Plataformas aux = new Plataformas(0.75 + i  0.25, i, 1 + i, i, i);
-		esferas.Agregar(aux);
+		ListaPlataformas += new Plataformas(1.5f, 21 * i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 27 * i, 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.2f, 28.5 * i, 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 33 * i, 2.9);
 	}
-	*/
 }
 
 void Nivel::Dibuja()
