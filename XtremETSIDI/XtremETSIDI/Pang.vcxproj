@@ -83,8 +83,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Charcos.cpp" />
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaCharcos.cpp" />
     <ClCompile Include="src\ListaCreditos.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaProbetas.cpp" />
@@ -102,8 +104,10 @@
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Charcos.h" />
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaCharcos.h" />
     <ClInclude Include="src\ListaCreditos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaProbetas.h" />

@@ -1,6 +1,4 @@
-/*#include "ListaProbetas.h"
-#include "Interaccion.h"
-
+#include "ListaProbetas.h"
 
 ListaProbetas::ListaProbetas()
 {
@@ -11,18 +9,19 @@ ListaProbetas::ListaProbetas()
 ListaProbetas::~ListaProbetas() {
 
 }
-bool ListaProbetas::Agregar(Probeta* d)
+bool ListaProbetas::Agregar(Probeta* p)
 {
 	for (int i = 0; i < numero; i++)
-		if (lista[i] == d)
+		if (lista[i] == p)
 			return false;
 
 	if (numero < MAX_PROBETAS)
-		lista[numero++] = d;
+		lista[numero++] = p;
 	else
 		return false;
 	return true;
 }
+
 void ListaProbetas::DestruirContenido()
 {
 	for (int i = 0; i < numero; i++)
@@ -32,23 +31,14 @@ void ListaProbetas::DestruirContenido()
 void ListaProbetas::Mueve(float t)
 {
 	for (int i = 0; i < numero; i++)
-		lista[i]->Mueve(t);
+		lista[i]->mueve(t);
 }
 void ListaProbetas::Dibuja()
 {
 	for (int i = 0; i < numero; i++)
 		lista[i]->Dibuja();
 }
-int ListaProbetas::Colision(Muñeco m)
-{
-	for (int i = 0; i < numero; i++) //Recorre la lista de probetas
-	{
-		if (Interaccion::Colision(*(lista[i]), m)) //Detecta la colisión entre la plataforma y un elemento de la lista de probetas
-			return i; //Si hay colisión devuelve el número de elemento de la lista que ha colisionado
-	}
-	return -1; // No hay colisión
-	//HAY QUE HACER COMO SALTAR A JULIO
-}
+
 
 void ListaProbetas::Eliminar(int index)  //Envía destruir las probetas de la lista indicado
 {
@@ -63,7 +53,7 @@ void ListaProbetas::Eliminar(int index)  //Envía destruir las probetas de la lis
 }
 
 
-void ListaProbetas::Eliminar(Probeta * p) //Borra las probetas, pero tiene que recibir una probeta en concreto
+void ListaProbetas::Eliminar(Probeta* p) //Borra las probetas, pero tiene que recibir una probeta en concreto
 {
 	for (int i = 0; i < numero; i++)  //Recorre la lista hasta encontrar la probeta que le hemos indicado
 		if (lista[i] == p)
@@ -74,26 +64,6 @@ void ListaProbetas::Eliminar(Probeta * p) //Borra las probetas, pero tiene que r
 }
 
 
-int ListaProbetas:: Colision(Plataformas f)  //Colisión entre la probeta y la plataforma
-{
-	for (int i = 0; i < numero; i++) //Recorre la lista de probetas
-	{
-		if (Interaccion::Colision(*(lista[i]), f)) //Detecta la colisión entre la plataforma y un elemento de la lista de probetas
-			return i; //Si hay colisión devuelve el número de elemento de la lista que ha colisionado
-	}
-	return -1; // No hay colisión
-}
-bool ListaProbetas::Agregar(Probeta* m) //Función para agregar una plataforma
-{
-	for (int i = 0; i < numero; i++) // Evitamos plataformas ya existentes
-		if (lista[i] == m)
-			return false;
-	if (numero < MAX_PROBETAS)  //Si no se ha llegado al máximo de plataformas permitidas
-		lista[numero++] = m;  //se añade uno
-	else
-		return false;
-	return true;
-}
 Probeta* ListaProbetas::operator [](int i) //Sobrecarga del operador [] para escoger una plataforma de toda la lista
 {
 	if (i >= numero)
@@ -103,4 +73,3 @@ Probeta* ListaProbetas::operator [](int i) //Sobrecarga del operador [] para esc
 
 	return lista[i];
 }
-*/

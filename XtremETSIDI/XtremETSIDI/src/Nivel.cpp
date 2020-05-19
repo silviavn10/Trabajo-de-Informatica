@@ -60,6 +60,20 @@ void Nivel::Inicializa(Suelo& s, Creditos& c, Proyectiles& pro, Vida& v)
 		ListaCreditos += new Creditos(15 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 
 	}
+	for (int i = 1; i < MAX_PROBETAS; i++)
+	{
+		Probeta* p1 = new Probeta(15 * i, 7);
+		ListaProbetas.Agregar(p1);
+		Probeta* p2 = new Probeta(20 * i, 7);
+		ListaProbetas.Agregar(p2);
+	}
+	for (int i = 1; i < MAX_C; i++)
+	{
+		Charcos* c1 = new Charcos(15 * i);
+		ListaCharcos.Agregar(c1);
+		Charcos* c2 = new Charcos(20 * i);
+		ListaCharcos.Agregar(c2);
+	}
 }
 
 void Nivel::Dibuja()
@@ -81,6 +95,8 @@ void Nivel::Dibuja()
 	
 	ListaPlataformas.Dibuja();
 	ListaCreditos.Dibuja();
+	ListaProbetas.Dibuja();
+	ListaCharcos.Dibuja();
 	muñeco.Dibuja();
 }
 

@@ -13,21 +13,21 @@ class Probeta : public Proyectiles //DERIVA DE PROYECTILES
 public:
 	//Métodos
 	Probeta();
-	Probeta(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0);
-    ~Probeta();
+	//Probeta(float rad, float x = 0, float y = 0, float vx = 0, float vy = 0);
+	~Probeta();
+	Probeta(float x, float y);
 	void Mueve(float t);
 	void Dibuja();
+	float getPosX();
+	void setPos(float x, float y);
 	void setRadio(float r);
 	float getRadio() { return radio; }  //Función para obtener el valor del radio, ya que es un atributo protected
-
-
 protected:
 	//Atributos
 	float radio;
-
-
 private:
 	SpriteSequence sprite;
 };
+
 
 

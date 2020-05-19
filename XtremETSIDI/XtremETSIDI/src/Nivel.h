@@ -5,6 +5,8 @@
 #include"Proyectiles.h"
 #include "ListaPlataformas.h"
 #include "ListaCreditos.h"
+#include "ListaProbetas.h"
+#include "ListaCharcos.h"
 #include"Interaccion.h"
 
 class Nivel
@@ -20,6 +22,8 @@ public:
 	//void SetVel(float vx, float vy);
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
+	ListaProbetas ListaProbetas;
+	ListaCharcos ListaCharcos;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
 	void setfq() { muñeco.setfq(); }

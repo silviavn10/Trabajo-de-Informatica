@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 #define MAX_PROBETAS 25
 #include"Plataformas.h"
 #include "Probeta.h"
@@ -12,12 +12,8 @@ public:
 	void DestruirContenido();
 	void Mueve(float t);
 	void Dibuja();
-	int Colision(Muñeco m);
-	int Colision(Plataformas f);
-	bool Agregar(Probeta * m);
 	void Eliminar(Probeta* m);
 	void Eliminar(int index);
-	void DestruirContenido();
 
 	//void Colision(Imag imag);
 
@@ -30,4 +26,4 @@ private:
 	Probeta* lista[MAX_PROBETAS];
 	int numero;
 };
-*/
+
