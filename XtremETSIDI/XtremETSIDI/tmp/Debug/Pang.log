@@ -1,4 +1,23 @@
-﻿  Nivel.cpp
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
-C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
-  Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+﻿  Creditos.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Creditos.cpp(17,33): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Creditos.cpp(18,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Interaccion.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(23,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(29,27): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(33,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Interaccion.cpp(41,13): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  ListaCreditos.cpp
+  ListaPlataformas.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Mundo.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Nivel.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Pang.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\ListaPlataformas.h(4,1): warning C4005: 'MAX_PLATAFORMAS': redefinición de macro
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\Plataformas.h(4): message : vea la definición anterior de 'MAX_PLATAFORMAS'
+  Generando código...
+  Pang.vcxproj -> C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe

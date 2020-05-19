@@ -169,10 +169,11 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		nivel1.Dibuja();
 		//plataforma.Dibuja();
 		//plataforma2.Dibuja();
-		suelo.Dibuja();
+		//suelo.Dibuja();
 		//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 		vida1.GetMov(ojo);
 		vida1.Dibuja();
+		OpenGL::Print("CREDITOS: 0", 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
 
 		break;
 

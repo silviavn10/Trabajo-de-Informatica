@@ -12,9 +12,9 @@ void Interaccion::Colision(Muñeco& m, Plataformas p)
 {
 	
 	float xlim1 = p.limite1.x;//punto abajo izq
-	float xlim2 = p.limite1.x+p.lado;//punto abajo derecha
+	float xlim2 = p.limite1.x+ (p.lado);//punto abajo derecha
 	float ylim1 = p.limite1.y;//punto arriba izq
-	float ylim2 = p.limite1.y + p.lado;//punto arriba dercha
+	float ylim2 = p.limite1.y + (p.lado);//punto arriba dercha
 	if (m.posicion.x + 1.0 > xlim1 && m.posicion.y + m.altura >= ylim1) { //comprueba que la posicion x sea menor que el limite izq de la plataforma
 	                                                                    	//y que la posicion y sea mayor que el limite de abajo de la plataforam
 		if (m.posicion.x < xlim2 && m.posicion.y + 1 <= ylim2)//comprueba que el muñeco sigue en la parte izq de la plataforma 
@@ -49,19 +49,14 @@ void Interaccion::Colision(Muñeco& m, Plataformas p)
 	}
 
 }
-/*void Interaccion::rebote(Plataformas p, Muñeco m)
+
+void Interaccion::Colision(Muñeco& m, Creditos& c)
 {
-
-	Vector2D dir;
-	
-	float dif = (m.posicion.y + 0.7) - p.limite1.x;
-	if (dif <= 0.0f)
-	{
-		Vector2D v_inicial = m.velocidad;
-		m.velocidad = v_inicial - dir * 2.0 * (v_inicial * dir);
-		m.posicion = m.posicion - dir * dif;
-		
+	if (m.posicion.x == c.posicion.x) {
+		if (c.posicion.y >= m.posicion.y && c.posicion.y < m.posicion.y + m.altura && c.posicion_z == 0.5)
+		{
+			c.posicion_z = -0.5;
+			ETSIDI::play("bin/bso/creditos.mp3");
+		}
 	}
-
-}*/
-
+}

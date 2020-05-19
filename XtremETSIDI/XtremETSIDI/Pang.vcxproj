@@ -85,11 +85,13 @@
   <ItemGroup>
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaCreditos.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaProbetas.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
     <ClCompile Include="src\Nivel.cpp" />
+    <ClCompile Include="src\OpenGL.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Probeta.cpp" />
@@ -102,11 +104,13 @@
   <ItemGroup>
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaCreditos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaProbetas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Muñeco.h" />
     <ClInclude Include="src\Nivel.h" />
+    <ClInclude Include="src\OpenGL.h" />
     <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Probeta.h" />
     <ClInclude Include="src\Proyectiles.h" />

@@ -12,13 +12,13 @@ public:
 	Interaccion();
 	~Interaccion();
 	//static bool Colision (Creditos& c, Muñeco& m); //Definir muñeco
-	static void Colision(Plataformas p, Muñeco& m);
 	static void Colision(Muñeco& h, Plataformas plataforma);
-	static bool Colision(Plataformas& p, Proyectiles& pr);
-	static bool Colision(Proyectiles& pr, Muñeco& m);
-	static bool Colision(Suelo& s, Muñeco& m);
-	static bool Colision(Proyectiles& pr, Suelo& s);
-	static void rebote(Plataformas p, Muñeco m);
+	static void Colision(Muñeco& m, Creditos& c);
+	//static bool Colision(Plataformas& p, Proyectiles& pr);
+	//static bool Colision(Proyectiles& pr, Muñeco& m);
+	//static bool Colision(Suelo& s, Muñeco& m);
+	//static bool Colision(Proyectiles& pr, Suelo& s);
+	//static void rebote(Plataformas p, Muñeco m);
 	
 
 	//FALTAN MUCHAS INTERACCIONES

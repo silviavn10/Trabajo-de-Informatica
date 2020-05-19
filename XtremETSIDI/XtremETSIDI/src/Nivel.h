@@ -1,10 +1,10 @@
 #pragma once
 #include "Vector2D.h"
 #include "Muñeco.h"
-#include "Creditos.h"
 #include "Suelo.h"
 #include"Proyectiles.h"
 #include "ListaPlataformas.h"
+#include "ListaCreditos.h"
 #include"Interaccion.h"
 
 class Nivel
@@ -19,6 +19,7 @@ public:
 	Vector2D GetPos();
 	//void SetVel(float vx, float vy);
 	ListaPlataformas ListaPlataformas;
+	ListaCreditos ListaCreditos;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
 	void setfq() { muñeco.setfq(); }

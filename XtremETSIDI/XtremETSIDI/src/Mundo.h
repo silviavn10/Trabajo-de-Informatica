@@ -4,6 +4,7 @@
 #include "Vida.h"
 #include "ETSIDI.h"
 #include "Interaccion.h"
+#include "OpenGL.h"
 
 class MundoXtremETSIDI
 {
