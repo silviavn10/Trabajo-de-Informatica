@@ -50,13 +50,33 @@ void Interaccion::Colision(Muñeco& m, Plataformas p)
 
 }
 
-void Interaccion::Colision(Muñeco& m, Creditos& c)
+bool Interaccion::Colision(Muñeco& m, Creditos& c)
 {
 	if (m.posicion.x == c.posicion.x) {
 		if (c.posicion.y >= m.posicion.y && c.posicion.y < m.posicion.y + m.altura && c.posicion_z == 0.5)
 		{
+
 			c.posicion_z = -0.5;
 			ETSIDI::play("bin/bso/creditos.mp3");
+			return true;
 		}
+
 	}
+	else return false;
+}
+bool Interaccion::Colision(Muñeco& m, Charcos& c)
+{
+
+	if (m.posicion.y == 2.5) {
+		if ((c.GetPosX() + 2 >= m.posicion.x)&& (c.GetPosX() - 2 < m.posicion.x))
+		{
+			ETSIDI::play("bin/bso/creditos.mp3");
+			//printf("He chocado  %d", setvida);
+			return true;
+		
+		}
+
+	}
+	else return false;
+
 }

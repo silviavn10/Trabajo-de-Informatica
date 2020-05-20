@@ -20,19 +20,34 @@ void Nivel::Mueve()
 		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
 		//printf("Estoy entrando");
 	}
-	for (int i = 0; i < ListaCreditos.getNumero(); i++)
-		Interaccion::Colision(muñeco, *ListaCreditos[i]);
+	for (int i = 0; i < ListaCreditos.getNumero(); i++) {
+		aux = Interaccion::Colision(muñeco, *ListaCreditos[i]);
+		if (aux == true) {
+			contador++;
+		}
+	}
+	for (int i = 0; i < MAX_PROBETAS; i++)
+	{
+		if (ListaProbetas[i]->getPosX() - muñeco.posicion.x < 8)
+		{
+			ListaProbetas[i]->mueve(0.025f);
+		}
+	}
+
 	ListaCreditos.Mueve(0.005f);
-	//Proyectil.Mueve() falta por hacer
-	//AQUI FALTAN TODAS LAS INTERACCIONES
+	for (int i = 0; i < ListaCreditos.getNumero(); i++) {
+		aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
+		if (aux1 == true) {
+			setvida -= 1;
+		}
+		
+		printf("%d", setvida);
+	}
 }
 
-void Nivel::Inicializa(Suelo& s, Creditos& c, Proyectiles& pro, Vida& v)
+void Nivel::Inicializa()
 {
-	//habria que hacerlo con vectores
-	//Proyectil.SetPos(-5.0f, 0.0f);
-	s.SetPos();
-	//Vida.SetPos(2, 6);
+	
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
 		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -71,7 +86,7 @@ void Nivel::Inicializa(Suelo& s, Creditos& c, Proyectiles& pro, Vida& v)
 	{
 		Charcos* c1 = new Charcos(15 * i);
 		ListaCharcos.Agregar(c1);
-		Charcos* c2 = new Charcos(20 * i);
+		Charcos* c2 = new Charcos(37 * i);
 		ListaCharcos.Agregar(c2);
 	}
 }

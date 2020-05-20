@@ -42,19 +42,3 @@ void Probeta::setRadio(float r)  //Funcion para inicializar al radio de la probe
 	radio = r;
 }
 
-/*void Probeta::Mueve(float t)  //Funcion para que la probeta tenga movimiento
-{
-	Proyectiles::mueve(t);  //La probeta deriva de proyectiles, por lo que para generar movimiento accede a la funcion mueve de la clase base
-	//sprite.loop();
-}*/
-void Probeta::setPos(float x, float y)  //Función para definir la posición del objeto en el eje horizontal y en el vertical
-{
-	Proyectiles::setPos(x, y);
-	//posicion.x = x;
-	//posicion.y = y;
-}
-
-float Probeta::getPosX()
-{
-	return posicion.x;
-}

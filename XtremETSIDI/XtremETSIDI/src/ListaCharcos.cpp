@@ -58,3 +58,12 @@ void ListaCharcos::Eliminar(Charcos *c)
 			return;
 		}
 }
+Charcos* ListaCharcos::operator [](int i)
+{
+	if (i >= numero)
+		i = numero - 1;
+	if (i < 0)
+		i = 0;
+
+	return lista[i];
+}

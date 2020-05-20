@@ -28,11 +28,11 @@ void ListaProbetas::DestruirContenido()
 		delete lista[i];
 	numero = 0;
 }
-void ListaProbetas::Mueve(float t)
+/*void ListaProbetas::Mueve(float t)
 {
 	for (int i = 0; i < numero; i++)
 		lista[i]->mueve(t);
-}
+}*/
 void ListaProbetas::Dibuja()
 {
 	for (int i = 0; i < numero; i++)

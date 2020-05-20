@@ -12,6 +12,7 @@ public:
 	Charcos(float x);
 	void Dibuja();
 	void SetPos(float ix, float iy);
+	float GetPosX();
 
 protected:
 	float lado1, lado2;

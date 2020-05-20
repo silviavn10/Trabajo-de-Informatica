@@ -7,7 +7,7 @@ MundoXtremETSIDI::MundoXtremETSIDI()  //Construyo el Menu
 {
 	estado = START; //Comienza el juego y estamos en START
 	//ETSIDI::playMusica("bin/bso/intro.mp3", true); //Al empezar el juego se activa la múscia de inicio
-	nivel1.Inicializa(suelo, creditos, proyectil, vida1);//inicializa los valores de plataforma, plataforma2.....
+	nivel1.Inicializa();//inicializa los valores de plataforma, plataforma2.....
 
 }
 
@@ -173,7 +173,10 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 		vida1.GetMov(ojo);
 		vida1.Dibuja();
-		OpenGL::Print("CREDITOS: 0", 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
+		nivel1.GetContador();
+
+		OpenGL::Print("CREDITOS: ", nivel1.GetContador(), 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
+		
 
 		break;
 

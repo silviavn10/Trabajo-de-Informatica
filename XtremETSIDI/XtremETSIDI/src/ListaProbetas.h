@@ -1,5 +1,5 @@
 #pragma once
-#define MAX_PROBETAS 25
+#define MAX_PROBETAS 24
 #include"Plataformas.h"
 #include "Probeta.h"
 #include "Muñeco.h"
@@ -10,7 +10,7 @@ public:
 	virtual ~ListaProbetas();
 	bool Agregar(Probeta* d);
 	void DestruirContenido();
-	void Mueve(float t);
+	//void Mueve(float t);
 	void Dibuja();
 	void Eliminar(Probeta* m);
 	void Eliminar(int index);

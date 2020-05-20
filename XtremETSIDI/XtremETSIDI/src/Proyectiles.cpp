@@ -45,3 +45,7 @@ void Proyectiles::setPos(Vector2D pos)  //Función para definir un vector con las
 {
 	posicion = pos;
 }
+float Proyectiles::getPosX()
+{
+	return posicion.x;
+}

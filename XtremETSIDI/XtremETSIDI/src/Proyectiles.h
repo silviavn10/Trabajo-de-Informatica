@@ -13,6 +13,7 @@ public:
 	void setVel(Vector2D vel);
 	void setPos(float x, float y);
 	void setPos(Vector2D pos);
+	float getPosX();
 
 protected:
 	Vector2D posicion;
