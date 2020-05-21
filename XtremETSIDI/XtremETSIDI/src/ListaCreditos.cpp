@@ -51,10 +51,7 @@ void ListaCreditos::Eliminar(Creditos* p)
 			Eliminar(i);
 			return;
 		}
-
 }
-
-
 Creditos* ListaCreditos::operator [](int i)
 {
 	if (i >= numero)
@@ -76,16 +73,12 @@ bool ListaCreditos::Agregar(Creditos* p)
 		return false;
 	return true;
 }
-
-
 void ListaCreditos::Mueve(float t)
 {
 
 	for (int i = 0; i < numero; i++)
 		lista[i]->Mueve(t);
 }
-
-
 bool ListaCreditos::operator += (Creditos* c) {
 
 	if (numero < MAX_CREDITOS) {

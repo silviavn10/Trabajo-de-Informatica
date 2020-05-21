@@ -15,12 +15,14 @@ public:
 	Nivel();
 	~Nivel();
 	void Inicializa();
+	void Inicializa2();
 	void Dibuja();
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
 	Vector2D GetPos();
 	int GetContador() { return contador; };
 	//void SetVel(float vx, float vy);
+	int SetVida() { return setvida; };
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
 	ListaProbetas ListaProbetas;
@@ -42,10 +44,9 @@ private:
 	float l2;
 	float l3;
 	float l4;
-	bool aux;
+	bool aux, aux1, aux2, aux3;
 	int contador = 0;
 	int setvida = 2;
-	bool aux1;
 	//ETSIDI::Sprite Creditos;
 	//Proyectiles Proyectiles;//Cuando la hagamos
 

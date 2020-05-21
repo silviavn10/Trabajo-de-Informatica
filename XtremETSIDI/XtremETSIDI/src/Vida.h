@@ -8,6 +8,7 @@ public:
 	Vida();
 	~Vida();
 	void Dibuja();
+	void Dibuja2();
 	//float getRadio() { return radio; }
 	//void SetPos(float x1, float y1);
 	friend class Interaccion;

@@ -145,12 +145,28 @@ void Muñeco::Dibuja()
 
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0.5);
-	if (velocidad.x > 0.035)activo->flip(false, false);
+	/*if (velocidad.x > 0.035)activo->flip(false, false);
 	if (velocidad.x < -0.035)activo->flip(true, false);
 	if ((velocidad.x < 0.035) && (velocidad.x > -0.035))
 		activo->setState(0);
 	else if (activo->getState() == 0)
-		activo->setState(1, false);
+		activo->setState(1, false);*/
+	/*if (velocidad.x > 0)
+	{
+		if ((int)posicion.x % 2 == 0)activo->loop();
+		if ((int)posicion.x % 2 == 1)activo->loop();
+		activo->flip(false, false);
+	}
+	if (velocidad.x < 0)
+	{
+		if ((int)posicion.x % 2 == 0)activo->loop();
+		if ((int)posicion.x % 2 == 1)activo->loop();
+		activo->flip(true, false);
+	}
+	if (velocidad.x == 0)
+		activo->setState(0);
+	else if (activo->getState() == 0)
+	activo->setState(1, false);*/
 	activo->draw();
 
 	glPopMatrix();

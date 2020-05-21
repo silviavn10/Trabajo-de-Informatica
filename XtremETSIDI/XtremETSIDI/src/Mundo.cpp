@@ -8,7 +8,6 @@ MundoXtremETSIDI::MundoXtremETSIDI()  //Construyo el Menu
 	estado = START; //Comienza el juego y estamos en START
 	//ETSIDI::playMusica("bin/bso/intro.mp3", true); //Al empezar el juego se activa la múscia de inicio
 	nivel1.Inicializa();//inicializa los valores de plataforma, plataforma2.....
-
 }
 
 MundoXtremETSIDI::~MundoXtremETSIDI() //Destructor
@@ -165,19 +164,35 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		gluLookAt(ojo, 4.5, 13,   // Posición del ojo si esta jugando
 			ojo, 4.5, 0.0,
 			0.0, 1.0, 0.0);
-		//muñeco.Dibuja();
 		nivel1.Dibuja();
-		//plataforma.Dibuja();
-		//plataforma2.Dibuja();
-		//suelo.Dibuja();
-		//Creditos.Dibuja(); EN CREDITO AUN NO HEMOS PUESTO LA FUNCIÓN DIBUJA
 		vida1.GetMov(ojo);
-		vida1.Dibuja();
-		nivel1.GetContador();
+		if (nivel1.SetVida() == 2)
+			vida1.Dibuja();
+		if (nivel1.SetVida() == 1)
+			vida1.Dibuja2();
+		if (nivel1.SetVida() == 0)
+			estado = GAMEOVER;
 
-		OpenGL::Print("CREDITOS: ", nivel1.GetContador(), 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
+		//nivel1.GetContador();
+
+		//OpenGL::Print("CREDITOS: ", nivel1.GetContador(), 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
 		
-
+		break;
+	case NIVEL2: //Comenzamos el juego
+		ojo = nivel2.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo MIRAR BIEN
+		if (ojo <= 0) ojo = 0;
+		gluLookAt(ojo, 4.5, 13,   // Posición del ojo si esta jugando
+			ojo, 4.5, 0.0,
+			0.0, 1.0, 0.0);
+		nivel2.Dibuja();
+		
+		vida1.GetMov(ojo);
+		if (nivel1.SetVida() == 2)
+			vida1.Dibuja();
+		if (nivel1.SetVida() == 1)
+			vida1.Dibuja2();
+		if (nivel1.SetVida() == 0)
+			estado = GAMEOVER;
 		break;
 
 	case VICTORIA: //Has ganado
@@ -327,7 +342,6 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 		break;
 
 	case NIVEL1:
-
 		if (key == 27)
 		{
 			//estado = MENU;
@@ -335,7 +349,30 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			exit(0);
 			//Musica();
 		}
+		if (key == 50) //Tecla número 2
+		{
+			//nivel2.Inicializa2();
+			estado = NIVEL2;
+		}
 		break;
+	
+	case NIVEL2:
+		if (key == 27)
+		{
+
+			//estado = MENU;
+			aux++;
+			exit(0);
+			//Musica();
+		}
+
+	case GAMEOVER:
+		if (key == 27)
+		{
+			//estado = MENU;
+			exit(0);
+		break;
+		}
 	}
 
 

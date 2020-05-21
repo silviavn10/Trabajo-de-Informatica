@@ -49,3 +49,15 @@ float Proyectiles::getPosX()
 {
 	return posicion.x;
 }
+float Proyectiles::getPosY()
+{
+	return posicion.y;
+}
+float Proyectiles::getPosZ()
+{
+	return posicion_z;
+}
+void Proyectiles::SetPosZ(float z)
+{
+	posicion_z = z;
+}

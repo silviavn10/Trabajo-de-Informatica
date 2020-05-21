@@ -20,7 +20,7 @@ public:
 	void Mueve();
 	void Dibuja();
 	void Musica();
-	Nivel nivel1;
+	Nivel nivel1, nivel2;
 	//Plataformas plataforma, plataforma2;
 	//
 	Suelo suelo;
@@ -35,7 +35,7 @@ protected:
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{
 		START, MENU, CONTROLES, ESCOGE_SEXO, ESCOGE_CARRERAF, ESCOGE_CARRERAV, CARTA, SUERTE,
-		NIVEL1, VICTORIA, GAMEOVER, FIN/* JUEGO_N2, JUEGO_N3, JUEGO2,
+		NIVEL1, NIVEL2, VICTORIA, GAMEOVER, FIN/* JUEGO_N3, JUEGO2,
 		GAMEOVER, SALIR,  //LEVELUP1, LEVELUP2, LEVELUP3,
 		VICTORIA, FIN*/
 	};

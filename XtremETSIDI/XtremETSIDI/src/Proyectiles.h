@@ -14,10 +14,13 @@ public:
 	void setPos(float x, float y);
 	void setPos(Vector2D pos);
 	float getPosX();
-
+	float getPosY();
+	float getPosZ();
+	void SetPosZ(float z);
 protected:
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
+	float posicion_z = 0.5;
 	int NUM_MAX;
 };

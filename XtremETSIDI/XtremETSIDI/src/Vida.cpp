@@ -26,7 +26,7 @@ void Vida::Dibuja()
 
 	glEnable(GL_TEXTURE_2D);
 
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/vida.png").id);
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/vidaordinaria.png").id);
 	glDisable(GL_LIGHTING);
 	glBegin(GL_POLYGON);
 	glColor3f(1, 1, 1);
@@ -41,6 +41,28 @@ void Vida::Dibuja()
 	glDisable(GL_TEXTURE_2D);
 	
 	
+}
+
+void Vida::Dibuja2()
+{
+
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/vidajulio.png").id);
+	glDisable(GL_LIGHTING);
+	glBegin(GL_POLYGON);
+	glColor3f(1, 1, 1);
+
+	glTexCoord2d(0, 1);		glVertex3f(Mov - 8.5, 8, 0.1);
+	glTexCoord2d(1, 1);		glVertex3f(Mov - 6.5, 8, 0.1);
+	glTexCoord2d(1, 0);		glVertex3f(Mov - 6.5, 9, 0.1);
+	glTexCoord2d(0, 0);		glVertex3f(Mov - 8.5, 9, 0.1);
+	glEnd();
+
+	glEnable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D);
+
+
 }
 /*void Vida::SetPos(float ix, float iy)
 {

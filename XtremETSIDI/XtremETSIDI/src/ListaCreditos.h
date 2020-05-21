@@ -19,9 +19,9 @@ public:
 	bool ListaCreditos::operator += (Creditos* c);
 	//int getNumero() { return numero; }
 	Creditos* operator[] (int index);
-	int numero;
 	friend class Nivel;
 
 private:
 	Creditos* *lista;
+	int numero;
 };

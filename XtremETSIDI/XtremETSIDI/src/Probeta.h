@@ -24,7 +24,9 @@ public:
 	float getRadio() { return radio; }  //Función para obtener el valor del radio, ya que es un atributo protected
 private:
 	SpriteSequence sprite;
+	//SpriteSequence* activo;
 	float radio;
+	//void setprobetas() { activo = &sprite; }
 };
 
 

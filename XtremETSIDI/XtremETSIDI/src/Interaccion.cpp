@@ -4,7 +4,6 @@
 Interaccion::Interaccion() //Constructor
 {
 }
-
 Interaccion::~Interaccion() //Destructor
 {
 }
@@ -49,10 +48,11 @@ void Interaccion::Colision(Muñeco& m, Plataformas p)
 	}
 
 }
-
 bool Interaccion::Colision(Muñeco& m, Creditos& c)
 {
-	if (m.posicion.x == c.posicion.x) {
+	
+	if ((c.posicion.x + 1 >= m.posicion.x) && (c.posicion.x - 1 < m.posicion.x))
+	{
 		if (c.posicion.y >= m.posicion.y && c.posicion.y < m.posicion.y + m.altura && c.posicion_z == 0.5)
 		{
 
@@ -68,15 +68,40 @@ bool Interaccion::Colision(Muñeco& m, Charcos& c)
 {
 
 	if (m.posicion.y == 2.5) {
-		if ((c.GetPosX() + 2 >= m.posicion.x)&& (c.GetPosX() - 2 < m.posicion.x))
+		if ((c.GetPosX() + 0.7 >= m.posicion.x)&& (c.GetPosX() - 0.7 < m.posicion.x))
 		{
 			ETSIDI::play("bin/bso/creditos.mp3");
-			//printf("He chocado  %d", setvida);
+			m.posicion.x -= 5;
+			m.posicion.y = 5;
+			m.SetVel(0.0f, 0.0f);
 			return true;
-		
 		}
-
 	}
 	else return false;
-
+}
+bool Interaccion::Colision(Muñeco& m, Proyectiles& pr)
+{
+	if (pr.getPosY() >= m.posicion.y && pr.getPosY() < m.posicion.y + m.altura)	
+	{
+		if ((pr.getPosX() + 1 >= m.posicion.x) && (pr.getPosX() - 1 < m.posicion.x))
+		{
+			ETSIDI::play("bin/bso/creditos.mp3");
+			m.posicion.x -= 5;
+			m.posicion.y = 5;
+			m.SetVel(0.0f, 0.0f);
+			return true;
+		}
+	}
+	else return false;
+}
+bool Interaccion::Colision(Plataformas& p, Proyectiles& pr)
+{
+	printf("1");
+	if ((pr.getPosY() == (p.limite1.y|| p.limite2.y)) && (p.limite1.x < pr.getPosX() < p.limite2.x) && pr.getPosZ() == 0.5)
+	{
+		//pr.SetPosZ(-0.5);
+		printf("2");
+		return true;
+	}
+	else return false;
 }

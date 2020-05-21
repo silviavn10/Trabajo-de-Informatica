@@ -1,7 +1,7 @@
 #pragma once
 #include "Charcos.h"
 #include "Interaccion.h"
-#define MAX_C 7
+#define MAX_C 9
 
 class ListaCharcos
 {
