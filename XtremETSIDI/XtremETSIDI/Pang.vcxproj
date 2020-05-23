@@ -93,6 +93,7 @@
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
     <ClCompile Include="src\Nivel.cpp" />
+    <ClCompile Include="src\NivelCOVID.cpp" />
     <ClCompile Include="src\OpenGL.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
@@ -114,6 +115,7 @@
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Muñeco.h" />
     <ClInclude Include="src\Nivel.h" />
+    <ClInclude Include="src\NivelCOVID.h" />
     <ClInclude Include="src\OpenGL.h" />
     <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Probeta.h" />

@@ -47,10 +47,12 @@ private:
 	bool aux, aux1, aux2, aux3;
 	int contador = 0;
 	int setvida = 2;
+	int nivel;
 	//ETSIDI::Sprite Creditos;
 	//Proyectiles Proyectiles;//Cuando la hagamos
 
 	//float y_ojo;
 	//float z_ojo;
 };
+
 

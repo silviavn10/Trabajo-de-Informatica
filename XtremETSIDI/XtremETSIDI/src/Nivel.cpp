@@ -4,15 +4,13 @@
 
 Nivel::Nivel()
 {
-	//DE MOMENTO NADA
 }
 Nivel:: ~Nivel()
 {
-
 }
 void Nivel::Mueve()
 {
-	
+
 	muñeco.Mueve(0.025f);
 	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
 	{
@@ -31,8 +29,8 @@ void Nivel::Mueve()
 			setvida -= 1;
 		}
 	}
-	
-	for (int i = 0; i < MAX_PROBETAS; i++)
+
+	/*for (int i = 0; i < MAX_PROBETAS; i++)
 	{
 		if (ListaProbetas[i]->getPosX() - muñeco.posicion.x < 8)
 		{
@@ -44,70 +42,24 @@ void Nivel::Mueve()
 					ListaProbetas[i]->SetPosZ(-0.5);
 			}
 		}
-	}
+	}*/
 
 	ListaCreditos.Mueve(0.005f);
 
-	for (int i = 0; i < MAX_C; i++) {
-		aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
-		if (aux1 == true) {
-			setvida -= 1;
+	if (nivel == 1) {
+		for (int i = 0; i < MAX_C; i++) {
+			aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
+			if (aux1 == true) {
+				setvida -= 1;
+			}
 		}
 	}
 }
 
-void Nivel::Inicializa()
+void Nivel::Inicializa() //Para nivel 1
 {
-	
-	for (int i = 0; i < MAX_PLATAFORMAS; i++)
-	{
-		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.9);
-		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
-		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
-		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
-		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
-		ListaPlataformas.lista[i]->SetPos(l1,l2,l3,l4);
-	}
-	for (int i = 0; i < 200; i += 20) {
+	muñeco.SetPos(0, 2.5);
 
-		ListaCreditos += new Creditos(8 + i, 5.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-
-	}
-	for (int i = 0; i < 200; i += 25) {
-
-		ListaCreditos += new Creditos(4 + i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-
-	}
-	for (int i = 0; i < 200; i += 35) {
-
-		ListaCreditos += new Creditos(15 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-
-	}
-	for (int i = 1; i < MAX_PROBETAS; i++)
-	{
-		Probeta* p1 = new Probeta(15 * i, 7);
-		ListaProbetas.Agregar(p1);
-		Probeta* p2 = new Probeta(20 * i, 7);
-		ListaProbetas.Agregar(p2);
-	}
-	for (int i = 1; i < MAX_C; i++)
-	{
-		Charcos* c1 = new Charcos(15 * i);
-		ListaCharcos.Agregar(c1);
-		Charcos* c2 = new Charcos(37 * i);
-		ListaCharcos.Agregar(c2);
-	}
-
-	//ListaCharcos.DestruirContenido();
-	//ListaCreditos.DestruirContenido();
-	//ListaPlataformas.DestruirContenido();
-	//ListaProbetas.DestruirContenido();
-}
-/*void Nivel::Inicializa2()
-{
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
 		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -149,7 +101,69 @@ void Nivel::Inicializa()
 		Charcos* c2 = new Charcos(37 * i);
 		ListaCharcos.Agregar(c2);
 	}
-}*/
+
+	nivel = 1;
+}
+
+void Nivel::Inicializa2()
+{
+	ListaCharcos.DestruirContenido();
+	ListaCreditos.DestruirContenido();
+	ListaPlataformas.DestruirContenido();
+	ListaProbetas.DestruirContenido();
+
+	muñeco.SetPos(0, 2.5);
+
+	for (int i = 0; i < MAX_PLATAFORMAS; i++)
+	{
+		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.9);
+		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
+		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
+		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
+		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
+		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
+	}
+	for (int i = 0; i < 200; i += 20) {
+
+		ListaCreditos += new Creditos(8 + i, 5.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+
+	}
+	for (int i = 0; i < 200; i += 25) {
+
+		ListaCreditos += new Creditos(4 + i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+
+	}
+	for (int i = 0; i < 200; i += 35) {
+
+		ListaCreditos += new Creditos(15 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+
+	}
+	/*for (int i = 1; i < MAX_PROBETAS; i++)
+	{
+		Probeta* p1 = new Probeta(15 * i, 7);
+		ListaProbetas.Agregar(p1);
+		Probeta* p2 = new Probeta(20 * i, 7);
+		ListaProbetas.Agregar(p2);
+	}
+	for (int i = 1; i < MAX_C; i++)
+	{
+		Charcos* c1 = new Charcos(15 * i);
+		ListaCharcos.Agregar(c1);
+		Charcos* c2 = new Charcos(37 * i);
+		ListaCharcos.Agregar(c2);
+	}*/
+
+	nivel = 2;
+
+	/*ListaCharcos.DestruirContenido();
+	ListaCreditos.DestruirContenido();
+	ListaPlataformas.DestruirContenido();
+	ListaProbetas.DestruirContenido();*/
+}
+
 
 void Nivel::Dibuja()
 {
@@ -188,12 +202,20 @@ void Nivel::Dibuja()
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 	}
-	
-	ListaPlataformas.Dibuja();
-	ListaCreditos.Dibuja();
-	ListaProbetas.Dibuja();
-	ListaCharcos.Dibuja();
 	muñeco.Dibuja();
+	if (nivel == 1)
+	{
+		ListaProbetas.Dibuja();
+		ListaCharcos.Dibuja();
+		ListaPlataformas.Dibuja();
+		ListaCreditos.Dibuja();
+	}
+	if (nivel == 2) {
+
+		ListaPlataformas.Dibuja();
+		ListaCreditos.Dibuja();
+	}
+
 }
 
 void Nivel::TeclaEspecial(unsigned char key)

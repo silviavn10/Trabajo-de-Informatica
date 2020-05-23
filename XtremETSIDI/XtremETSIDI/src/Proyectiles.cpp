@@ -17,6 +17,11 @@ void Proyectiles::mueve(float t)  //Funcion para definir el movimiento de los pr
 {
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
+	if (posicion.y <= 2.8) {
+		posicion_z = -0.5; //cuando llegan al suelo se paran y desaparecen
+		velocidad.y = 0;
+		posicion.y = 9;
+	}
 }
 
 Vector2D Proyectiles::getPos()  //Función para obtener la posición del objeto, ya que es un atributo protected

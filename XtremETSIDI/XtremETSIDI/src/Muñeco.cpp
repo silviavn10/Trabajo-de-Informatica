@@ -69,8 +69,18 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 		posicion.x = 179;
 		velocidad.x = 0;
 	}
-	//activo->loop(); //Funcion interna de los sprites
-	
+
+	sprite_vq.loop();
+	sprite_fq.loop();
+	sprite_vd.loop();
+	sprite_fd.loop();
+	sprite_ve.loop();
+	sprite_fe.loop();
+	sprite_vm.loop();
+	sprite_fm.loop();
+	sprite_va.loop();
+	sprite_fa.loop();
+
 }
 
 int Muñeco::SetSexo(unsigned char key)
@@ -145,54 +155,55 @@ void Muñeco::Dibuja()
 
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, 0.5);
-	/*if (velocidad.x > 0.035)activo->flip(false, false);
-	if (velocidad.x < -0.035)activo->flip(true, false);
-	if ((velocidad.x < 0.035) && (velocidad.x > -0.035))
-		activo->setState(0);
+	if (velocidad.x > 0.06)activo->flip(false, false);
+	if (velocidad.x < -0.06)activo->flip(true, false);
+	//if ((velocidad.x < 0.06) && (velocidad.x > -0.06))
+		/*activo->setState(0);
 	else if (activo->getState() == 0)
 		activo->setState(1, false);*/
-	/*if (velocidad.x > 0)
-	{
-		if ((int)posicion.x % 2 == 0)activo->loop();
-		if ((int)posicion.x % 2 == 1)activo->loop();
-		activo->flip(false, false);
-	}
-	if (velocidad.x < 0)
-	{
-		if ((int)posicion.x % 2 == 0)activo->loop();
-		if ((int)posicion.x % 2 == 1)activo->loop();
-		activo->flip(true, false);
-	}
-	if (velocidad.x == 0)
-		activo->setState(0);
-	else if (activo->getState() == 0)
-	activo->setState(1, false);*/
+
+		/*if (velocidad.x > 0)
+		{
+			if ((int)posicion.x % 2 == 0)activo->loop();
+			if ((int)posicion.x % 2 == 1)activo->loop();
+			activo->flip(false, false);
+		}
+		if (velocidad.x < 0)
+		{
+			if ((int)posicion.x % 2 == 0)activo->loop();
+			if ((int)posicion.x % 2 == 1)activo->loop();
+			activo->flip(true, false);
+		}
+		if (velocidad.x == 0)
+			activo->setState(0);
+		else if (activo->getState() == 0)
+		activo->setState(1, false);*/
 	activo->draw();
 
 	glPopMatrix();
 
 }
 void Muñeco::TeclaEspecial(unsigned char key) {
-	
+
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		
+
 		Muñeco::SetVel(-5.0f, 0.0f);
-		
+
 		break;
 	case GLUT_KEY_RIGHT:
 		Muñeco::SetVel(5.0f, 0.0f);
 		break;
 	case GLUT_KEY_UP:
-		if(Muñeco::getDistancia()) //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
+		if (Muñeco::getDistancia()) //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
 			Muñeco::SetVel(0.0f, 7.0f);//se mete si es true
 		break;
 
 
-	/*case GLUT_KEY_DOWN:
-		Muñeco::SetVel(0.0f, -5.0f);
-		break;*/
+		/*case GLUT_KEY_DOWN:
+			Muñeco::SetVel(0.0f, -5.0f);
+			break;*/
 	}
 }
 void Muñeco::SetVel(float vx, float vy)
@@ -210,6 +221,13 @@ bool  Muñeco::getDistancia(void)
 	}
 	return false;
 }
+
+void Muñeco::SetPos(float x, float y)
+{
+	posicion.x = x;
+	posicion.y = y;
+}
+
 
 
 

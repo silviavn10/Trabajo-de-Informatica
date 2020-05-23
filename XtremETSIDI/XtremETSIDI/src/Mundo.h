@@ -1,5 +1,6 @@
 #pragma once
 #include"Nivel.h"
+#include "NivelCOVID.h"
 #include "Muñeco.h"
 #include "Vida.h"
 #include "ETSIDI.h"
@@ -21,6 +22,7 @@ public:
 	void Dibuja();
 	void Musica();
 	Nivel nivel1, nivel2;
+	NivelCOVID nivel3;
 	//Plataformas plataforma, plataforma2;
 	//
 	Suelo suelo;
@@ -35,7 +37,7 @@ protected:
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{
 		START, MENU, CONTROLES, ESCOGE_SEXO, ESCOGE_CARRERAF, ESCOGE_CARRERAV, CARTA, SUERTE,
-		NIVEL1, NIVEL2, VICTORIA, GAMEOVER, FIN/* JUEGO_N3, JUEGO2,
+		NIVEL1, NIVEL2, NIVEL3, VICTORIA, GAMEOVER, FIN/* JUEGO_N3, JUEGO2,
 		GAMEOVER, SALIR,  //LEVELUP1, LEVELUP2, LEVELUP3,
 		VICTORIA, FIN*/
 	};

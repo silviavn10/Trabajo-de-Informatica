@@ -11,10 +11,11 @@ class Muñeco
 public:
 	Muñeco();
 	//Muñeco(float altura);
-    ~Muñeco();
+	~Muñeco();
 	void Dibuja();
 	void Mueve(float);
 	void SetVel(float vx, float vy);
+	void SetPos(float x, float y);
 	int SetSexo(unsigned char key);
 	void SetPersonaje(void);
 	void  TeclaEspecial(unsigned char key);
