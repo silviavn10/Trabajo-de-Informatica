@@ -188,7 +188,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		if (nivel2.SetVida() == 2)
 			vida1.Dibuja();
 		if (nivel2.SetVida() == 1)
-			vida1.Dibuja2();
+			vida1.Dibuja2();	
 		if (nivel2.SetVida() == 0)
 			estado = GAMEOVER;
 		break;
@@ -283,8 +283,7 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			nivel1.Inicializa();
 			key = '0';
 			estado = NIVEL1;
-			nivel1.setvq();
-			Musica();
+				Musica();
 		}
 		if (key == '2')
 		{
@@ -446,8 +445,11 @@ void MundoXtremETSIDI::Musica()
 		break;
 
 	case NIVEL1:
-		ETSIDI::stopMusica();
-		if (nivel1.SetVida() == 2) { ETSIDI::playMusica("bin/bso/nivel1.mp3", true); }
+
+		if (nivel1.SetVida() == 2) 
+		{ ETSIDI::stopMusica(); 
+		ETSIDI::playMusica("bin/bso/nivel1.mp3", true); }
+
 		if (nivel1.SetVida() == 1) {
 			ETSIDI::stopMusica();
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);

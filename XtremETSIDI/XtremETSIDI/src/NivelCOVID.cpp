@@ -50,12 +50,12 @@ void NivelCOVID::Mueve()
 
 	ListaCreditos.Mueve(0.005f);
 
-	for (int i = 0; i < MAX_C; i++) {
+	/*for (int i = 0; i < MAX_C; i++) {
 		aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
 		if (aux1 == true) {
 			setvida -= 1;
 		}
-	}
+	}*/
 }
 
 void NivelCOVID::Inicializa()
