@@ -83,13 +83,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\CharcoCOVID.cpp" />
     <ClCompile Include="src\Charcos.cpp" />
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
+    <ClCompile Include="src\ListaCharcoCOVID.cpp" />
     <ClCompile Include="src\ListaCharcos.cpp" />
     <ClCompile Include="src\ListaCreditos.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
     <ClCompile Include="src\ListaProbetas.cpp" />
+    <ClCompile Include="src\ListaReglas.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Muñeco.cpp" />
     <ClCompile Include="src\Nivel.cpp" />
@@ -100,18 +103,22 @@
     <ClCompile Include="src\Probeta.cpp" />
     <ClCompile Include="src\Proyectiles.cpp" />
     <ClCompile Include="src\Puntuacion.cpp" />
+    <ClCompile Include="src\Reglas.cpp" />
     <ClCompile Include="src\Suelo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\CharcoCOVID.h" />
     <ClInclude Include="src\Charcos.h" />
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
+    <ClInclude Include="src\ListaCharcoCOVID.h" />
     <ClInclude Include="src\ListaCharcos.h" />
     <ClInclude Include="src\ListaCreditos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
     <ClInclude Include="src\ListaProbetas.h" />
+    <ClInclude Include="src\ListaReglas.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Muñeco.h" />
     <ClInclude Include="src\Nivel.h" />
@@ -121,6 +128,7 @@
     <ClInclude Include="src\Probeta.h" />
     <ClInclude Include="src\Proyectiles.h" />
     <ClInclude Include="src\Puntuacion.h" />
+    <ClInclude Include="src\Reglas.h" />
     <ClInclude Include="src\Suelo.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vida.h" />

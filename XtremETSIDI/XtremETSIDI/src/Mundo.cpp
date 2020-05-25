@@ -283,7 +283,8 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			nivel1.Inicializa();
 			key = '0';
 			estado = NIVEL1;
-				Musica();
+			nivel1.setvq();
+			Musica();
 		}
 		if (key == '2')
 		{
@@ -414,6 +415,14 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			nivel3.setvq();
 			Musica();
 		}
+	case NIVEL3:
+		if (key == 27)
+		{
+			estado = MENU;
+			aux++;
+			exit(0);
+			Musica();
+		}
 
 	case GAMEOVER:
 		if (key == 27)
@@ -447,13 +456,17 @@ void MundoXtremETSIDI::Musica()
 	case NIVEL1:
 
 		if (nivel1.SetVida() == 2) 
-		{ ETSIDI::stopMusica(); 
-		ETSIDI::playMusica("bin/bso/nivel1.mp3", true); }
-
-		if (nivel1.SetVida() == 1) {
+		{
+			printf("Entra1");
+			ETSIDI::stopMusica(); 
+			ETSIDI::playMusica("bin/bso/nivel1.mp3", true); 
+		}
+		/*if (nivel1.SetVida() != 2) 
+		{
+			printf("Entra2Taco");
 			ETSIDI::stopMusica();
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);
-		}
+		}*/
 		break;
 
 	case NIVEL2:
@@ -467,7 +480,7 @@ void MundoXtremETSIDI::Musica()
 
 	case NIVEL3:
 		ETSIDI::stopMusica();
-		if (nivel3.SetVida() == 2) { ETSIDI::playMusica("bin/bso/nivel1.mp3", true); }
+		if (nivel3.SetVida() == 2) { ETSIDI::playMusica("bin/bso/corona.mp3", true); }
 		if (nivel3.SetVida() == 1) {
 			ETSIDI::stopMusica();
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);

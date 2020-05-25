@@ -178,6 +178,7 @@ void Muñeco::Dibuja()
 			activo->setState(0);
 		else if (activo->getState() == 0)
 		activo->setState(1, false);*/
+	
 	activo->draw();
 
 	glPopMatrix();

@@ -50,16 +50,20 @@ void NivelCOVID::Mueve()
 
 	ListaCreditos.Mueve(0.005f);
 
-	/*for (int i = 0; i < MAX_C; i++) {
-		aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
+	for (int i = 0; i < MAX_C; i++) {
+		aux1 = Interaccion::Colision(muñeco, *ListaCharcoCOVID[i]);
 		if (aux1 == true) {
 			setvida -= 1;
 		}
-	}*/
+	}
 }
 
 void NivelCOVID::Inicializa()
 {
+	/*ListaCharcos.DestruirContenido();
+	ListaCreditos.DestruirContenido();
+	ListaPlataformas.DestruirContenido();
+	ListaProbetas.DestruirContenido();*/
 	muñeco.SetPos(0, 2.5);
 	/*for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
@@ -94,14 +98,14 @@ void NivelCOVID::Inicializa()
 		ListaProbetas.Agregar(p1);
 		Probeta* p2 = new Probeta(20 * i, 7);
 		ListaProbetas.Agregar(p2);
-	}
+	}*/
 	for (int i = 1; i < MAX_C; i++)
 	{
-		Charcos* c1 = new Charcos(15 * i);
-		ListaCharcos.Agregar(c1);
-		Charcos* c2 = new Charcos(37 * i);
-		ListaCharcos.Agregar(c2);
-	}*/
+		CharcoCOVID *c1 = new CharcoCOVID(48 * i);
+		ListaCharcoCOVID.Agregar(c1);
+		CharcoCOVID *c2 = new CharcoCOVID(37 * i);
+		ListaCharcoCOVID.Agregar(c2);
+	}
 
 	//ListaCharcos.DestruirContenido();
 	//ListaCreditos.DestruirContenido();
@@ -150,8 +154,8 @@ void NivelCOVID::Dibuja()
 	//PONER BIEN CON NIVEL=1
 	//ListaPlataformas.Dibuja();
 	ListaCreditos.Dibuja();
-	/*ListaProbetas.Dibuja();
-	ListaCharcos.Dibuja();*/
+	//ListaProbetas.Dibuja();
+	ListaCharcoCOVID.Dibuja();
 	muñeco.Dibuja();
 }
 

@@ -12,45 +12,67 @@ void Nivel::Mueve()
 {
 
 	muñeco.Mueve(0.025f);
-	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
+	ListaCreditos.Mueve(0.005f);
+	for (int i = 0; i < ListaCreditos.getNumero(); i++) 
 	{
-		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
-		//printf("Estoy entrando");
-	}
-	for (int i = 0; i < ListaCreditos.getNumero(); i++) {
 		aux = Interaccion::Colision(muñeco, *ListaCreditos[i]);
 		if (aux == true) {
 			contador++;
 		}
 	}
-	for (int i = 0; i < ListaProbetas.getNumero(); i++) {
-		aux2 = Interaccion::Colision(muñeco, *ListaProbetas[i]);
-		if (aux2 == true) {
-			setvida -= 1;
-		}
+	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
+	{
+		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
+		//printf("Estoy entrando");
 	}
 
-	/*for (int i = 0; i < MAX_PROBETAS; i++)
-	{
-		if (ListaProbetas[i]->getPosX() - muñeco.posicion.x < 8)
-		{
-			ListaProbetas[i]->mueve(0.025f);
-			for (int j = 0; j < MAX_PLATAFORMAS; j++)
-			{
-				aux3 = Interaccion::Colision(*ListaPlataformas[j], *ListaProbetas[i]);
-				if (aux3 == true)
-					ListaProbetas[i]->SetPosZ(-0.5);
+	if (nivel == 1) {
+		for (int i = 0; i < ListaProbetas.getNumero(); i++) {
+			aux2 = Interaccion::Colision(muñeco, *ListaProbetas[i]);
+			if (aux2 == true) {
+				setvida -= 1;
 			}
 		}
-	}*/
-
-	ListaCreditos.Mueve(0.005f);
-
+		for (int i = 0; i < MAX_PROBETAS; i++)
+		{
+			if (ListaProbetas[i]->getPosX() - muñeco.posicion.x < 8.5)
+			{
+				ListaProbetas[i]->mueve(0.025f);
+				for (int j = 0; j < MAX_PLATAFORMAS; j++)
+				{
+					aux3 = Interaccion::Colision(*ListaPlataformas[j], *ListaProbetas[i]);
+					if (aux3 == true)
+						ListaProbetas[i]->SetPosZ(-0.5);
+				}
+			}
+		}
+	}
 	if (nivel == 1) {
 		for (int i = 0; i < MAX_C; i++) {
 			aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
 			if (aux1 == true) {
 				setvida -= 1;
+			}
+		}
+	}
+	if (nivel == 2) {
+		for (int i = 0; i < ListaReglas.getNumero(); i++) {
+			aux2 = Interaccion::Colision(muñeco, *ListaReglas[i]);
+			if (aux2 == true) {
+				setvida -= 1;
+			}
+		}
+		for (int i = 0; i < MAX_REGLAS; i++)
+		{
+			if (ListaReglas[i]->getPosX() - muñeco.posicion.x < 8.5)
+			{
+				ListaReglas[i]->mueve(0.025f);
+				for (int j = 0; j < MAX_REGLAS; j++)
+				{
+					aux3 = Interaccion::Colision(*ListaPlataformas[j], *ListaReglas[i]);
+					if (aux3 == true)
+						ListaReglas[i]->SetPosZ(-0.5);
+				}
 			}
 		}
 	}
@@ -79,19 +101,19 @@ void Nivel::Inicializa() //Para nivel 1
 	}
 	for (int i = 0; i < 200; i += 25) {
 
-		ListaCreditos += new Creditos(4 + i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaCreditos += new Creditos(1.2 + i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 
 	}
 	for (int i = 0; i < 200; i += 35) {
 
-		ListaCreditos += new Creditos(15 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaCreditos += new Creditos(13 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 
 	}
 	for (int i = 1; i < MAX_PROBETAS; i++)
 	{
-		Probeta* p1 = new Probeta(15 * i, 7);
+		Probeta* p1 = new Probeta(15 * i, 9.5); //Para cambiar la altura de probetas
 		ListaProbetas.Agregar(p1);
-		Probeta* p2 = new Probeta(20 * i, 7);
+		Probeta* p2 = new Probeta(20 * i, 9.5);
 		ListaProbetas.Agregar(p2);
 	}
 	for (int i = 1; i < MAX_C; i++)
@@ -107,10 +129,10 @@ void Nivel::Inicializa() //Para nivel 1
 
 void Nivel::Inicializa2()
 {
-	ListaCharcos.DestruirContenido();
+	/*ListaCharcos.DestruirContenido();
 	ListaCreditos.DestruirContenido();
 	ListaPlataformas.DestruirContenido();
-	ListaProbetas.DestruirContenido();
+	ListaProbetas.DestruirContenido();*/
 
 	muñeco.SetPos(0, 2.5);
 
@@ -141,13 +163,14 @@ void Nivel::Inicializa2()
 		ListaCreditos += new Creditos(15 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 
 	}
-	/*for (int i = 1; i < MAX_PROBETAS; i++)
+	for (int i = 1; i < MAX_REGLAS; i++)
 	{
-		Probeta* p1 = new Probeta(15 * i, 7);
-		ListaProbetas.Agregar(p1);
-		Probeta* p2 = new Probeta(20 * i, 7);
-		ListaProbetas.Agregar(p2);
+		Reglas* p1 = new Reglas(15 * i, 9.5);
+		ListaReglas.Agregar(p1);
+		Reglas* p2 = new Reglas(20 * i, 9.5);
+		ListaReglas.Agregar(p2);
 	}
+	/*
 	for (int i = 1; i < MAX_C; i++)
 	{
 		Charcos* c1 = new Charcos(15 * i);
@@ -169,6 +192,8 @@ void Nivel::Dibuja()
 {
 	if (setvida == 2)
 	{
+		/*ETSIDI::stopMusica();
+		ETSIDI::play("bin/bso/nivel1.mp3");*/
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto pasillo
 
@@ -187,6 +212,16 @@ void Nivel::Dibuja()
 
 	if (setvida == 1)
 	{
+		//printf("Ketchup");
+		//ETSIDI::stopMusica();
+		//ETSIDI::playMusica("bin/bso/julio.mp3",true); 
+		//TAMPOCO VA
+		for(int i=0; i<1;i++)
+		{
+			printf("Entra2Taco");
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("bin/bso/julio.mp3", true);
+		}
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/fondoJULIO.png").id); //foto pasillo JULIO
 
@@ -214,6 +249,7 @@ void Nivel::Dibuja()
 
 		ListaPlataformas.Dibuja();
 		ListaCreditos.Dibuja();
+		ListaReglas.Dibuja();
 	}
 
 }

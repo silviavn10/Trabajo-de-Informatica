@@ -6,6 +6,7 @@
 #include "ListaPlataformas.h"
 #include "ListaCreditos.h"
 #include "ListaProbetas.h"
+#include "ListaReglas.h"
 #include "ListaCharcos.h"
 #include"Interaccion.h"
 
@@ -21,12 +22,12 @@ public:
 	void Mueve();
 	Vector2D GetPos();
 	int GetContador() { return contador; };
-	//void SetVel(float vx, float vy);
 	int SetVida() { return setvida; };
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
 	ListaProbetas ListaProbetas;
 	ListaCharcos ListaCharcos;
+	ListaReglas ListaReglas;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
 	void setfq() { muñeco.setfq(); }
