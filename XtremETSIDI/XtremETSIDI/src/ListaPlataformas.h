@@ -1,11 +1,13 @@
 #pragma once
 #include "Plataformas.h"
 #include "Muñeco.h"
+#include "PlataformaMovil.h"
 #define MAX_PLATAFORMAS 25
+#define MAX_PLATAFORMASMOVILES 7
 
 class ListaPlataformas
 {
-	public:
+public:
 	ListaPlataformas();
 	~ListaPlataformas();
 	void Dibuja();
@@ -19,8 +21,10 @@ class ListaPlataformas
 	//int getNumero() { return numero; }
 	Plataformas* operator[] (int index);
 	void Colision(Muñeco& h, Plataformas* Lista);
+	void Color(unsigned char r, unsigned char v, unsigned char a);
+	void Mueve(float t);
 	friend class Nivel;
-private:
+protected:
 	Plataformas** lista;// hay que crear un plataforma* que apunte a la direccion de memoria que te devuelce la creacion de memoria dinámica. 
 						//el segundo puntero es para que lista sea un vector
 	int numero;

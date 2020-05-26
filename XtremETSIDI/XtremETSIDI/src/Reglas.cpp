@@ -1,7 +1,7 @@
 #include "Reglas.h"
 #include "Probeta.h"
 
-Reglas::Reglas() :sprite("bin/imagenes/COVID.png", 5) //Constructor de la probeta
+Reglas::Reglas() :sprite("bin/imagenes/reglas.png", 5) //Constructor de la probeta
 {
 	radio = 2.5f;  //Radio de la probeta
 	velocidad.x = 0;  //Velocidad en el sentido negativo del eje horizontal
@@ -17,7 +17,7 @@ Reglas::~Reglas() //Destructor
 {
 
 }
-Reglas::Reglas(float x, float y) :sprite("bin/imagenes/COVID.png", 5)
+Reglas::Reglas(float x, float y) :sprite("bin/imagenes/reglas.png", 5)
 {
 	posicion.x = x;
 	posicion.y = y;

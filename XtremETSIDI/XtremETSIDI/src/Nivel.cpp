@@ -10,7 +10,7 @@ Nivel:: ~Nivel()
 }
 void Nivel::Mueve()
 {
-
+	ListaPlataformas.Mueve(0.025);
 	muñeco.Mueve(0.025f);
 	ListaCreditos.Mueve(0.005f);
 	for (int i = 0; i < ListaCreditos.getNumero(); i++) 
@@ -25,6 +25,7 @@ void Nivel::Mueve()
 		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
 		//printf("Estoy entrando");
 	}
+	
 
 	if (nivel == 1) {
 		for (int i = 0; i < ListaProbetas.getNumero(); i++) {
@@ -75,6 +76,7 @@ void Nivel::Mueve()
 				}
 			}
 		}
+		
 	}
 }
 
@@ -93,6 +95,7 @@ void Nivel::Inicializa() //Para nivel 1
 		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
 		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
+		ListaPlataformas.Color(148, 26, 28);
 	}
 	for (int i = 0; i < 200; i += 20) {
 
@@ -136,17 +139,21 @@ void Nivel::Inicializa2()
 
 	muñeco.SetPos(0, 2.5);
 
-	for (int i = 0; i < MAX_PLATAFORMAS; i++)
+	for (int i = 0; i < MAX_PLATAFORMASMOVILES; i++)
 	{
-		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.9);
+
+		ListaPlataformas += new PlataformaMovil(1.5f, 20 * (i + 1), 3.4);
+		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.5);
+		ListaPlataformas += new PlataformaMovil(1.5f, 50 * (i + 1), 2.5, 7);
+
 		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
 		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
 		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
 		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
+
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
+		ListaPlataformas.Color(148, 26, 28);
+
 	}
 	for (int i = 0; i < 200; i += 20) {
 
@@ -216,12 +223,12 @@ void Nivel::Dibuja()
 		//ETSIDI::stopMusica();
 		//ETSIDI::playMusica("bin/bso/julio.mp3",true); 
 		//TAMPOCO VA
-		for(int i=0; i<1;i++)
+		/*for(int i=0; i<1;i++)
 		{
 			printf("Entra2Taco");
 			ETSIDI::stopMusica();
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);
-		}
+		}*/
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/fondoJULIO.png").id); //foto pasillo JULIO
 

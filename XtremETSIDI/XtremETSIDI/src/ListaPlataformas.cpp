@@ -21,6 +21,12 @@ void ListaPlataformas::Dibuja()
 		lista[i]->Dibuja();
 }
 
+void ListaPlataformas::Color(unsigned char r, unsigned char v, unsigned char a) {
+
+	for (int i = 0; i < numero; i++)
+		lista[i]->SetColor(r, v, a);
+
+}
 void ListaPlataformas::DestruirContenido()
 {
 	for (int i = 0; i < numero; i++)
@@ -53,7 +59,7 @@ void ListaPlataformas::Eliminar(Plataformas* p)
 
 }
 
-/*lataformas* ListaPlataformas::Colision(Muñeco m)
+/*Plataformas* ListaPlataformas::Colision(Muñeco m)
 {
 	for (int i = 0; i < numero; i++)
 	{
@@ -63,7 +69,7 @@ void ListaPlataformas::Eliminar(Plataformas* p)
 	return 0; //no hay colisión
 
 }*/
-Plataformas* ListaPlataformas::operator [](int i)
+Plataformas * ListaPlataformas::operator [](int i)
 {
 	if (i >= numero)
 		i = numero - 1;
@@ -76,8 +82,9 @@ bool ListaPlataformas::Agregar(Plataformas* p)
 {
 	//EJERCICIO 6.4
 	for (int i = 0; i < numero; i++)
-		if (lista[i] == p)
+		if (lista[i] == p) {
 			return false;
+		}
 
 	if (numero < MAX_PLATAFORMAS)
 		lista[numero++] = p;
@@ -98,4 +105,14 @@ void ListaPlataformas::Colision(Muñeco& h, Plataformas* Lista)
 {
 	for (int i = 0; i < numero; i++)
 		Interaccion::Colision(h, *Lista);
+}
+
+void ListaPlataformas::Mueve(float f)
+{
+	for (int i = 0; i < numero; i++)
+	{
+		lista[i]->Mueve(f);
+
+	}
+
 }

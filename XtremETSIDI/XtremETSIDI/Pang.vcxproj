@@ -99,6 +99,7 @@
     <ClCompile Include="src\NivelCOVID.cpp" />
     <ClCompile Include="src\OpenGL.cpp" />
     <ClCompile Include="src\Pang.cpp" />
+    <ClCompile Include="src\PlataformaMovil.cpp" />
     <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Probeta.cpp" />
     <ClCompile Include="src\Proyectiles.cpp" />
@@ -124,6 +125,7 @@
     <ClInclude Include="src\Nivel.h" />
     <ClInclude Include="src\NivelCOVID.h" />
     <ClInclude Include="src\OpenGL.h" />
+    <ClInclude Include="src\PlataformaMovil.h" />
     <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Probeta.h" />
     <ClInclude Include="src\Proyectiles.h" />

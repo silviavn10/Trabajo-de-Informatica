@@ -48,6 +48,7 @@ void Interaccion::Colision(Muñeco& m, Plataformas p)
 	}
 
 }
+
 bool Interaccion::Colision(Muñeco& m, Creditos& c)
 {
 
@@ -65,6 +66,21 @@ bool Interaccion::Colision(Muñeco& m, Creditos& c)
 	else return false;
 }
 bool Interaccion::Colision(Muñeco& m, Charcos& c)
+{
+
+	if (m.posicion.y == 2.5) {
+		if ((c.GetPosX() + 1.25 >= m.posicion.x) && (c.GetPosX() - 1.25 < m.posicion.x))
+		{
+			ETSIDI::play("bin/bso/creditos.mp3");
+			m.posicion.x -= 5;
+			m.posicion.y = 5;
+			m.SetVel(0.0f, 0.0f);
+			return true;
+		}
+	}
+	else return false;
+}
+bool Interaccion::Colision(Muñeco& m, CharcoCOVID& c)
 {
 
 	if (m.posicion.y == 2.5) {

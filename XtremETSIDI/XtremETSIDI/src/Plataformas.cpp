@@ -10,9 +10,9 @@ Plataformas::Plataformas(float lad, float x, float y)
 	lado = lad;
 	posicion.x = x;
 	posicion.y = y;
-	rojo = 148;
-	verde = 26;
-	azul = 28; //color distinto
+	//rojo = 148;
+	//verde = 26;
+	//azul = 28; //color distinto
 }
 Plataformas:: ~Plataformas()
 {
@@ -67,5 +67,3 @@ float Plataformas::distancia(Vector2D punto, Plataformas p, Vector2D* direccion)
 		*direccion = dir.Unitario();
 	return distancia;
 }
-
-

@@ -467,6 +467,13 @@ void MundoXtremETSIDI::Musica()
 			ETSIDI::stopMusica();
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);
 		}*/
+
+		/*do{
+			printf("Entra2Taco");
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("bin/bso/julio.mp3", true);
+		} while (nivel1.SetVida() == 1);*/
+
 		break;
 
 	case NIVEL2:

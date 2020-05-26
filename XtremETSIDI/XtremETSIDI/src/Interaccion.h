@@ -5,6 +5,8 @@
 #include "Proyectiles.h"
 #include "Muñeco.h"
 #include "Charcos.h"
+#include "CharcoCOVID.h"
+
 
 class Interaccion
 {
@@ -16,6 +18,7 @@ public:
 	static void Colision(Muñeco& h, Plataformas plataforma);
 	static bool Colision(Muñeco& m, Creditos& c);
 	static bool Colision(Muñeco& m, Charcos& c);
+	static bool Colision(Muñeco& m, CharcoCOVID& c);
 	static bool Colision(Muñeco& m, Proyectiles& pr);
 	static bool Colision(Plataformas& p, Proyectiles& pr);
 	//static bool Colision(Suelo& s, Muñeco& m);
