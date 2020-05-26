@@ -14,6 +14,7 @@ void NivelCOVID::Mueve()
 {
 
 	muñeco.Mueve(0.025f);
+	COVID.mueve();
 
 	//INTERACCIONES
 	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
@@ -65,8 +66,9 @@ void NivelCOVID::Inicializa()
 	ListaPlataformas.DestruirContenido();
 	ListaProbetas.DestruirContenido();*/
 	muñeco.SetPos(0, 2.5);
-	/*for (int i = 0; i < MAX_PLATAFORMAS; i++)
+	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
+		ListaPlataformas += new Plataformas(1.5f, 0, 2.5);
 		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -76,7 +78,8 @@ void NivelCOVID::Inicializa()
 		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
 		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
-	}*/
+		ListaPlataformas.Color(0,143,57);
+	}
 	for (int i = 0; i < 200; i += 20) {
 
 		ListaCreditos += new Creditos(8 + i, 5.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -152,10 +155,11 @@ void NivelCOVID::Dibuja()
 	}
 
 	//PONER BIEN CON NIVEL=1
-	//ListaPlataformas.Dibuja();
+	ListaPlataformas.Dibuja();
 	ListaCreditos.Dibuja();
 	//ListaProbetas.Dibuja();
 	ListaCharcoCOVID.Dibuja();
+	COVID.Dibuja();
 	muñeco.Dibuja();
 }
 
@@ -164,4 +168,3 @@ void NivelCOVID::TeclaEspecial(unsigned char key)
 	muñeco.TeclaEspecial(key);
 }
 
-//HACER UNA FUNCION EN MUÑECO QUE ME DEVUELVA MUEVE

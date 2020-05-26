@@ -24,6 +24,7 @@ public:
 	void Color(unsigned char r, unsigned char v, unsigned char a);
 	void Mueve(float t);
 	friend class Nivel;
+	friend class NivelCOVID;
 protected:
 	Plataformas** lista;// hay que crear un plataforma* que apunte a la direccion de memoria que te devuelce la creacion de memoria dinámica. 
 						//el segundo puntero es para que lista sea un vector

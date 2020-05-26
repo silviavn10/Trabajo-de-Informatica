@@ -9,7 +9,6 @@ Interaccion::~Interaccion() //Destructor
 }
 void Interaccion::Colision(Muñeco& m, Plataformas p)
 {
-
 	float xlim1 = p.limite1.x;//punto abajo izq
 	float xlim2 = p.limite1.x + (p.lado);//punto abajo derecha
 	float ylim1 = p.limite1.y;//punto arriba izq
@@ -82,7 +81,6 @@ bool Interaccion::Colision(Muñeco& m, Charcos& c)
 }
 bool Interaccion::Colision(Muñeco& m, CharcoCOVID& c)
 {
-
 	if (m.posicion.y == 2.5) {
 		if ((c.GetPosX() + 1.25 >= m.posicion.x) && (c.GetPosX() - 1.25 < m.posicion.x))
 		{

@@ -22,6 +22,7 @@ public:
 	//void setPos(float x, float y);
 	void setRadio(float r);
 	float getRadio() { return radio; }  //Función para obtener el valor del radio, ya que es un atributo protected
+	void Probeta::mueve();
 private:
 	SpriteSequence sprite;
 	//SpriteSequence* activo;

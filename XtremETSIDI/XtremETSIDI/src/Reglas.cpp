@@ -39,3 +39,8 @@ void Reglas::setRadio(float r)  //Funcion para inicializar al radio de la probet
 		r = 0.1F;
 	radio = r;
 }
+void Reglas::mueve()
+{
+	Proyectiles::mueve(0.025f);
+	sprite.loop();
+}

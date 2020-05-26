@@ -38,7 +38,7 @@ void Nivel::Mueve()
 		{
 			if (ListaProbetas[i]->getPosX() - muñeco.posicion.x < 8.5)
 			{
-				ListaProbetas[i]->mueve(0.025f);
+				ListaProbetas[i]->mueve();
 				for (int j = 0; j < MAX_PLATAFORMAS; j++)
 				{
 					aux3 = Interaccion::Colision(*ListaPlataformas[j], *ListaProbetas[i]);
@@ -67,7 +67,7 @@ void Nivel::Mueve()
 		{
 			if (ListaReglas[i]->getPosX() - muñeco.posicion.x < 8.5)
 			{
-				ListaReglas[i]->mueve(0.025f);
+				ListaReglas[i]->mueve();
 				for (int j = 0; j < MAX_REGLAS; j++)
 				{
 					aux3 = Interaccion::Colision(*ListaPlataformas[j], *ListaReglas[i]);

@@ -8,6 +8,7 @@
 #include "ListaProbetas.h"
 #include "ListaCharcos.h"
 #include "ListaCharcoCOVID.h"
+#include "COVID.h"
 #include"Interaccion.h"
 
 class NivelCOVID
@@ -28,6 +29,7 @@ public:
 	ListaProbetas ListaProbetas;
 	ListaCharcos ListaCharcos;
 	ListaCharcoCOVID ListaCharcoCOVID;
+	COVID COVID;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
 	void setfq() { muñeco.setfq(); }

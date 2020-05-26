@@ -38,4 +38,8 @@ void Probeta::setRadio(float r)  //Funcion para inicializar al radio de la probe
 		r = 0.1F;
 	radio = r;
 }
-
+void Probeta::mueve()
+{
+	Proyectiles::mueve(0.025f);
+	sprite.loop();
+}

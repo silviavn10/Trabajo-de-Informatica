@@ -6,7 +6,6 @@ Proyectiles::Proyectiles()
 	aceleracion.y = 0;
 	velocidad.x = 0;
 	velocidad.y = -2.0f;
-
 }
 Proyectiles:: ~Proyectiles()
 {

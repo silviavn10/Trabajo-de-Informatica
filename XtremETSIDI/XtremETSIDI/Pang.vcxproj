@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="src\CharcoCOVID.cpp" />
     <ClCompile Include="src\Charcos.cpp" />
+    <ClCompile Include="src\COVID.cpp" />
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaCharcoCOVID.cpp" />
@@ -112,6 +113,7 @@
   <ItemGroup>
     <ClInclude Include="src\CharcoCOVID.h" />
     <ClInclude Include="src\Charcos.h" />
+    <ClInclude Include="src\COVID.h" />
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaCharcoCOVID.h" />
