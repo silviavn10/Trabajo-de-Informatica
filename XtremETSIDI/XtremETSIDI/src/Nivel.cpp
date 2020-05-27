@@ -17,7 +17,7 @@ void Nivel::Mueve()
 	{
 		aux = Interaccion::Colision(muñeco, *ListaCreditos[i]);
 		if (aux == true) {
-			contador++;
+			puntos++;
 		}
 	}
 	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
@@ -199,8 +199,7 @@ void Nivel::Dibuja()
 {
 	if (setvida == 2)
 	{
-		/*ETSIDI::stopMusica();
-		ETSIDI::play("bin/bso/nivel1.mp3");*/
+
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto pasillo
 
@@ -215,20 +214,12 @@ void Nivel::Dibuja()
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
+		
 	}
 
 	if (setvida == 1)
 	{
-		//printf("Ketchup");
-		//ETSIDI::stopMusica();
-		//ETSIDI::playMusica("bin/bso/julio.mp3",true); 
-		//TAMPOCO VA
-		/*for(int i=0; i<1;i++)
-		{
-			printf("Entra2Taco");
-			ETSIDI::stopMusica();
-			ETSIDI::playMusica("bin/bso/julio.mp3", true);
-		}*/
+		
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/fondoJULIO.png").id); //foto pasillo JULIO
 
@@ -243,6 +234,7 @@ void Nivel::Dibuja()
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
+		
 	}
 	muñeco.Dibuja();
 	if (nivel == 1)
@@ -259,9 +251,21 @@ void Nivel::Dibuja()
 		ListaReglas.Dibuja();
 	}
 
+	ActDatos(puntos); //Función para ir actualizando los datos que aparecen en la parte superior de la pantalla
 }
 
 void Nivel::TeclaEspecial(unsigned char key)
 {
 	muñeco.TeclaEspecial(key);
+}
+
+void Nivel::ActDatos(int puntos)  //Función para actualizar los datos de la parte superior: número de vidas, balas y puntos
+{
+	ETSIDI::setTextColor(255, 0, 255);
+	ETSIDI::setFont("fuentes/Pixeltype.ttf", 52);
+	char cont[100];
+
+	sprintf(cont, "%d / %d", puntos, 400);
+	ETSIDI::printxy(cont, -3, 9.1, 2);
+
 }

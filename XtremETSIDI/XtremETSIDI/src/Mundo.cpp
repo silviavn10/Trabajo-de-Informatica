@@ -188,7 +188,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		if (nivel2.SetVida() == 2)
 			vida1.Dibuja();
 		if (nivel2.SetVida() == 1)
-			vida1.Dibuja2();	
+			vida1.Dibuja2();
 		if (nivel2.SetVida() == 0)
 			estado = GAMEOVER;
 		break;
@@ -273,6 +273,7 @@ void MundoXtremETSIDI::Tecla(unsigned char key)
 			exit(0);
 		if (key == 13) { //Pulsa el enter para continuar
 			nivel1.Inicializa();
+			Musica();
 			key = '0';
 			estado = MENU;// Para que no se pase el menú
 			//estado = NIVEL1; //Andrea luego quitalo
@@ -458,14 +459,15 @@ void MundoXtremETSIDI::Musica()
 		if (nivel1.SetVida() == 2) 
 		{
 			printf("Entra1");
-			ETSIDI::stopMusica(); 
-			ETSIDI::playMusica("bin/bso/nivel1.mp3", true); 
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("bin/bso/nivel1.mp3", true);
 		}
-		/*if (nivel1.SetVida() != 2) 
+		//if (nivel1.SetVida() == 1)
+		/*else
 		{
 			printf("Entra2Taco");
-			ETSIDI::stopMusica();
-			ETSIDI::playMusica("bin/bso/julio.mp3", true);
+			//ETSIDI::stopMusica();
+			ETSIDI::playMusica("bin/bso/julio.mp3");
 		}*/
 
 		/*do{

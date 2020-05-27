@@ -135,7 +135,7 @@ void NivelCOVID::Dibuja()
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
 	}
-
+	
 	if (setvida == 1)
 	{
 		glEnable(GL_TEXTURE_2D);

@@ -21,7 +21,7 @@ public:
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
 	Vector2D GetPos();
-	int GetContador() { return contador; };
+	int GetContador() { return puntos; };
 	int SetVida() { return setvida; };
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
@@ -39,6 +39,10 @@ public:
 	void setfm() { muñeco.setfm(); }
 	void setva() { muñeco.setva(); }
 	void setfa() { muñeco.setfa(); }
+	void ActDatos(int puntos);
+
+protected: 
+	int puntos = 0;
 
 private:
 	float l1;
@@ -46,7 +50,7 @@ private:
 	float l3;
 	float l4;
 	bool aux, aux1, aux2, aux3;
-	int contador = 0;
+	
 	int setvida = 2;
 	int nivel;
 	//ETSIDI::Sprite Creditos;

@@ -110,11 +110,11 @@ bool Interaccion::Colision(Muñeco& m, Proyectiles& pr)
 }
 bool Interaccion::Colision(Plataformas& p, Proyectiles& pr)
 {
-	printf("1");
+	
 	if ((pr.getPosY() == (p.limite1.y || p.limite2.y)) && (p.limite1.x < pr.getPosX() < p.limite2.x) && pr.getPosZ() == 0.5)
 	{
 		//pr.SetPosZ(-0.5);
-		printf("2");
+
 		return true;
 	}
 	else return false;
