@@ -14,6 +14,7 @@ public:
 	void Eliminar(int index);
 	void Eliminar(CharcoCOVID* c);
 	CharcoCOVID* operator [](int i);
+	friend class NivelCOVID;
 private:
 	CharcoCOVID* lista[MAX_C];
 	int numero;

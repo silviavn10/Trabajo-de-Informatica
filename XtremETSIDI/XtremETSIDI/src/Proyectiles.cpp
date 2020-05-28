@@ -65,3 +65,7 @@ void Proyectiles::SetPosZ(float z)
 {
 	posicion_z = z;
 }
+void Proyectiles::setPosX(float x)
+{
+	posicion.x = x;
+}

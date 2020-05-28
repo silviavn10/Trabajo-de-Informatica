@@ -28,12 +28,12 @@ void NivelCOVID::Mueve()
 			contador++;
 		}
 	}
-	for (int i = 0; i < ListaProbetas.getNumero(); i++) {
+	/*for (int i = 0; i < ListaProbetas.getNumero(); i++) {
 		aux2 = Interaccion::Colision(muñeco, *ListaProbetas[i]);
 		if (aux2 == true) {
 			setvida -= 1;
 		}
-	}
+	}*/
 
 	/*for (int i = 0; i < MAX_PROBETAS; i++)
 	{
@@ -42,7 +42,7 @@ void NivelCOVID::Mueve()
 			ListaProbetas[i]->mueve(0.025f);
 			for (int j = 0; j < MAX_PLATAFORMAS; j++)
 			{
-				aux3 = Interaccion::Colision(*ListaPlataformas[j], *ListaProbetas[i]);
+				aux4 = Interaccion::Colision(*ListaPlataformas[j], *ListaProbetas[i]);
 				if (aux3 == true)
 					ListaProbetas[i]->SetPosZ(-0.5);
 			}
@@ -50,9 +50,14 @@ void NivelCOVID::Mueve()
 	}*/
 
 	ListaCreditos.Mueve(0.005f);
+	aux3= Interaccion::Colision(muñeco, COVID);
+	if (aux3==true)
+	{
+		setvida -= 1;
+	}
 
 	for (int i = 0; i < MAX_C; i++) {
-		aux1 = Interaccion::Colision(muñeco, *ListaCharcoCOVID[i]);
+		aux1 = Interaccion::Colision(muñeco, *ListaCharcoCOVID[i]); //Con listaCharcos para que los construya valdría (?)
 		if (aux1 == true) {
 			setvida -= 1;
 		}
@@ -106,7 +111,7 @@ void NivelCOVID::Inicializa()
 	{
 		CharcoCOVID *c1 = new CharcoCOVID(48 * i);
 		ListaCharcoCOVID.Agregar(c1);
-		CharcoCOVID *c2 = new CharcoCOVID(37 * i);
+		CharcoCOVID*c2 = new CharcoCOVID(37 * i);
 		ListaCharcoCOVID.Agregar(c2);
 	}
 

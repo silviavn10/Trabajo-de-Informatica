@@ -47,7 +47,6 @@ void Interaccion::Colision(Muñeco& m, Plataformas p)
 	}
 
 }
-
 bool Interaccion::Colision(Muñeco& m, Creditos& c)
 {
 
@@ -66,7 +65,6 @@ bool Interaccion::Colision(Muñeco& m, Creditos& c)
 }
 bool Interaccion::Colision(Muñeco& m, Charcos& c)
 {
-
 	if (m.posicion.y == 2.5) {
 		if ((c.GetPosX() + 1.25 >= m.posicion.x) && (c.GetPosX() - 1.25 < m.posicion.x))
 		{
@@ -115,6 +113,19 @@ bool Interaccion::Colision(Plataformas& p, Proyectiles& pr)
 	{
 		//pr.SetPosZ(-0.5);
 
+		return true;
+	}
+	else return false;
+}
+bool Interaccion::Colision(Muñeco& m, COVID& c)
+{
+	if (c.getPosX() -1.5 >= m.posicion.x)
+	{
+		ETSIDI::play("bin/bso/creditos.mp3");
+		c.setPosX(m.posicion.x-10.0f); //Mirar distancia
+		//m.posicion.x -= 5;
+		m.posicion.y = 5;
+		m.SetVel(0.0f, 0.0f);
 		return true;
 	}
 	else return false;

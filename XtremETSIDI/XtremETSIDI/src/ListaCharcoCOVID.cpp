@@ -7,12 +7,10 @@ ListaCharcoCOVID::ListaCharcoCOVID()
 		lista[i] = 0;
 	}
 }
-
 ListaCharcoCOVID::~ListaCharcoCOVID()
 {
 
 }
-
 bool ListaCharcoCOVID::Agregar(CharcoCOVID* co)
 {
 	for (int i = 0; i < numero; i++)

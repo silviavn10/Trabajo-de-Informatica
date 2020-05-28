@@ -5,7 +5,7 @@
 
 using ETSIDI::SpriteSequence;
 
-class CharcoCOVID : public Charcos //Hereda de charcos 
+class CharcoCOVID  : public Charcos		//Hereda de charcos 
 {
 public:
 	CharcoCOVID();
@@ -15,10 +15,9 @@ public:
 	//void SetPos(float ix, float iy);
 	//float GetPosX();
 
-protected:
+private:
 	float lado1, lado2;
 	Vector2D posicion;
-private:
 	SpriteSequence sprite;
 
 };
