@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "CharcoCOVID.h"
 #include "Interaccion.h"
 #define MAX_C 9
@@ -19,3 +19,4 @@ private:
 	CharcoCOVID* lista[MAX_C];
 	int numero;
 };
+*/

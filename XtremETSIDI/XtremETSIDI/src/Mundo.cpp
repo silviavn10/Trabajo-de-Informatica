@@ -171,7 +171,15 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			vida1.Dibuja2();
 		if (nivel1.SetVida() == 0)
 			estado = GAMEOVER;
-
+		if (nivel1.muñeco.posicion.x == nivel1.muñeco.fin)
+		{
+			//nivel2.muñeco = nivel1.muñeco = 0;
+			//nivel2.muñeco.posicion.x = nivel1.muñeco.posicion.x = 0;
+			//nivel2.muñeco.posicion.x = 0;
+			nivel2.Inicializa2();
+			estado = NIVEL2;
+			Musica();
+		}
 		//nivel1.GetContador();
 
 		//OpenGL::Print("CREDITOS: ", nivel1.GetContador(), 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
@@ -456,7 +464,7 @@ void MundoXtremETSIDI::Musica()
 
 	case NIVEL1:
 
-		if (nivel1.SetVida() == 2) 
+		if (nivel1.SetVida() == 2)
 		{
 			printf("Entra1");
 			ETSIDI::stopMusica();

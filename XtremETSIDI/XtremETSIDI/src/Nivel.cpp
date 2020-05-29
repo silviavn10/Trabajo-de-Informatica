@@ -237,6 +237,11 @@ void Nivel::Dibuja()
 		
 	}
 	muñeco.Dibuja();
+	/*if (nivel == 1)
+	{
+		muñeco.Dibuja();
+		//if (muñeco.posicion.x == muñeco.fin) muñeco.posicion.x = 0;
+	}*/
 	if (nivel == 1)
 	{
 		ListaProbetas.Dibuja();

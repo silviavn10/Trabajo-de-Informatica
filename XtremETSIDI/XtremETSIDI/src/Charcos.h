@@ -10,14 +10,14 @@ public:
 	Charcos();
 	~Charcos();
 	Charcos(float x);
-	void Dibuja();
+	virtual void Dibuja();
 	void SetPos(float ix, float iy);
 	float GetPosX();
 
 protected:
 	float lado1, lado2;
 	Vector2D posicion;
-private:
 	SpriteSequence sprite;
+
 };
 

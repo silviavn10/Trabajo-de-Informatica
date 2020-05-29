@@ -64,11 +64,16 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 	if (posicion.x <= -8) posicion.x = -8; //si la posicion x es <=-8 (izq del todo) se limita la posicion
 	if (posicion.y <= 2.5) posicion.y = 2.5; //si la posicion y es menor que 2.5(suelo) se limita
 	if (posicion.y >= 7) posicion.y = 7; //si la posicion y es mayor que 7(techo) se limita
-	if (posicion.x >= 179)
+	if (posicion.x >= fin)
+	{
+		posicion.x = fin;
+		velocidad.x = 0;
+	}
+	/*if (posicion.x >= 179)
 	{
 		posicion.x = 179;
 		velocidad.x = 0;
-	}
+	}*/
 
 	sprite_vq.loop();
 	sprite_fq.loop();
@@ -178,7 +183,7 @@ void Muñeco::Dibuja()
 			activo->setState(0);
 		else if (activo->getState() == 0)
 		activo->setState(1, false);*/
-	
+
 	activo->draw();
 
 	glPopMatrix();
@@ -228,7 +233,3 @@ void Muñeco::SetPos(float x, float y)
 	posicion.x = x;
 	posicion.y = y;
 }
-
-
-
-

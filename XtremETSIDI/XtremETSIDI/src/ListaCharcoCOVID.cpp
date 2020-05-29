@@ -1,4 +1,4 @@
-#include "ListaCharcoCOVID.h"
+/*#include "ListaCharcoCOVID.h"
 
 ListaCharcoCOVID::ListaCharcoCOVID()
 {
@@ -65,3 +65,4 @@ CharcoCOVID* ListaCharcoCOVID::operator [](int i)
 
 	return lista[i];
 }
+*/

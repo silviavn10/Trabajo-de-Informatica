@@ -4,7 +4,7 @@
 
 NivelCOVID::NivelCOVID()
 {
-	//DE MOMENTO NADA
+	ListaCharcos.DestruirContenido();
 }
 NivelCOVID:: ~NivelCOVID()
 {
@@ -57,9 +57,10 @@ void NivelCOVID::Mueve()
 	}
 
 	for (int i = 0; i < MAX_C; i++) {
-		aux1 = Interaccion::Colision(muñeco, *ListaCharcoCOVID[i]); //Con listaCharcos para que los construya valdría (?)
+		aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
 		if (aux1 == true) {
 			setvida -= 1;
+			COVID.setPos(muñeco.posicion.x - 10);
 		}
 	}
 }
@@ -73,7 +74,7 @@ void NivelCOVID::Inicializa()
 	muñeco.SetPos(0, 2.5);
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
-		ListaPlataformas += new Plataformas(1.5f, 0, 2.5);
+		//ListaPlataformas += new Plataformas(1.5f, 0, 2.5);
 		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -110,9 +111,9 @@ void NivelCOVID::Inicializa()
 	for (int i = 1; i < MAX_C; i++)
 	{
 		CharcoCOVID *c1 = new CharcoCOVID(48 * i);
-		ListaCharcoCOVID.Agregar(c1);
+		ListaCharcos.Agregar(c1);
 		CharcoCOVID*c2 = new CharcoCOVID(37 * i);
-		ListaCharcoCOVID.Agregar(c2);
+		ListaCharcos.Agregar(c2);
 	}
 
 	//ListaCharcos.DestruirContenido();
@@ -163,7 +164,7 @@ void NivelCOVID::Dibuja()
 	ListaPlataformas.Dibuja();
 	ListaCreditos.Dibuja();
 	//ListaProbetas.Dibuja();
-	ListaCharcoCOVID.Dibuja();
+	ListaCharcos.Dibuja();
 	COVID.Dibuja();
 	muñeco.Dibuja();
 }

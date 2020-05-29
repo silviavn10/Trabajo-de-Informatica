@@ -28,7 +28,7 @@ public:
 	ListaCreditos ListaCreditos;
 	ListaProbetas ListaProbetas;
 	ListaCharcos ListaCharcos;
-	ListaCharcoCOVID ListaCharcoCOVID;
+	//ListaCharcoCOVID ListaCharcoCOVID;
 	COVID COVID;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
