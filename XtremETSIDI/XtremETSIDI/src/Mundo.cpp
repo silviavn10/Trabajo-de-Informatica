@@ -178,6 +178,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			//nivel2.muñeco.posicion.x = 0;
 			nivel2.Inicializa2();
 			estado = NIVEL2;
+			nivel2.setvq();
 			Musica();
 		}
 		//nivel1.GetContador();
@@ -199,6 +200,16 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			vida1.Dibuja2();
 		if (nivel2.SetVida() == 0)
 			estado = GAMEOVER;
+		if (nivel2.muñeco.posicion.x == nivel2.muñeco.fin)
+		{
+			//nivel2.muñeco = nivel1.muñeco = 0;
+			//nivel2.muñeco.posicion.x = nivel1.muñeco.posicion.x = 0;
+			//nivel2.muñeco.posicion.x = 0;
+			nivel3.Inicializa();
+			estado = NIVEL3;
+			nivel3.setvq();
+			Musica();
+		}
 		break;
 
 	case NIVEL3: //Comenzamos el juego
@@ -215,6 +226,11 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			vida1.Dibuja2();
 		if (nivel3.SetVida() == 0)
 			estado = GAMEOVER;
+		if (nivel3.muñeco.posicion.x == nivel3.muñeco.fin)
+		{
+			estado = VICTORIA;
+			Musica();
+		}
 		break;
 
 	case VICTORIA: //Has ganado

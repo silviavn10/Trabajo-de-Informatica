@@ -12,7 +12,6 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 
 {
 
-	//VALORES AUN POR DEFINIR
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
 	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
 	altura = 1.5;  //Tamaño del muñeco (por definir)

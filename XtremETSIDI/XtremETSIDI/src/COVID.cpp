@@ -3,7 +3,7 @@
 COVID::COVID() :sprite("bin/imagenes/COVID.png", 1) //Constructor del COVID
 {
 	radio = 2.5f;  //Radio del COVID
-	velocidad.x = 4.0;  //Velocidad en el eje horizontal
+	velocidad.x = 4.25;  //Velocidad en el eje horizontal
 	//velocidad.y = 8.0f;  //Velocidad nula en el eje vertical 
 	//aceleracion.y = 9.8; 
 	posicion.x = -8;

@@ -50,7 +50,7 @@ public:
 	float altura;
 	int jugador;
 	int sexo;// 1:varon, 0:hembra
-	int fin = 20;
+	int fin = 172;
 	int carrera;
 	int aux = 0;
 	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm,
