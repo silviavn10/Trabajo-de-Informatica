@@ -2,7 +2,7 @@
 #include "Plataformas.h"
 #include "Muñeco.h"
 #include "PlataformaMovil.h"
-#define MAX_PLATAFORMAS 25
+#define MAX_PLATAFORMAS 35
 #define MAX_PLATAFORMASMOVILES 7
 
 class ListaPlataformas

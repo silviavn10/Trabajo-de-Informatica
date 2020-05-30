@@ -21,8 +21,9 @@ public:
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
 	Vector2D GetPos();
-	int GetContador() { return puntos; };
-	int SetVida() { return setvida; };
+	int GetContador() { return puntos; }
+	int SetVida() { return setvida; }
+	void ValorVida(int x) { setvida = x; }
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
 	ListaProbetas ListaProbetas;
