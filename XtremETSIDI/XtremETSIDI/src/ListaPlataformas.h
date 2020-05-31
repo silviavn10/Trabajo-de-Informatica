@@ -3,7 +3,7 @@
 #include "Muñeco.h"
 #include "PlataformaMovil.h"
 #define MAX_PLATAFORMAS 25
-#define MAX_PLATAFORMASMOVILES 7
+#define MAX_PLATAFORMASMOVILES 25
 
 class ListaPlataformas
 {

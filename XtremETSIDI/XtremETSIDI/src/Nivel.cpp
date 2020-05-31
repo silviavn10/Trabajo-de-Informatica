@@ -143,8 +143,9 @@ void Nivel::Inicializa2()
 	{
 
 		ListaPlataformas += new PlataformaMovil(1.5f, 20 * (i + 1), 3.4);
-		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.5);
 		ListaPlataformas += new PlataformaMovil(1.5f, 50 * (i + 1), 2.5, 7);
+		ListaPlataformas += new Plataformas(1.5f, 35 * (i + 1), 2.5);
+		ListaPlataformas += new Plataformas(1.5f, 20 + 36 * (i + 2), 3.1);
 
 		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
 		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
@@ -172,10 +173,12 @@ void Nivel::Inicializa2()
 	}
 	for (int i = 1; i < MAX_REGLAS; i++)
 	{
-		Reglas* p1 = new Reglas(15 * i, 9.5);
+		Reglas* p1 = new Reglas(17 * i, 9.5); //15
 		ListaReglas.Agregar(p1);
-		Reglas* p2 = new Reglas(20 * i, 9.5);
+		Reglas* p2 = new Reglas(23 * i, 9.5); //20
 		ListaReglas.Agregar(p2);
+		Reglas* p3 = new Reglas(28 * i, 9.5);
+		ListaReglas.Agregar(p3);
 	}
 	/*
 	for (int i = 1; i < MAX_C; i++)
