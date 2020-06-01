@@ -1,7 +1,5 @@
 #pragma once 
 #include "Vector2D.h"
-#include "Plataformas.h"
-#include"Vida.h"
 #include "ETSIDI.h"
 using ETSIDI::SpriteSequence;
 
@@ -26,8 +24,9 @@ public:
 	void setVelY(float vy) { velocidad.y = vy; };
 	void setPosY(float y) { posicion.y = y; };
 	void setGravedad(float g) { aceleracion.y = g; };
-	int guardamuñeco;
 	void setguardamuñeco(int x) { guardamuñeco = x; }
+	int getguardamuñeco() { return guardamuñeco; }
+	int getfin() { return fin; }
 	void setvq() { activo = &sprite_vq; }
 	void setfq() { activo = &sprite_fq; }
 	void setvd() { activo = &sprite_vd; }
@@ -39,18 +38,18 @@ public:
 	void setva() { activo = &sprite_va; }
 	void setfa() { activo = &sprite_fa; }
 	friend class Interaccion;
-	friend class Nivel;
-	Vector2D posicion;
-	Vector2D velocidad;
-	Vector2D aceleracion;
-	Plataformas Plataforma;
-	Vida Vida;
+
+private:
+	int guardamuñeco;
 	float altura;
 	int jugador;
 	int sexo;// 1:varon, 0:hembra
 	int fin = 169;
 	int carrera;
 	int aux = 0;
+	Vector2D posicion;
+	Vector2D velocidad;
+	Vector2D aceleracion;
 	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm,
 		sprite_va, sprite_fa;
 	SpriteSequence* activo;

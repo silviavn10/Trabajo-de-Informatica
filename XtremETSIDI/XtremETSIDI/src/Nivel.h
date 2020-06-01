@@ -19,15 +19,9 @@ public:
 	void Dibuja();
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
-	Vector2D GetPos();
 	int GetContador() { return puntos; }
 	int SetVida() { return setvida; }
 	void ValorVida(int x) { setvida = x; }
-	ListaPlataformas ListaPlataformas;
-	ListaCreditos ListaCreditos;
-	ListaProbetas ListaProbetas;
-	ListaCharcos ListaCharcos;
-	ListaReglas ListaReglas;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
 	void setfq() { muñeco.setfq(); }
@@ -48,9 +42,13 @@ private:
 	float l4;
 	bool aux, aux1, aux2, aux3;
 	int puntos = 0;
-	
 	int setvida = 2;
 	int nivel;
+	ListaPlataformas ListaPlataformas;
+	ListaCreditos ListaCreditos;
+	ListaProbetas ListaProbetas;
+	ListaCharcos ListaCharcos;
+	ListaReglas ListaReglas;
 	
 };
 

@@ -34,7 +34,7 @@ void Nivel::Mueve()
 		}
 		for (int i = 0; i < MAX_PROBETAS; i++)
 		{
-			if (ListaProbetas[i]->getPosX() - muñeco.posicion.x < 8.5)
+			if (ListaProbetas[i]->getPosX() - muñeco.getPosX() < 8.5)
 			{
 				ListaProbetas[i]->mueve();
 				for (int j = 0; j < MAX_PLATAFORMAS; j++)
@@ -63,7 +63,7 @@ void Nivel::Mueve()
 		}
 		for (int i = 0; i < MAX_REGLAS; i++)//--------------------------------------------------------------------------------------MAAAAAAL
 		{
-			if (ListaReglas[i]->getPosX() - muñeco.posicion.x < 8.5)
+			if (ListaReglas[i]->getPosX() - muñeco.getPosX() < 8.5)
 			{
 				ListaReglas[i]->mueve();
 				for (int j = 0; j < MAX_REGLAS; j++)
@@ -88,10 +88,10 @@ void Nivel::Inicializa() //Para inicializar el nivel 1
 		ListaPlataformas += new Plataformas(1.5f, 28 + 13.5*i, 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 		ListaPlataformas += new Plataformas(1.5f, 57.5+ 27* i, 4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
 		//ListaPlataformas += new Plataformas(1.5f, 33 + 10 * i, 2.9);
-		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
-		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
-		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
-		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
+		l1 = ListaPlataformas.lista[i]->GetPosX() - (ListaPlataformas.lista[i]->GetLado() / 2); //limite1.x
+		l2 = ListaPlataformas.lista[i]->GetPosY() + (ListaPlataformas.lista[i]->GetLado() / 2); //limite1.y
+		l3 = ListaPlataformas.lista[i]->GetPosX() + (ListaPlataformas.lista[i]->GetLado() / 2); //limite2.x
+		l4 = ListaPlataformas.lista[i]->GetPosY() - (ListaPlataformas.lista[i]->GetLado() / 2); //limite2.y
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
 		ListaPlataformas.Color(148, 26, 28);
 	}
@@ -145,10 +145,10 @@ void Nivel::Inicializa2() //Para inicializar el nivel 2
 		ListaPlataformas += new Plataformas(1.5f, 35 * (i + 1), 2.5);
 		ListaPlataformas += new Plataformas(1.5f, 20 + 36 * (i + 2), 3.1);
 
-		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
-		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
-		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
-		l4 = ListaPlataformas.lista[i]->posicion.y - (ListaPlataformas.lista[i]->lado / 2); //limite2.y
+		l1 = ListaPlataformas.lista[i]->GetPosX() - (ListaPlataformas.lista[i]->GetLado() / 2); //limite1.x
+		l2 = ListaPlataformas.lista[i]->GetPosY() + (ListaPlataformas.lista[i]->GetLado() / 2); //limite1.y
+		l3 = ListaPlataformas.lista[i]->GetPosX() + (ListaPlataformas.lista[i]->GetLado() / 2); //limite2.x
+		l4 = ListaPlataformas.lista[i]->GetPosY() - (ListaPlataformas.lista[i]->GetLado() / 2); //limite2.y
 
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
 		ListaPlataformas.Color(148, 26, 28);

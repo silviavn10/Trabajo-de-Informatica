@@ -4,7 +4,6 @@
 ListaCreditos::ListaCreditos(void)
 {
 	numero = 0;
-	//for (int i = 0; i < MAX_CREDITOS; i++)lista[i] = 0;
 	lista = new Creditos * [MAX_CREDITOS];
 }
 

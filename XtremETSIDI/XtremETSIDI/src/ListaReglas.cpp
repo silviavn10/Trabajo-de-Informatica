@@ -26,11 +26,7 @@ void ListaReglas::DestruirContenido()
 		delete lista[i];
 	numero = 0;
 }
-/*void ListaProbetas::Mueve(float t)
-{
-	for (int i = 0; i < numero; i++)
-		lista[i]->mueve(t);
-}*/
+
 void ListaReglas::Dibuja()
 {
 	for (int i = 0; i < numero; i++)

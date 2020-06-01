@@ -22,5 +22,4 @@ public:
 	static bool Colision(Plataformas& p, Proyectiles& pr);
 	static bool Colision(Muñeco& m, COVID& c);
 	
-
 };

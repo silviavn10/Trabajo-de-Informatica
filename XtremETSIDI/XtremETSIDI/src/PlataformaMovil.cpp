@@ -3,27 +3,13 @@ PlataformaMovil::PlataformaMovil()
 {
 	velocidad.x = 3;
 	velocidad.y = 0;
-	//posicion.x = 6;
-	//posicion.y = 3;
-	//lado = 1.5f;
-	//limite1.x = 4;
-	//limite2.x = 8;
 	
 }
 PlataformaMovil::~PlataformaMovil()
 {
 
 }
-/*
-void PlataformaMovil::SetVel(float v) {
-	velocidad.x = v;
-}*/
 
-/*void PlataformaMovil:: SetLimitesMoviles(float x1, float x2)
-{
-	LimiteDeMov1.x = x1;
-	LimiteDeMov2.x = x2;
-}*/
 
 void PlataformaMovil::SetColor(unsigned char r, unsigned char v, unsigned char a) { //-------------------------------------------------------REDEFINICION DE LA FUNCION
 	
@@ -58,7 +44,8 @@ int PlataformaMovil::SetCambio(int c) {
 
 void PlataformaMovil::Mueve(float t) 
 {
-	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
+	pos= GetPos() + velocidad * t + aceleracion * (0.5f * t * t);
+	SetPos(pos);
 	velocidad = velocidad + aceleracion * t;
 	
 	if (velocidad.x < -8) {
@@ -69,9 +56,10 @@ void PlataformaMovil::Mueve(float t)
 		velocidad.y = 7;
 	}
 
-	limite1 = limite1 + velocidad * t + aceleracion * (0.5f * t * t);
-	limite2 = limite2 + velocidad * t + aceleracion * (0.5f * t * t);
-
+	lim1 = GetLimite1() + velocidad * t + aceleracion * (0.5f * t * t);
+	lim2 = GetLimite2() + velocidad * t + aceleracion * (0.5f * t * t);
+	SetLimite1(lim1);
+	SetLimite2(lim2);
 	//-----------------------------------------------------------------------------------------------------------------------HACER LIMITE
 	SetColor(0, 0, 0);
 	

@@ -3,7 +3,6 @@
 
 Vida::Vida() //Constructor
 {
-	//radio = 0.6f;
 }
 
 Vida::~Vida() //Destructor
@@ -64,9 +63,3 @@ void Vida::Dibuja2()
 
 
 }
-/*void Vida::SetPos(float ix, float iy)
-{
-	posicion.x = ix;
-	posicion.y = iy;
-}
-*/

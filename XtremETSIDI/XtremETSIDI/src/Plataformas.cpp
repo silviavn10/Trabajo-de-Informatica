@@ -10,9 +10,7 @@ Plataformas::Plataformas(float lad, float x, float y)
 	lado = lad;
 	posicion.x = x;
 	posicion.y = y;
-	//rojo = 148;
-	//verde = 26;
-	//azul = 28; //color distinto
+	
 }
 Plataformas:: ~Plataformas()
 {
@@ -21,7 +19,6 @@ Plataformas:: ~Plataformas()
 void Plataformas::Dibuja()
 {
 	glColor3ub(rojo, verde, azul);
-	//glRotatef(30, 1, 1, 1); //CAMBIAR POR SI SALE DE LADO
 	glTranslatef(posicion.x, posicion.y, 0);
 	glutSolidCube(lado);
 	glTranslatef(-posicion.x, -posicion.y, 0);
@@ -31,15 +28,7 @@ void Plataformas::SetColor(unsigned char r, unsigned char v, unsigned char a) {
 	verde = v;
 	azul = a;
 }
-/*void Plataformas::SetPos(float ix, float iy)
-{
-	posicion.x = ix;
-	posicion.y = iy;
-	limite1.x = posicion.x - (lado / 2);
-	limite1.y = posicion.y + (lado / 2);
-	limite2.x = posicion.x + (lado / 2);
-	limite2.y = posicion.y + (lado / 2);
-}*/
+
 void Plataformas::SetPos(float x1, float y1, float x2, float y2)
 {
 

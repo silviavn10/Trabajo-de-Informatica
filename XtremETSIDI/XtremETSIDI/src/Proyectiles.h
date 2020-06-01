@@ -23,5 +23,4 @@ protected:
 	Vector2D velocidad;
 	Vector2D aceleracion;
 	float posicion_z = 0.5;
-	int NUM_MAX;
 };

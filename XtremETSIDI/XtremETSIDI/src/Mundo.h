@@ -14,8 +14,7 @@ using namespace std;
 
 class MundoXtremETSIDI
 {
-	int aux = 0;
-	float x_ojo = 0.0;
+
 public:
 
 	MundoXtremETSIDI();
@@ -25,14 +24,14 @@ public:
 	void Mueve();
 	void Dibuja();
 	void Musica();
+
+private:
+	int aux = 0;
+	int guardanivel= 0;
 	Nivel nivel1, nivel2;
 	NivelCOVID nivel3;
 	Vida vida1;
-	float ojo;
-
-protected:
-
-	int guardanivel;
+	float ojo=0;
 
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{

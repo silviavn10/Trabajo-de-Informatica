@@ -16,14 +16,8 @@ public:
 	void Dibuja();
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
-	Vector2D GetPos();
 	int GetContador() { return contador; };
 	int SetVida() { return setvida; };
-	ListaPlataformas ListaPlataformas;
-	ListaCreditos ListaCreditos;
-	ListaCharcos ListaCharcos;
-	COVID COVID;
-	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
 	void setfq() { muñeco.setfq(); }
 	void setvd() { muñeco.setvd(); }
@@ -34,6 +28,7 @@ public:
 	void setfm() { muñeco.setfm(); }
 	void setva() { muñeco.setva(); }
 	void setfa() { muñeco.setfa(); }
+	Muñeco muñeco;
 
 private:
 	float l1;
@@ -43,5 +38,10 @@ private:
 	bool aux, aux1, aux2, aux3;
 	int contador = 0;
 	int setvida = 2;
+	ListaPlataformas ListaPlataformas;
+	ListaCreditos ListaCreditos;
+	ListaCharcos ListaCharcos;
+	COVID COVID;
+
 };
 

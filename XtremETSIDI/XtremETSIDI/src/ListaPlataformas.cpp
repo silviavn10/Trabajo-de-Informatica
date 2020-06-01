@@ -6,14 +6,10 @@ ListaPlataformas::ListaPlataformas(void)
 	numero = 0;
 	lista = new Plataformas * [MAX_PLATAFORMAS];// reserva memoria dinámicamente para vector lista con una dimension maxima de MAX_PLATAFORMAS
 }
-
-
 ListaPlataformas::~ListaPlataformas(void)
 {
 
 }
-
-
 void ListaPlataformas::Dibuja()
 {
 
@@ -59,16 +55,6 @@ void ListaPlataformas::Eliminar(Plataformas* p)
 
 }
 
-/*Plataformas* ListaPlataformas::Colision(Muñeco m)
-{
-	for (int i = 0; i < numero; i++)
-	{
-		if (Interaccion::Colision(*(lista[i]), m))
-			return lista[i];
-	}
-	return 0; //no hay colisión
-
-}*/
 Plataformas * ListaPlataformas::operator [](int i)
 {
 	if (i >= numero)
@@ -80,7 +66,6 @@ Plataformas * ListaPlataformas::operator [](int i)
 }
 bool ListaPlataformas::Agregar(Plataformas* p)
 {
-	//EJERCICIO 6.4
 	for (int i = 0; i < numero; i++)
 		if (lista[i] == p) {
 			return false;

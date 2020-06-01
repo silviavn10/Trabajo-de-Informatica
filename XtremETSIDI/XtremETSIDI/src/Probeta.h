@@ -20,7 +20,6 @@ public:
 	void Probeta::mueve();
 private:
 	SpriteSequence sprite;
-	//SpriteSequence* activo;
 	float radio;
 	
 };

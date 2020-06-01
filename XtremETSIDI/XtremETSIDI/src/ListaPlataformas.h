@@ -17,8 +17,6 @@ public:
 	int getNumero() { return numero; };
 	bool Agregar(Plataformas* p);
 	bool ListaPlataformas::operator += (Plataformas* p);
-	//Plataformas* Colision(Muñeco m);
-	//int getNumero() { return numero; }
 	Plataformas* operator[] (int index);
 	void Colision(Muñeco& h);
 	void Color(unsigned char r, unsigned char v, unsigned char a);

@@ -14,4 +14,5 @@ public: //atributos
     Vector2D operator + (Vector2D&); // (6) suma de vectores
     float operator *(Vector2D&); // (7) producto escalar
     Vector2D operator *(float); // (8) producto por un escalar
+ 
 };

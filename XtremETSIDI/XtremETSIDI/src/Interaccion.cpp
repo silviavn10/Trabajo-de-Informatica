@@ -9,10 +9,10 @@ Interaccion::~Interaccion() //Destructor
 }
 void Interaccion::Colision(Muñeco& m, Plataformas p)
 {
-	float xlim1 = p.limite1.x;//punto abajo izq
-	float xlim2 = p.limite1.x + (p.lado);//punto abajo derecha
-	float ylim1 = p.limite1.y;//punto arriba izq
-	float ylim2 = p.limite1.y + (p.lado);//punto arriba dercha
+	float xlim1 = p.GetLimiteX1();//punto abajo izq
+	float xlim2 = p.GetLimiteX1() + (p.GetLado());//punto abajo derecha
+	float ylim1 = p.GetLimiteY1();//punto arriba izq
+	float ylim2 = p.GetLimiteY1() + (p.GetLado());//punto arriba dercha
 	if (m.posicion.x + 1.0 > xlim1&& m.posicion.y + m.altura >= ylim1) { //comprueba que la posicion x sea menor que el limite izq de la plataforma
 																			//y que la posicion y sea mayor que el limite de abajo de la plataforam
 		if (m.posicion.x < xlim2 && m.posicion.y + 1 <= ylim2)//comprueba que el muñeco sigue en la parte izq de la plataforma 
@@ -109,10 +109,9 @@ bool Interaccion::Colision(Muñeco& m, Proyectiles& pr)
 bool Interaccion::Colision(Plataformas& p, Proyectiles& pr)
 {
 	
-	if ((pr.getPosY() == (p.limite1.y || p.limite2.y)) && (p.limite1.x < pr.getPosX() < p.limite2.x) && pr.getPosZ() == 0.5)
+	if ((pr.getPosY() == (p.GetLimiteY1() || p.GetLimiteY2())) && (p.GetLimiteX1() < pr.getPosX() < p.GetLimiteX2()) && pr.getPosZ() == 0.5)
 	{
-		//pr.SetPosZ(-0.5);
-
+	
 		return true;
 	}
 	else return false;
@@ -122,8 +121,7 @@ bool Interaccion::Colision(Muñeco& m, COVID& c)
 	if (c.getPosX() -1.5 >= m.posicion.x)
 	{
 		ETSIDI::play("bin/bso/creditos.mp3");
-		c.setPosX(m.posicion.x-10.0f); //Mirar distancia
-		//m.posicion.x -= 5;
+		c.setPosX(m.posicion.x-10.0f); 
 		m.posicion.y = 5;
 		m.SetVel(0.0f, 0.0f);
 		return true;
