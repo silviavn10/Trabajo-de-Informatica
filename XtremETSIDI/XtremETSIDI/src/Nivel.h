@@ -21,8 +21,9 @@ public:
 	void TeclaEspecial(unsigned char key);
 	void Mueve();
 	Vector2D GetPos();
-	int GetContador() { return puntos; };
-	int SetVida() { return setvida; };
+	int GetContador() { return puntos; }
+	int SetVida() { return setvida; }
+	void ValorVida(int x) { setvida = x; }
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
 	ListaProbetas ListaProbetas;
@@ -41,8 +42,10 @@ public:
 	void setfa() { muñeco.setfa(); }
 	void ActDatos(int puntos);
 
+	
+
 protected: 
-	int puntos = 0;
+	
 
 private:
 	float l1;
@@ -50,6 +53,7 @@ private:
 	float l3;
 	float l4;
 	bool aux, aux1, aux2, aux3;
+	int puntos = 0;
 	
 	int setvida = 2;
 	int nivel;

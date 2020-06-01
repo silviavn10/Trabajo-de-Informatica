@@ -101,10 +101,10 @@ bool ListaPlataformas::operator += (Plataformas* p) {
 	}
 	return false;
 }
-void ListaPlataformas::Colision(Muñeco& h, Plataformas* Lista)
+void ListaPlataformas::Colision(Muñeco& h)
 {
 	for (int i = 0; i < numero; i++)
-		Interaccion::Colision(h, *Lista);
+		Interaccion::Colision(h, *lista[i]);
 }
 
 void ListaPlataformas::Mueve(float f)
@@ -112,7 +112,6 @@ void ListaPlataformas::Mueve(float f)
 	for (int i = 0; i < numero; i++)
 	{
 		lista[i]->Mueve(f);
-
 	}
 
 }

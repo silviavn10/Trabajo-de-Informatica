@@ -1,8 +1,6 @@
 #include "OpenGL.h"
 #include <string.h>
 #include "glut.h"
-
-
 OpenGL::OpenGL()
 {
 
@@ -12,7 +10,7 @@ OpenGL::~OpenGL()
 {
 
 }
-void OpenGL::Print(char* mensaje,int numero, int x, int y, unsigned char r, unsigned char g, unsigned char b)
+void OpenGL::Print(char* mensaje, int x, int y, unsigned char r, unsigned char g, unsigned char b)
 {
 	glDisable(GL_LIGHTING);
 
@@ -37,7 +35,7 @@ void OpenGL::Print(char* mensaje,int numero, int x, int y, unsigned char r, unsi
 	int len = strlen(mensaje);
 	for (int i = 0; i < len; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, mensaje[i]);
-	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, numero);
+
 
 	glMatrixMode(GL_TEXTURE);
 	glPopMatrix();
@@ -51,3 +49,18 @@ void OpenGL::Print(char* mensaje,int numero, int x, int y, unsigned char r, unsi
 	glEnable(GL_DEPTH_TEST);
 }
 
+
+
+
+void OpenGL::drawText(char* string, int x, int y) {
+	char* c;    
+	glPushMatrix();    
+	glTranslatef(x, y, 0);   
+	glScalef(0.1, -0.1, 1);
+
+	for (c = string; *c != '\0'; c++)
+	{ glutStrokeCharacter(GLUT_STROKE_ROMAN, *c);
+	}   
+	glPopMatrix();
+
+}

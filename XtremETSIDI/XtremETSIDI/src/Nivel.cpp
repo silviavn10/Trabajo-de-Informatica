@@ -4,13 +4,17 @@
 
 Nivel::Nivel()
 {
+	
 }
 Nivel:: ~Nivel()
 {
 }
 void Nivel::Mueve()
 {
+	
 	ListaPlataformas.Mueve(0.025);
+	
+	
 	muñeco.Mueve(0.025f);
 	ListaCreditos.Mueve(0.005f);
 	for (int i = 0; i < ListaCreditos.getNumero(); i++) 
@@ -18,14 +22,17 @@ void Nivel::Mueve()
 		aux = Interaccion::Colision(muñeco, *ListaCreditos[i]);
 		if (aux == true) {
 			puntos++;
+			
 		}
 	}
-	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
+	/*for (int i = 0; i < ListaPlataformas.getNumero(); i++)
 	{
 		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
-		//printf("Estoy entrando");
 	}
 	
+	*/
+
+	ListaPlataformas.Colision(muñeco);
 
 	if (nivel == 1) {
 		for (int i = 0; i < ListaProbetas.getNumero(); i++) {
@@ -63,7 +70,7 @@ void Nivel::Mueve()
 				setvida -= 1;
 			}
 		}
-		for (int i = 0; i < MAX_REGLAS; i++)
+		for (int i = 0; i < MAX_REGLAS; i++)//--------------------------------------------------------------------------------------MAAAAAAL
 		{
 			if (ListaReglas[i]->getPosX() - muñeco.posicion.x < 8.5)
 			{
@@ -77,19 +84,21 @@ void Nivel::Mueve()
 			}
 		}
 		
+		
 	}
 }
-
 void Nivel::Inicializa() //Para nivel 1
 {
 	muñeco.SetPos(0, 2.5);
 
+	//BUCLE PARA DIBUJAR LAS PLATAFORMAS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
+
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
-		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.9);
+		ListaPlataformas += new Plataformas(1.5f, 20.5 + 15*i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 28 + 13.5*i, 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 57.5+ 27* i, 4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		//ListaPlataformas += new Plataformas(1.5f, 33 + 10 * i, 2.9);
 		l1 = ListaPlataformas.lista[i]->posicion.x - (ListaPlataformas.lista[i]->lado / 2); //limite1.x
 		l2 = ListaPlataformas.lista[i]->posicion.y + (ListaPlataformas.lista[i]->lado / 2); //limite1.y
 		l3 = ListaPlataformas.lista[i]->posicion.x + (ListaPlataformas.lista[i]->lado / 2); //limite2.x
@@ -97,21 +106,19 @@ void Nivel::Inicializa() //Para nivel 1
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
 		ListaPlataformas.Color(148, 26, 28);
 	}
-	for (int i = 0; i < 200; i += 20) {
 
+	//BUCLE PARA DIBUJAR LOS CREDITOS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
+	
+	for (int i = 0; i < MAX_CREDITOS; i += 20) {
 		ListaCreditos += new Creditos(8 + i, 5.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaCreditos += new Creditos(32.5+i, 2.5);
+		ListaCreditos += new Creditos(14 + i, 3.5);
+		ListaCreditos += new Creditos(57.5 + 2.7 * i, 6);
 
 	}
-	for (int i = 0; i < 200; i += 25) {
+	
+		//BUCLE PARA DIBUJAR LAS PLATAFORMAS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
 
-		ListaCreditos += new Creditos(1.2 + i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-
-	}
-	for (int i = 0; i < 200; i += 35) {
-
-		ListaCreditos += new Creditos(13 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-
-	}
 	for (int i = 1; i < MAX_PROBETAS; i++)
 	{
 		Probeta* p1 = new Probeta(15 * i, 9.5); //Para cambiar la altura de probetas
@@ -119,29 +126,31 @@ void Nivel::Inicializa() //Para nivel 1
 		Probeta* p2 = new Probeta(20 * i, 9.5);
 		ListaProbetas.Agregar(p2);
 	}
+
+	//BUCLE PARA DIBUJAR LOS CHARCOS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
+
 	for (int i = 1; i < MAX_C; i++)
 	{
 		Charcos* c1 = new Charcos(15 * i);
 		ListaCharcos.Agregar(c1);
-		Charcos* c2 = new Charcos(37 * i);
+		Charcos* c2 = new Charcos(37.5* i);
 		ListaCharcos.Agregar(c2);
 	}
-
 	nivel = 1;
 }
-
 void Nivel::Inicializa2()
 {
-	/*ListaCharcos.DestruirContenido();
+	ListaCharcos.DestruirContenido();
 	ListaCreditos.DestruirContenido();
 	ListaPlataformas.DestruirContenido();
-	ListaProbetas.DestruirContenido();*/
+	ListaProbetas.DestruirContenido();
 
 	muñeco.SetPos(0, 2.5);
+	muñeco.SetVel(0.0f, 0.0f);
+	
 
 	for (int i = 0; i < MAX_PLATAFORMASMOVILES; i++)
 	{
-
 		ListaPlataformas += new PlataformaMovil(1.5f, 20 * (i + 1), 3.4);
 		ListaPlataformas += new PlataformaMovil(1.5f, 50 * (i + 1), 2.5, 7);
 		ListaPlataformas += new Plataformas(1.5f, 35 * (i + 1), 2.5);
@@ -156,6 +165,7 @@ void Nivel::Inicializa2()
 		ListaPlataformas.Color(148, 26, 28);
 
 	}
+
 	for (int i = 0; i < 200; i += 20) {
 
 		ListaCreditos += new Creditos(8 + i, 5.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -180,21 +190,7 @@ void Nivel::Inicializa2()
 		Reglas* p3 = new Reglas(28 * i, 9.5);
 		ListaReglas.Agregar(p3);
 	}
-	/*
-	for (int i = 1; i < MAX_C; i++)
-	{
-		Charcos* c1 = new Charcos(15 * i);
-		ListaCharcos.Agregar(c1);
-		Charcos* c2 = new Charcos(37 * i);
-		ListaCharcos.Agregar(c2);
-	}*/
-
 	nivel = 2;
-
-	/*ListaCharcos.DestruirContenido();
-	ListaCreditos.DestruirContenido();
-	ListaPlataformas.DestruirContenido();
-	ListaProbetas.DestruirContenido();*/
 }
 
 
@@ -202,7 +198,6 @@ void Nivel::Dibuja()
 {
 	if (setvida == 2)
 	{
-
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/nivel1.png").id); //foto pasillo
 
@@ -217,12 +212,9 @@ void Nivel::Dibuja()
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-		
 	}
-
 	if (setvida == 1)
 	{
-		
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("bin/imagenes/fondoJULIO.png").id); //foto pasillo JULIO
 
@@ -237,14 +229,8 @@ void Nivel::Dibuja()
 		glEnd();
 		glEnable(GL_LIGHTING);
 		glDisable(GL_TEXTURE_2D);
-		
 	}
 	muñeco.Dibuja();
-	/*if (nivel == 1)
-	{
-		muñeco.Dibuja();
-		//if (muñeco.posicion.x == muñeco.fin) muñeco.posicion.x = 0;
-	}*/
 	if (nivel == 1)
 	{
 		ListaProbetas.Dibuja();
@@ -258,15 +244,14 @@ void Nivel::Dibuja()
 		ListaCreditos.Dibuja();
 		ListaReglas.Dibuja();
 	}
-
-	ActDatos(puntos); //Función para ir actualizando los datos que aparecen en la parte superior de la pantalla
+	//ActDatos(puntos); //Función para ir actualizando los datos que aparecen en la parte superior de la pantalla
 }
 
 void Nivel::TeclaEspecial(unsigned char key)
 {
 	muñeco.TeclaEspecial(key);
 }
-
+/*
 void Nivel::ActDatos(int puntos)  //Función para actualizar los datos de la parte superior: número de vidas, balas y puntos
 {
 	ETSIDI::setTextColor(255, 0, 255);
@@ -275,5 +260,6 @@ void Nivel::ActDatos(int puntos)  //Función para actualizar los datos de la part
 
 	sprintf(cont, "%d / %d", puntos, 400);
 	ETSIDI::printxy(cont, -3, 9.1, 2);
+}*/
 
-}
+
