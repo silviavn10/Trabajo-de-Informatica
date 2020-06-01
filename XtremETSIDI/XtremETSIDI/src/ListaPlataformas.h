@@ -2,7 +2,11 @@
 #include "Plataformas.h"
 #include "Muñeco.h"
 #include "PlataformaMovil.h"
+<<<<<<< HEAD
 #define MAX_PLATAFORMAS 35
+=======
+#define MAX_PLATAFORMAS 25
+>>>>>>> parent of 50c8ac3... Plataformas NIvel2
 #define MAX_PLATAFORMASMOVILES 7
 
 class ListaPlataformas

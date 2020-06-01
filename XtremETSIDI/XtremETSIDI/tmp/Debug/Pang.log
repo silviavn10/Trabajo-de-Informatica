@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 ﻿  Pang.vcxproj -> C:\Users\Silvia\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+=======
+﻿  COVID.cpp
+C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\src\COVID.cpp(30,43): warning C4305: 'argumento': truncamiento de 'double' a 'GLfloat'
+  Pang.vcxproj -> C:\Users\andre\OneDrive\Documents\GitHub\Trabajo-de-Informatica\XtremETSIDI\XtremETSIDI\bin\Pang.exe
+>>>>>>> parent of 50c8ac3... Plataformas NIvel2
