@@ -127,30 +127,60 @@ void Muñeco::SetPersonaje() {
 	switch (carrera)
 	{
 	case 0://Escogemos quimica
-		if (sexo == 1)  setvq();
-		else setfq();
+		if (sexo == 1) {
+			setvq();
+			setguardamuñeco(0);
+		}
+		else {
+			setfq();
+			setguardamuñeco(1);
+		}
 		break;
 
 	case 1: //Diseño
-		if (sexo == 1)  setvd();
-		else setfd();
+		if (sexo == 1) {
+			setvd();
+			setguardamuñeco(2);
+		}
+		else {
+			setfd();
+			setguardamuñeco(3);
+		}
 		break;
 
 	case 2: //Electrica
-		if (sexo == 1)  setve();
-		else setfe();
+		if (sexo == 1) {
+			setve();
+			setguardamuñeco(4);
+		}
+		else {
+			setfe();
+			setguardamuñeco(5);
+		}
 
 		break;
 
 	case 3: //Mecanica
-		if (sexo == 1)  setvm();
-		else setfm();
+		if (sexo == 1) {
+			setvm();
+			setguardamuñeco(6);
+		}
+		else {
+			setfm();
+			setguardamuñeco(7);
+		}
 
 		break;
 
 	case 4: //Electronica
-		if (sexo == 1)  setva();
-		else setfa();
+		if (sexo == 1) {
+			setva();
+			setguardamuñeco(8);
+		}
+		else {
+			setfa();
+			setguardamuñeco(9);
+		}
 		break;
 	}
 }

@@ -67,10 +67,10 @@ void NivelCOVID::Mueve()
 
 void NivelCOVID::Inicializa()
 {
-	/*ListaCharcos.DestruirContenido();
+
 	ListaCreditos.DestruirContenido();
 	ListaPlataformas.DestruirContenido();
-	ListaProbetas.DestruirContenido();*/
+
 	muñeco.SetPos(0, 2.5);
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
