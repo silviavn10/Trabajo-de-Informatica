@@ -1,17 +1,15 @@
 #include "Reglas.h"
 #include "Probeta.h"
 
-Reglas::Reglas() :sprite("bin/imagenes/reglas.png", 5) //Constructor de la probeta
+Reglas::Reglas() :sprite("bin/imagenes/reglas.png", 5) 
 {
-	radio = 2.5f;  //Radio de la probeta
+	radio = 2.5f; 
 	velocidad.x = 0;  //Velocidad en el sentido negativo del eje horizontal
-	//velocidad.y = 8.0f;  //Velocidad nula en el eje vertical CON PONER LA ACELERACION EN LA Y NEGATIVA ES SUFICIENTE
 	aceleracion.y = -3.0f;
 	posicion.x = 15;
 	posicion.y = 7.0f;
 	sprite.setCenter(1, 3);
 	sprite.setSize(1, 3);
-	//setprobetas();
 }
 Reglas::~Reglas() //Destructor
 {
@@ -25,17 +23,16 @@ Reglas::Reglas(float x, float y) :sprite("bin/imagenes/reglas.png", 5)
 	sprite.setSize(1, 3);
 }
 
-void Reglas::Dibuja() //Función para dibujar la probeta
+void Reglas::Dibuja() 
 {
 	glPushMatrix();
 	glTranslatef(posicion.x, posicion.y, posicion_z);  //Funcion de la libreria glut para trasladar a la probeta las posiciones indicadas
-	sprite.draw();  //Se dibuja la probeta, es una funcion interna de los sprites
+	sprite.draw();  
 	glPopMatrix();
-	//FALTA QUE LA PROBETA VAYA CAMBIANDO DE DIBUJO CUANDO CAIGA
 }
-void Reglas::setRadio(float r)  //Funcion para inicializar al radio de la probeta, ya que es un atributo protected
+void Reglas::setRadio(float r)  
 {
-	if (r < 0.1F)  //Se asegura de que el radio no pueda ser menor de 0.1, poniendo este valor si lo fuera
+	if (r < 0.1F)  
 		r = 0.1F;
 	radio = r;
 }

@@ -88,7 +88,6 @@
     <ClCompile Include="src\COVID.cpp" />
     <ClCompile Include="src\Creditos.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
-    <ClCompile Include="src\ListaCharcoCOVID.cpp" />
     <ClCompile Include="src\ListaCharcos.cpp" />
     <ClCompile Include="src\ListaCreditos.cpp" />
     <ClCompile Include="src\ListaPlataformas.cpp" />
@@ -105,7 +104,6 @@
     <ClCompile Include="src\Probeta.cpp" />
     <ClCompile Include="src\Proyectiles.cpp" />
     <ClCompile Include="src\Reglas.cpp" />
-    <ClCompile Include="src\Suelo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
     <ClCompile Include="src\Vida.cpp" />
   </ItemGroup>
@@ -115,7 +113,6 @@
     <ClInclude Include="src\COVID.h" />
     <ClInclude Include="src\Creditos.h" />
     <ClInclude Include="src\Interaccion.h" />
-    <ClInclude Include="src\ListaCharcoCOVID.h" />
     <ClInclude Include="src\ListaCharcos.h" />
     <ClInclude Include="src\ListaCreditos.h" />
     <ClInclude Include="src\ListaPlataformas.h" />
@@ -131,7 +128,6 @@
     <ClInclude Include="src\Probeta.h" />
     <ClInclude Include="src\Proyectiles.h" />
     <ClInclude Include="src\Reglas.h" />
-    <ClInclude Include="src\Suelo.h" />
     <ClInclude Include="src\Vector2D.h" />
     <ClInclude Include="src\Vida.h" />
   </ItemGroup>

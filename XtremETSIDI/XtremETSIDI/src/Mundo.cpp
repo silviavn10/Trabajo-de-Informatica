@@ -168,25 +168,14 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		if (nivel1.SetVida() == 2)
 			vida1.Dibuja();
 		if (nivel1.SetVida() == 1) {
-			//vida1.Dibuja2();
 			ETSIDI::stopMusica();
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);
 			guardanivel = 1;
 			estado = JULIO;
 		}
-
-		/*if (nivel1.SetVida() == 0) {
-			estado = GAMEOVER;
-			ETSIDI::stopMusica();
-			ETSIDI::playMusica("bin/bso/gameover.mpeg", true);
-		}*/
 		if (nivel1.muñeco.posicion.x == nivel1.muñeco.fin)
 		{
-			//nivel2.muñeco = nivel1.muñeco = 0;
-			//nivel2.muñeco.posicion.x = nivel1.muñeco.posicion.x = 0;
-			//nivel2.muñeco.posicion.x = 0;
 			nivel2.Inicializa2();
-			//key = '0';
 			switch (nivel1.muñeco.guardamuñeco) {
 			case 0:
 				nivel2.setvq();
@@ -223,19 +212,12 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			Musica();
 		}
 		
-		
-		
-		OpenGL::Print("CREDITOS: ", 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
-		
+		//OpenGL::Print("CREDITOS: ", 300, 60, 0, 0, 0); //HAY QUE HACER UN CONTADOR
 		break;
-	
-		
-
 
 	case JULIO: //Comenzamos el juego
 		if (guardanivel == 1) {
-			ojo = nivel1.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo MIRAR BIEN
-
+			ojo = nivel1.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo 
 			gluLookAt(ojo, 0, 0.01,   // Posición del ojo si esta jugando
 				ojo, 0, 0.0,
 				0.0, 1.0, 0.0);
@@ -251,9 +233,6 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			}
 			if (nivel1.muñeco.posicion.x == nivel1.muñeco.fin)
 			{
-				//nivel2.muñeco = nivel1.muñeco = 0;
-				//nivel2.muñeco.posicion.x = nivel1.muñeco.posicion.x = 0;
-				//nivel2.muñeco.posicion.x = 0;
 				nivel2.Inicializa2();
 				switch (nivel1.muñeco.guardamuñeco) {
 				case 0:
@@ -291,12 +270,9 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 				
 				Musica();
 			}
-
-			
 		}
 		if (guardanivel == 2) {
-			ojo = nivel2.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo MIRAR BIEN
-
+			ojo = nivel2.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo
 			gluLookAt(ojo, 0, 0.01,   // Posición del ojo si esta jugando
 				ojo, 0, 0.0,
 				0.0, 1.0, 0.0);
@@ -312,9 +288,6 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			}
 			if (nivel2.muñeco.posicion.x == nivel2.muñeco.fin)
 			{
-				//nivel2.muñeco = nivel1.muñeco = 0;
-				//nivel2.muñeco.posicion.x = nivel1.muñeco.posicion.x = 0;
-				//nivel2.muñeco.posicion.x = 0;
 				nivel3.Inicializa();
 				switch (nivel1.muñeco.guardamuñeco) {
 				case 0:
@@ -354,14 +327,12 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			}
 		}
 		if (guardanivel == 3) {
-			ojo = nivel3.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo MIRAR BIEN
-
+			ojo = nivel3.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo 
 			gluLookAt(ojo, 0, 0.01,   // Posición del ojo si esta jugando
 				ojo, 0, 0.0,
 				0.0, 1.0, 0.0);
 			nivel3.Dibuja();
 			vida1.GetMov(ojo);
-
 			if (nivel3.SetVida() == 1)
 				vida1.Dibuja2();
 			if (nivel3.SetVida() == 0) {
@@ -371,10 +342,6 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 			}
 			if (nivel3.muñeco.posicion.x == nivel3.muñeco.fin)
 			{
-				//nivel2.muñeco = nivel1.muñeco = 0;
-				//nivel2.muñeco.posicion.x = nivel1.muñeco.posicion.x = 0;
-				//nivel2.muñeco.posicion.x = 0;
-				
 				estado = VICTORIA;
 				Musica();
 			}
@@ -383,7 +350,7 @@ void MundoXtremETSIDI::Dibuja() //Para dibujar en pantalla los distintos estados
 		break;
 	
 	case NIVEL2: //Comenzamos el juego
-		ojo = nivel2.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo MIRAR BIEN
+		ojo = nivel2.muñeco.posicion.x; // recoge la posicion x del muñeco en la variable ojo 
 		if (ojo <= 0) ojo = 0;
 		gluLookAt(ojo, 0, 0.01,   // Posición del ojo si esta jugando
 			ojo, 0, 0.0,
@@ -905,12 +872,6 @@ void MundoXtremETSIDI::Musica()
 			ETSIDI::playMusica("bin/bso/nivel1.mp3", true);
 		}
 		break;
-	/*case JULIO:
-
-		ETSIDI::stopMusica();
-		ETSIDI::playMusica("bin/bso/julio.mp3", true); 
-	
-		break;*/
 
 	case NIVEL2:
 		ETSIDI::stopMusica();
@@ -929,11 +890,6 @@ void MundoXtremETSIDI::Musica()
 			ETSIDI::playMusica("bin/bso/julio.mp3", true);
 		}
 		break;
-	/*case GAMEOVER:
-		printf("jaja no sueno");
-		ETSIDI::stopMusica();
-		ETSIDI::playMusica("bin/bso/gameover.mpeg", true);
-		break;*/
 	case VICTORIA:
 		ETSIDI::stopMusica();
 		ETSIDI::playMusica("bin/bso/victoria.mpeg", true);
@@ -944,7 +900,6 @@ void MundoXtremETSIDI::Musica()
 
 void MundoXtremETSIDI::TeclaEspecial(unsigned char key)
 {
-	//muñeco.TeclaEspecial(key);
 	nivel1.TeclaEspecial(key);
 	nivel2.TeclaEspecial(key);
 	nivel3.TeclaEspecial(key);
@@ -975,15 +930,6 @@ void MundoXtremETSIDI::Mueve()
 		if (guardanivel == 3)
 			nivel3.Mueve();
 	}
-
-
-	
-
-	//muñeco.Mueve(0.025f);
-	//Interaccion::Colision(plataforma, muñeco);
-	//Interaccion::Colision(plataforma2, muñeco); //hacer interaccion por cada plataforma
-	//nivel1.Mueve();
-
 }
 
 

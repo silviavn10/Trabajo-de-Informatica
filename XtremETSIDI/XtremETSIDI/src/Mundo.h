@@ -18,7 +18,6 @@ class MundoXtremETSIDI
 	float x_ojo = 0.0;
 public:
 
-	//Métodos
 	MundoXtremETSIDI();
 	~MundoXtremETSIDI();
 	void TeclaEspecial(unsigned char key);
@@ -28,28 +27,17 @@ public:
 	void Musica();
 	Nivel nivel1, nivel2;
 	NivelCOVID nivel3;
-	//Plataformas plataforma, plataforma2;
-	//
-	Suelo suelo;
-	Creditos creditos;
 	Vida vida1;
-	Proyectiles proyectil;
 	float ojo;
-	
-	
-
 
 protected:
-	//Miembros
+
 	int guardanivel;
 
-	
 	enum Estado //Se crea una enumeración con los posibles estados que va a adoptar la máquina de estados
 	{
 		START, MENU, CONTROLES, ESCOGE_SEXO, ESCOGE_CARRERAF, ESCOGE_CARRERAV, CARTA, SUERTE,
-		NIVEL1, NIVEL2, NIVEL3, JULIO, VICTORIA, GAMEOVER, FIN/* JUEGO_N3, JUEGO2,
-		GAMEOVER, SALIR,  //LEVELUP1, LEVELUP2, LEVELUP3,
-		VICTORIA, FIN*/
+		NIVEL1, NIVEL2, NIVEL3, JULIO, VICTORIA, GAMEOVER, FIN
 	};
 	Estado estado; //Se define una variable del tipo de la enumeración anterior
 };

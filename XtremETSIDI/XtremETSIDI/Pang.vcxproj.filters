@@ -45,9 +45,6 @@
     <ClCompile Include="src\Proyectiles.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\Suelo.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Vida.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -73,9 +70,6 @@
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="src\CharcoCOVID.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaCharcoCOVID.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="src\Reglas.cpp">
@@ -119,9 +113,6 @@
     <ClInclude Include="src\Proyectiles.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="src\Suelo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="src\Vida.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -147,9 +138,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\CharcoCOVID.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaCharcoCOVID.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\Reglas.h">

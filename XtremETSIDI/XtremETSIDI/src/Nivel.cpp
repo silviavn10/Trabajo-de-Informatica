@@ -13,8 +13,6 @@ void Nivel::Mueve()
 {
 	
 	ListaPlataformas.Mueve(0.025);
-	
-	
 	muñeco.Mueve(0.025f);
 	ListaCreditos.Mueve(0.005f);
 	for (int i = 0; i < ListaCreditos.getNumero(); i++) 
@@ -25,13 +23,6 @@ void Nivel::Mueve()
 			
 		}
 	}
-	/*for (int i = 0; i < ListaPlataformas.getNumero(); i++)
-	{
-		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
-	}
-	
-	*/
-
 	ListaPlataformas.Colision(muñeco);
 
 	if (nivel == 1) {
@@ -87,12 +78,10 @@ void Nivel::Mueve()
 		
 	}
 }
-void Nivel::Inicializa() //Para nivel 1
+void Nivel::Inicializa() //Para inicializar el nivel 1
 {
 	muñeco.SetPos(0, 2.5);
-
 	//BUCLE PARA DIBUJAR LAS PLATAFORMAS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
-
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
 		ListaPlataformas += new Plataformas(1.5f, 20.5 + 15*i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
@@ -138,7 +127,7 @@ void Nivel::Inicializa() //Para nivel 1
 	}
 	nivel = 1;
 }
-void Nivel::Inicializa2()
+void Nivel::Inicializa2() //Para inicializar el nivel 2
 {
 	ListaCharcos.DestruirContenido();
 	ListaCreditos.DestruirContenido();
@@ -252,7 +241,7 @@ void Nivel::TeclaEspecial(unsigned char key)
 	muñeco.TeclaEspecial(key);
 }
 /*
-void Nivel::ActDatos(int puntos)  //Función para actualizar los datos de la parte superior: número de vidas, balas y puntos
+void Nivel::ActDatos(int puntos)  //Función para actualizar los datos de la parte superior puntos
 {
 	ETSIDI::setTextColor(255, 0, 255);
 	ETSIDI::setFont("fuentes/Pixeltype.ttf", 52);

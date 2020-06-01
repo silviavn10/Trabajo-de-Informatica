@@ -15,7 +15,7 @@ public:
 	float GetPosX();
 
 protected:
-	float lado1, lado2;
+	float lado1;
 	Vector2D posicion;
 	SpriteSequence sprite;
 

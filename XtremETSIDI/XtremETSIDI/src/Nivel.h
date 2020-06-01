@@ -1,7 +1,6 @@
 #pragma once
 #include "Vector2D.h"
 #include "Muñeco.h"
-#include "Suelo.h"
 #include"Proyectiles.h"
 #include "ListaPlataformas.h"
 #include "ListaCreditos.h"
@@ -40,12 +39,7 @@ public:
 	void setfm() { muñeco.setfm(); }
 	void setva() { muñeco.setva(); }
 	void setfa() { muñeco.setfa(); }
-	void ActDatos(int puntos);
-
-	
-
-protected: 
-	
+	//void ActDatos(int puntos);
 
 private:
 	float l1;
@@ -57,11 +51,7 @@ private:
 	
 	int setvida = 2;
 	int nivel;
-	//ETSIDI::Sprite Creditos;
-	//Proyectiles Proyectiles;//Cuando la hagamos
-
-	//float y_ojo;
-	//float z_ojo;
+	
 };
 
 

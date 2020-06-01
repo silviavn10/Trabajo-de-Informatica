@@ -37,18 +37,6 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	sprite_fa.setCenter(0.9, 0.9);
 	sprite_fa.setSize(2.3, 2.3);
 
-
-	//No sabemos si hay que ponerlo aqui tambien o no 
-	/*setvq();  //Funcion para activar el vq
-	setfq();  //Funcion para activar el fq
-	setvd();
-	setfd();
-	setve();
-	setfe();
-	setvm();
-	setfm();
-	setva();
-	setfa();*/
 }
 
 Muñeco::~Muñeco()
@@ -68,12 +56,6 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 		posicion.x = fin;
 		velocidad.x = 0;
 	}
-	/*if (posicion.x >= 179)
-	{
-		posicion.x = 179;
-		velocidad.x = 0;
-	}*/
-
 	sprite_vq.loop();
 	sprite_fq.loop();
 	sprite_vd.loop();
@@ -191,28 +173,6 @@ void Muñeco::Dibuja()
 	glTranslatef(posicion.x, posicion.y, 0.5);
 	if (velocidad.x > 0.06)activo->flip(false, false);
 	if (velocidad.x < -0.06)activo->flip(true, false);
-	//if ((velocidad.x < 0.06) && (velocidad.x > -0.06))
-		/*activo->setState(0);
-	else if (activo->getState() == 0)
-		activo->setState(1, false);*/
-
-		/*if (velocidad.x > 0)
-		{
-			if ((int)posicion.x % 2 == 0)activo->loop();
-			if ((int)posicion.x % 2 == 1)activo->loop();
-			activo->flip(false, false);
-		}
-		if (velocidad.x < 0)
-		{
-			if ((int)posicion.x % 2 == 0)activo->loop();
-			if ((int)posicion.x % 2 == 1)activo->loop();
-			activo->flip(true, false);
-		}
-		if (velocidad.x == 0)
-			activo->setState(0);
-		else if (activo->getState() == 0)
-		activo->setState(1, false);*/
-
 	activo->draw();
 
 	glPopMatrix();
@@ -235,10 +195,6 @@ void Muñeco::TeclaEspecial(unsigned char key) {
 			Muñeco::SetVel(0.0f, 7.0f);//se mete si es true
 		break;
 
-
-		/*case GLUT_KEY_DOWN:
-			Muñeco::SetVel(0.0f, -5.0f);
-			break;*/
 	}
 }
 void Muñeco::SetVel(float vx, float vy)

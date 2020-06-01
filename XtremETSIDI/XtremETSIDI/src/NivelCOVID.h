@@ -1,13 +1,9 @@
 #pragma once
 #include "Vector2D.h"
 #include "Muñeco.h"
-#include "Suelo.h"
-#include"Proyectiles.h"
 #include "ListaPlataformas.h"
 #include "ListaCreditos.h"
-#include "ListaProbetas.h"
 #include "ListaCharcos.h"
-#include "ListaCharcoCOVID.h"
 #include "COVID.h"
 #include"Interaccion.h"
 
@@ -22,13 +18,10 @@ public:
 	void Mueve();
 	Vector2D GetPos();
 	int GetContador() { return contador; };
-	//void SetVel(float vx, float vy);
 	int SetVida() { return setvida; };
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;
-	ListaProbetas ListaProbetas;
 	ListaCharcos ListaCharcos;
-	//ListaCharcoCOVID ListaCharcoCOVID;
 	COVID COVID;
 	Muñeco muñeco;
 	void setvq() { muñeco.setvq(); }
@@ -50,10 +43,5 @@ private:
 	bool aux, aux1, aux2, aux3;
 	int contador = 0;
 	int setvida = 2;
-	//ETSIDI::Sprite Creditos;
-	//Proyectiles Proyectiles;//Cuando la hagamos
-
-	//float y_ojo;
-	//float z_ojo;
 };
 

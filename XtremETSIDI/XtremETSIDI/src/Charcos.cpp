@@ -3,7 +3,6 @@
 Charcos::Charcos() :sprite("bin/imagenes/charcoblanco.png", 1)
 {
 	lado1 = 3.0f;//lados del charco
-	lado2 = 0.2f;//(este en el fondo no se si sobra)
 	sprite.setCenter(1, 1);//Centro sprite
 	sprite.setSize(2, 1);//Tamaño sprite
 }

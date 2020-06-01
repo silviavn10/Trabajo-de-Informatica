@@ -1,7 +1,6 @@
 #pragma once 
 #include "Vector2D.h"
 #include "Plataformas.h"
-#include "Suelo.h"
 #include"Vida.h"
 #include "ETSIDI.h"
 using ETSIDI::SpriteSequence;
@@ -10,7 +9,6 @@ class Muñeco
 {
 public:
 	Muñeco();
-	//Muñeco(float altura);
 	~Muñeco();
 	void Dibuja();
 	void Mueve(float);
@@ -47,7 +45,6 @@ public:
 	Vector2D aceleracion;
 	Plataformas Plataforma;
 	Vida Vida;
-	Suelo Suelo;
 	float altura;
 	int jugador;
 	int sexo;// 1:varon, 0:hembra
