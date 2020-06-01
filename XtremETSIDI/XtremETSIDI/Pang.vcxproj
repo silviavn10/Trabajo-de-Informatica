@@ -104,7 +104,6 @@
     <ClCompile Include="src\Plataformas.cpp" />
     <ClCompile Include="src\Probeta.cpp" />
     <ClCompile Include="src\Proyectiles.cpp" />
-    <ClCompile Include="src\Puntuacion.cpp" />
     <ClCompile Include="src\Reglas.cpp" />
     <ClCompile Include="src\Suelo.cpp" />
     <ClCompile Include="src\Vector2D.cpp" />
@@ -131,7 +130,6 @@
     <ClInclude Include="src\Plataformas.h" />
     <ClInclude Include="src\Probeta.h" />
     <ClInclude Include="src\Proyectiles.h" />
-    <ClInclude Include="src\Puntuacion.h" />
     <ClInclude Include="src\Reglas.h" />
     <ClInclude Include="src\Suelo.h" />
     <ClInclude Include="src\Vector2D.h" />
