@@ -33,7 +33,7 @@ public:
 	void setfm() { muñeco.setfm(); }
 	void setva() { muñeco.setva(); }
 	void setfa() { muñeco.setfa(); }
-	//void ActDatos(int puntos);
+	void ActDatos(int puntos);
 
 private:
 	float l1;
@@ -41,8 +41,8 @@ private:
 	float l3;
 	float l4;
 	bool aux, aux1, aux2, aux3;
-	int puntos = 0;
-	int setvida = 2;
+	int puntos;
+	int setvida;
 	int nivel;
 	ListaPlataformas ListaPlataformas;
 	ListaCreditos ListaCreditos;

@@ -4,7 +4,8 @@
 
 Nivel::Nivel()
 {
-	
+	puntos = 0;
+	setvida = 2;
 }
 Nivel:: ~Nivel()
 {
@@ -34,7 +35,7 @@ void Nivel::Mueve()
 		}
 		for (int i = 0; i < MAX_PROBETAS; i++)
 		{
-			if (ListaProbetas[i]->getPosX() - muñeco.getPosX() < 8.5)
+			if (ListaProbetas[i]->getPosX() - muñeco.getPosX() < 8.5f)
 			{
 				ListaProbetas[i]->mueve();
 				for (int j = 0; j < MAX_PLATAFORMAS; j++)
@@ -233,22 +234,22 @@ void Nivel::Dibuja()
 		ListaCreditos.Dibuja();
 		ListaReglas.Dibuja();
 	}
-	//ActDatos(puntos); //Función para ir actualizando los datos que aparecen en la parte superior de la pantalla
+	ActDatos(puntos); //Función para ir actualizando los datos que aparecen en la parte superior de la pantalla
 }
 
 void Nivel::TeclaEspecial(unsigned char key)
 {
 	muñeco.TeclaEspecial(key);
 }
-/*
+
 void Nivel::ActDatos(int puntos)  //Función para actualizar los datos de la parte superior puntos
 {
-	ETSIDI::setTextColor(255, 0, 255);
-	ETSIDI::setFont("fuentes/Pixeltype.ttf", 52);
+	ETSIDI::setTextColor(0, 0, 0);
+	ETSIDI::setFont("bin/fuentes/Pixeltype.ttf", 35); //Tamaño de la letra
 	char cont[100];
-
-	sprintf(cont, "%d / %d", puntos, 400);
-	ETSIDI::printxy(cont, -3, 9.1, 2);
-}*/
+	//SUBIR CRÉDITOS Y HACER QUE SE MUEVA BIEN
+	sprintf(cont, "CREDITOS: %d / %d", puntos, 240);
+	ETSIDI::printxy(cont, (float)(muñeco.getPosX()-3), (float)8.5, (float)2);
+}
 
 

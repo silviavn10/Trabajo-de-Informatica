@@ -11,7 +11,7 @@ sprite_vm("bin/imagenes/muñeco_vm.png", 2), sprite_fm("bin/imagenes/muñeco_fm.pn
 sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.png", 2)
 
 {
-
+	//activo = NULL;
 	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
 	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
 	altura = 1.5;  //Tamaño del muñeco (por definir)
@@ -36,7 +36,7 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
 	sprite_va.setSize(2.3, 2.3);
 	sprite_fa.setCenter(0.9, 0.9);
 	sprite_fa.setSize(2.3, 2.3);
-
+ 
 }
 
 Muñeco::~Muñeco()
@@ -49,13 +49,19 @@ void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
 	if (posicion.x <= -8) posicion.x = -8; //si la posicion x es <=-8 (izq del todo) se limita la posicion
-	if (posicion.y <= 2.5) posicion.y = 2.5; //si la posicion y es menor que 2.5(suelo) se limita
+	if (posicion.y <= 2.5) 
+	{
+		posicion.y = 2.5; //si la posicion y es menor que 2.5(suelo) se limita
+		velocidad.y = 0; 
+	}
 	if (posicion.y >= 7) posicion.y = 7; //si la posicion y es mayor que 7(techo) se limita
 	if (posicion.x >= fin)
 	{
 		posicion.x = fin;
 		velocidad.x = 0;
 	}
+	cout << velocidad.x << " " << velocidad.y<<endl;
+	cout << aceleracion.y << endl;
 	sprite_vq.loop();
 	sprite_fq.loop();
 	sprite_vd.loop();
@@ -182,17 +188,20 @@ void Muñeco::TeclaEspecial(unsigned char key) {
 
 	switch (key)
 	{
+		//Modificar los atributos 
 	case GLUT_KEY_LEFT:
-
-		Muñeco::SetVel(-5.0f, 0.0f);
-
+		SetVel(-5.0f, 0.0f);
+		if (velocidad.y != 0)
+			SetVel(5.0f, -7.0f);
 		break;
 	case GLUT_KEY_RIGHT:
-		Muñeco::SetVel(5.0f, 0.0f);
+		SetVel(5.0f, 0.0f);
+		if (velocidad.y != 0)
+			SetVel(5.0f, -7.0f);
 		break;
 	case GLUT_KEY_UP:
-		if (Muñeco::getDistancia()) //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
-			Muñeco::SetVel(0.0f, 7.0f);//se mete si es true
+		if (getDistancia()) //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
+			SetVel(0.0f, 7.0f);//se mete si es true
 		break;
 
 	}

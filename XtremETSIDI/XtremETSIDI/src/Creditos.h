@@ -8,7 +8,7 @@ class Creditos
 {
 public:
 	friend class Interaccion;
-	Creditos();
+	//Creditos();
 	~Creditos();
 	Creditos(float x, float y);
 	void Mueve(float t);
