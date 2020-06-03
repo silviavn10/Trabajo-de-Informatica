@@ -14,13 +14,11 @@ float Vida::GetMov(float x) //Funcion para obtener los valores de muñeco.posicio
 {
 	Mov = x;
 	if (Mov < 0)
-	{
 		return Mov = 0;
-	}
 	return Mov;
 }
 
-void Vida::Dibuja()
+void Vida::Dibuja() //Vida ordinaria
 {
 
 	glEnable(GL_TEXTURE_2D);
@@ -42,7 +40,7 @@ void Vida::Dibuja()
 	
 }
 
-void Vida::Dibuja2()
+void Vida::Dibuja2() //Vida de julio
 {
 
 	glEnable(GL_TEXTURE_2D);

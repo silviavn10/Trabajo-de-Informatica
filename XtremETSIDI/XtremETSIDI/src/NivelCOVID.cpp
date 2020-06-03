@@ -5,6 +5,7 @@
 NivelCOVID::NivelCOVID()
 {
 	ListaCharcos.DestruirContenido();
+	puntos = 0;
 }
 NivelCOVID:: ~NivelCOVID()
 {
@@ -12,49 +13,55 @@ NivelCOVID:: ~NivelCOVID()
 }
 void NivelCOVID::Mueve()
 {
+	// MOVIMIENTOS Y COLISIONES DEL NIVEL 3
 
 	muñeco.Mueve(0.025f);
-	COVID.mueve();
+	COVID.mueve(0.025f);
+	ListaCreditos.Mueve(0.005f);
 
-	//INTERACCIONES
 	for (int i = 0; i < ListaPlataformas.getNumero(); i++)
-	{
 		Interaccion::Colision(muñeco, *ListaPlataformas[i]);
-	}
+
+
 	for (int i = 0; i < ListaCreditos.getNumero(); i++) {
 		aux = Interaccion::Colision(muñeco, *ListaCreditos[i]);
 		if (aux == true) {
-			contador++;
+			puntos += 6;
+			if (puntos >= 60)
+				puntos = 60;
+			
+
 		}
-	}
-	ListaCreditos.Mueve(0.005f);
-	aux3= Interaccion::Colision(muñeco, COVID);
-	if (aux3==true)
-	{
-		setvida -= 1;
 	}
 
 	for (int i = 0; i < MAX_C; i++) {
 		aux1 = Interaccion::Colision(muñeco, *ListaCharcos[i]);
 		if (aux1 == true) {
 			setvida -= 1;
-			COVID.setPos(muñeco.getPosX() - 10);
+			COVID.setPosX(muñeco.getPosX() - 10);
 		}
 	}
+
+	aux3 = Interaccion::Colision(muñeco, COVID);
+	if (aux3 == true)
+		setvida -= 1;
 }
 
 void NivelCOVID::Inicializa()
 {
-
+	// Se destruyen los creditos y plataformas creados en niveles anteriores
 	ListaCreditos.DestruirContenido();
 	ListaPlataformas.DestruirContenido();
 
 	muñeco.SetPos(0, 2.5);
+
+	//BUCLE PARA INICIALIZAR LAS PLATAFORMAS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
+
 	for (int i = 0; i < MAX_PLATAFORMAS; i++)
 	{
-		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaPlataformas += new Plataformas(1.5f, 21 * (i + 1), 2.5);
+		ListaPlataformas += new Plataformas(1.5f, 27 * (i + 1), 3.1); 
+		ListaPlataformas += new Plataformas(1.5f, 28.5 * (i + 1), 3.4); 
 		ListaPlataformas += new Plataformas(1.5f, 33 * (i + 1), 2.9);
 		l1 = ListaPlataformas.lista[i]->GetPosX() - (ListaPlataformas.lista[i]->GetLado() / 2); //limite1.x
 		l2 = ListaPlataformas.lista[i]->GetPosY() + (ListaPlataformas.lista[i]->GetLado() / 2); //limite1.y
@@ -63,22 +70,19 @@ void NivelCOVID::Inicializa()
 		ListaPlataformas.lista[i]->SetPos(l1, l2, l3, l4);
 		ListaPlataformas.Color(0,143,57);
 	}
-	for (int i = 0; i < 200; i += 20) {
 
-		ListaCreditos += new Creditos(8 + i, 5.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+	//BUCLE PARA INICIALIZAR LOS CREDITOS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
 
-	}
-	for (int i = 0; i < 200; i += 25) {
+	for (int i = 0; i < MAX_CREDITOS; i +=20) {
 
-		ListaCreditos += new Creditos(12.3 + i, 2.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
-
-	}
-	for (int i = 0; i < 200; i += 35) {
-
-		ListaCreditos += new Creditos(18.2 + i, 3.5); // ---------------------------------------------------------SOBRECARGA DE OPERADORES
+		ListaCreditos += new Creditos(8 + i, 5.5); 
+		ListaCreditos += new Creditos(12.3 + i, 2.5);
+		ListaCreditos += new Creditos(18.2 + i, 3.5);
 
 	}
 	
+	//BUCLE PARA INICIALIZAR LOS CHARCOS EN DISTINTAS POSICIONES A LO LARGO DEL NIVEL
+
 	for (int i = 1; i < MAX_C; i++)
 	{
 		CharcoCOVID *c1 = new CharcoCOVID(48.3 * i);
@@ -90,6 +94,8 @@ void NivelCOVID::Inicializa()
 
 void NivelCOVID::Dibuja()
 {
+	//DIBUJA PARA LA CONVOCATORIA ORDINARIA
+
 	if (setvida == 2)
 	{
 		glEnable(GL_TEXTURE_2D);
@@ -108,6 +114,8 @@ void NivelCOVID::Dibuja()
 		glDisable(GL_TEXTURE_2D);
 	}
 	
+	//DIBUJA PARA LA CONVOCATORIA DE JULIO
+
 	if (setvida == 1)
 	{
 		glEnable(GL_TEXTURE_2D);
@@ -126,11 +134,14 @@ void NivelCOVID::Dibuja()
 		glDisable(GL_TEXTURE_2D);
 	}
 
+	//DIBUJA COMUNES PARA AMBAS COMBOCATORIAS 
+
 	ListaPlataformas.Dibuja();
 	ListaCreditos.Dibuja();
 	ListaCharcos.Dibuja();
 	COVID.Dibuja();
 	muñeco.Dibuja();
+	ActDatos(puntos);  //Función para ir actualizando los datos que aparecen en la parte superior de la pantalla (contador de creditos)
 }
 
 void NivelCOVID::TeclaEspecial(unsigned char key)
@@ -138,3 +149,13 @@ void NivelCOVID::TeclaEspecial(unsigned char key)
 	muñeco.TeclaEspecial(key);
 }
 
+
+
+void NivelCOVID::ActDatos(int puntos)  //Función para contar los créditos
+{
+	ETSIDI::setTextColor(0, 0, 0);
+	ETSIDI::setFont("bin/fuentes/azoft-sans.ttf", 20);
+	char cont[100];
+	sprintf(cont, "CREDITOS: %d / %d", puntos, 60);
+	ETSIDI::printxy(cont, muñeco.getPosX() - 5.5, 8, 2);
+}

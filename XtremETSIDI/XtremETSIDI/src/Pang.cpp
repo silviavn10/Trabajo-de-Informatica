@@ -5,11 +5,11 @@
 MundoXtremETSIDI XtremETSIDI;
 
 
-//Las siguientes son funciones que serán llamadas automáticamente por la glut cuando sucedan eventos, no es necesario llamarlas explícitamente
-void onDraw(void); //esta funcion sera llamada para dibujar
-void onTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
-void onKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-void onSpecialKeyboardDown(int key, int x, int y); //cuando se pulse una tecla especial	
+
+void onDraw(void);                                          //esta funcion sera llamada para dibujar
+void onTimer(int value);                                    //esta funcion sera llamada cuando transcurra una temporizacion
+void onKeyboardDown(unsigned char key, int x, int y);       //cuando se pulse una tecla	
+void onSpecialKeyboardDown(int key, int x, int y);          //cuando se pulse una tecla especial	
 
 int main(int argc, char* argv[])
 {
@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 
 	//Registrar los callbacks
 	glutDisplayFunc(onDraw);
-	glutTimerFunc(25, onTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	glutTimerFunc(25, onTimer, 0); //le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(onKeyboardDown);
 	glutSpecialFunc(onSpecialKeyboardDown);
 

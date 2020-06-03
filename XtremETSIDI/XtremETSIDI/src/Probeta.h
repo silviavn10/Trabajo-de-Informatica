@@ -8,20 +8,16 @@ using ETSIDI::SpriteSequence;
 
 class Probeta : public Proyectiles //DERIVA DE PROYECTILES
 {
-	friend class Interaccion; //Interaccion es una clase amiga de Meteorito
+	SpriteSequence sprite;
 
 public:
-	Probeta();
-	~Probeta();
+
 	Probeta(float x, float y);
+	~Probeta();
+	void mueve(float t);
 	void Dibuja();
-	void setRadio(float r);
-	float getRadio() { return radio; }  
-	void Probeta::mueve();
-private:
-	SpriteSequence sprite;
-	float radio;
-	
+	friend class Interaccion; //Probeta es una clase amiga de Interaccion
+
 };
 
 

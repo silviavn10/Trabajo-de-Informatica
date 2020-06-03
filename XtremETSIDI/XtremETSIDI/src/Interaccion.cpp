@@ -1,34 +1,29 @@
 #include "Interaccion.h"
 #include <math.h>
 
-Interaccion::Interaccion() //Constructor
-{
-}
-Interaccion::~Interaccion() //Destructor
-{
-}
+
 void Interaccion::Colision(Muñeco& m, Plataformas p)
 {
-	float xlim1 = p.GetLimiteX1();//punto abajo izq
-	float xlim2 = p.GetLimiteX1() + (p.GetLado());//punto abajo derecha
-	float ylim1 = p.GetLimiteY1();//punto arriba izq
-	float ylim2 = p.GetLimiteY1() + (p.GetLado());//punto arriba dercha
-	if (m.posicion.x + 1.0 > xlim1&& m.posicion.y + m.altura >= ylim1) { //comprueba que la posicion x sea menor que el limite izq de la plataforma
-																			//y que la posicion y sea mayor que el limite de abajo de la plataforam
-		if (m.posicion.x < xlim2 && m.posicion.y + 1 <= ylim2)//comprueba que el muñeco sigue en la parte izq de la plataforma 
-		{	                                                 //y que la posicion en y es menor que el limite y de la plataforma (no está todavia encima)
-			if (m.posicion.y == 2.5 || (m.posicion.y > 2.5 && m.posicion.y + m.altura < ylim2))//si el muñeco esta en el suelo o en una altura entre los limites de la plataforma 
-				m.posicion.x = xlim1 - 1.0;// se establece la posicion del muñeco justo antes de la plataforma 
+	float xlim1 = p.GetLimiteX1();                    //punto abajo izq
+	float xlim2 = p.GetLimiteX1() + (p.GetLado());    //punto abajo derecha
+	float ylim1 = p.GetLimiteY1();                    //punto arriba izq
+	float ylim2 = p.GetLimiteY1() + (p.GetLado());    //punto arriba dercha
+	if (m.posicion.x + 1.0 > xlim1&& m.posicion.y + m.altura >= ylim1) {                              //comprueba que la posicion x sea menor que el limite izq de la plataforma
+																			                          //y que la posicion y sea mayor que el limite de abajo de la plataforam
+		if (m.posicion.x < xlim2 && m.posicion.y + 1 <= ylim2)                                        //comprueba que el muñeco sigue en la parte izq de la plataforma 
+		{	                                                                                          //y que la posicion en y es menor que el limite y de la plataforma (no está todavia encima)
+			if (m.posicion.y == 2.5 || (m.posicion.y > 2.5 && m.posicion.y + m.altura < ylim2))       //si el muñeco esta en el suelo o en una altura entre los limites de la plataforma 
+				m.posicion.x = xlim1 - 1.0;                                                           // se establece la posicion del muñeco justo antes de la plataforma 
 		}
 	}
-	if (m.posicion.x - 1.0 < xlim2 && m.posicion.y + 1 <= ylim2) {//igual pero en el lado derecho
+	if (m.posicion.x - 1.0 < xlim2 && m.posicion.y + 1 <= ylim2) {                                    //igual pero en el lado derecho
 		if (m.posicion.y + m.altura >= ylim1 && m.posicion.x > xlim1)
 			if (m.posicion.y == 2.5 || (m.posicion.y > 2.5 && m.posicion.y + m.altura < ylim2))
 				m.posicion.x = xlim2 + 1.0;
 	}
-	if ((m.posicion.x + 1.0 > xlim1&& m.posicion.x - 1.0 < xlim2) && m.posicion.y + m.altura > ylim1)//comprueba si esta entre los limites superiores de la plataforma (arriba de la plataforma)
-		if (m.posicion.y + 0.7 < ylim2) {//comprueba que la posicion en y sea menor al limite superior
-			m.posicion.y = (ylim2 - 0.7);// toma esa altura como suelo de la plataforma para el muñeco
+	if ((m.posicion.x + 1.0 > xlim1&& m.posicion.x - 1.0 < xlim2) && m.posicion.y + m.altura > ylim1) //comprueba si esta entre los limites superiores de la plataforma (arriba de la plataforma)
+		if (m.posicion.y + 0.7 < ylim2) {                                                             //comprueba que la posicion en y sea menor al limite superior
+			m.posicion.y = (ylim2 - 0.7);                                                             // toma esa altura como suelo de la plataforma para el muñeco
 			m.aux = 1;
 		}
 
@@ -68,7 +63,7 @@ bool Interaccion::Colision(Muñeco& m, Charcos& c)
 	if (m.posicion.y == 2.5) {
 		if ((c.GetPosX() + 1.25 >= m.posicion.x) && (c.GetPosX() - 1.25 < m.posicion.x))
 		{
-			ETSIDI::play("bin/bso/creditos.mp3");
+			ETSIDI::play("bin/bso/muerte.mp3");
 			m.posicion.x -= 5;
 			m.posicion.y = 5;
 			m.SetVel(0.0f, 0.0f);
@@ -77,50 +72,29 @@ bool Interaccion::Colision(Muñeco& m, Charcos& c)
 	}
 	else return false;
 }
-bool Interaccion::Colision(Muñeco& m, CharcoCOVID& c)
-{
-	if (m.posicion.y == 2.5) {
-		if ((c.GetPosX() + 1.25 >= m.posicion.x) && (c.GetPosX() - 1.25 < m.posicion.x))
-		{
-			ETSIDI::play("bin/bso/creditos.mp3");
-			m.posicion.x -= 5;
-			m.posicion.y = 5;
-			m.SetVel(0.0f, 0.0f);
-			return true;
-		}
-	}
-	else return false;
-}
+
 bool Interaccion::Colision(Muñeco& m, Proyectiles& pr)
 {
 	if (pr.getPosY() >= m.posicion.y && pr.getPosY() < m.posicion.y + m.altura)
 	{
 		if ((pr.getPosX() + 1 >= m.posicion.x) && (pr.getPosX() - 1 < m.posicion.x))
 		{
-			ETSIDI::play("bin/bso/creditos.mp3");
+			ETSIDI::play("bin/bso/muerte.mp3");
 			m.posicion.x -= 5;
 			m.posicion.y = 5;
 			m.SetVel(0.0f, 0.0f);
+			
 			return true;
 		}
 	}
 	else return false;
 }
-bool Interaccion::Colision(Plataformas& p, Proyectiles& pr)
-{
-	
-	if ((pr.getPosY() == (p.GetLimiteY1() || p.GetLimiteY2())) && (p.GetLimiteX1() < pr.getPosX() < p.GetLimiteX2()) && pr.getPosZ() == 0.5)
-	{
-	
-		return true;
-	}
-	else return false;
-}
+
 bool Interaccion::Colision(Muñeco& m, COVID& c)
 {
 	if (c.getPosX() -1.5 >= m.posicion.x)
 	{
-		ETSIDI::play("bin/bso/creditos.mp3");
+		ETSIDI::play("bin/bso/muerte.mp3");
 		c.setPosX(m.posicion.x-10.0f); 
 		m.posicion.y = 5;
 		m.SetVel(0.0f, 0.0f);

@@ -7,11 +7,11 @@ using ETSIDI::SpriteSequence;
 
 class CharcoCOVID  : public Charcos		//Hereda de charcos 
 {
+	SpriteSequence spriteCOVID;
+
 public:
 	~CharcoCOVID();
 	CharcoCOVID(float x);
 	void Dibuja();
-private:
-	SpriteSequence spriteCOVID;
 
 };

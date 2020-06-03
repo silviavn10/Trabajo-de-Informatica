@@ -1,15 +1,12 @@
 #include "ListaPlataformas.h"
-#include "Interaccion.h"
+
 
 ListaPlataformas::ListaPlataformas(void)
 {
 	numero = 0;
-	lista = new Plataformas * [MAX_PLATAFORMAS];// reserva memoria dinámicamente para vector lista con una dimension maxima de MAX_PLATAFORMAS
+	lista = new Plataformas * [MAX_PLATAFORMAS];   // reserva memoria dinámicamente para vector lista con una dimension maxima de MAX_PLATAFORMAS
 }
-ListaPlataformas::~ListaPlataformas(void)
-{
 
-}
 void ListaPlataformas::Dibuja()
 {
 
@@ -23,36 +20,13 @@ void ListaPlataformas::Color(unsigned char r, unsigned char v, unsigned char a) 
 		lista[i]->SetColor(r, v, a);
 
 }
+
 void ListaPlataformas::DestruirContenido()
 {
 	for (int i = 0; i < numero; i++)
 		delete lista[i];
 
 	numero = 0;
-}
-
-void ListaPlataformas::Eliminar(int index)
-{
-	if ((index < 0) || (index >= numero))
-		return;
-
-	delete lista[index];
-
-	numero--;
-	for (int i = index; i < numero; i++)
-		lista[i] = lista[i + 1];
-
-}
-
-void ListaPlataformas::Eliminar(Plataformas* p)
-{
-	for (int i = 0; i < numero; i++)
-		if (lista[i] == p)
-		{
-			Eliminar(i);
-			return;
-		}
-
 }
 
 Plataformas * ListaPlataformas::operator [](int i)
@@ -64,6 +38,7 @@ Plataformas * ListaPlataformas::operator [](int i)
 
 	return lista[i];
 }
+
 bool ListaPlataformas::Agregar(Plataformas* p)
 {
 	for (int i = 0; i < numero; i++)
@@ -86,6 +61,7 @@ bool ListaPlataformas::operator += (Plataformas* p) {
 	}
 	return false;
 }
+
 void ListaPlataformas::Colision(Muñeco& h)
 {
 	for (int i = 0; i < numero; i++)
@@ -95,8 +71,6 @@ void ListaPlataformas::Colision(Muñeco& h)
 void ListaPlataformas::Mueve(float f)
 {
 	for (int i = 0; i < numero; i++)
-	{
 		lista[i]->Mueve(f);
-	}
 
 }

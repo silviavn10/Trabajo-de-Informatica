@@ -1,10 +1,11 @@
 #include "ListaCreditos.h"
-#include "Interaccion.h"
+
 
 ListaCreditos::ListaCreditos(void)
 {
 	numero = 0;
 	lista = new Creditos * [MAX_CREDITOS];
+	
 }
 
 
@@ -29,28 +30,6 @@ void ListaCreditos::DestruirContenido()
 	numero = 0;
 }
 
-void ListaCreditos::Eliminar(int index)
-{
-	if ((index < 0) || (index >= numero))
-		return;
-
-	delete lista[index];
-
-	numero--;
-	for (int i = index; i < numero; i++)
-		lista[i] = lista[i + 1];
-
-}
-
-void ListaCreditos::Eliminar(Creditos* p)
-{
-	for (int i = 0; i < numero; i++)
-		if (lista[i] == p)
-		{
-			Eliminar(i);
-			return;
-		}
-}
 Creditos* ListaCreditos::operator [](int i)
 {
 	if (i >= numero)

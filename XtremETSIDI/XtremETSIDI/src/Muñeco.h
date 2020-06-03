@@ -5,28 +5,42 @@ using ETSIDI::SpriteSequence;
 
 class Muñeco
 {
+	int guardamuñeco;
+	float altura;
+	int jugador;
+	int sexo;   // 1:chico, 0:chica
+	int fin;
+	int carrera;
+	int aux;
+	Vector2D posicion;
+	Vector2D velocidad;
+	Vector2D aceleracion;
+	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm, sprite_va, sprite_fa;
+	SpriteSequence* activo;
+
 public:
 	Muñeco();
-	~Muñeco();
+	~Muñeco() {}
 	void Dibuja();
 	void Mueve(float);
 	void SetVel(float vx, float vy);
 	void SetPos(float x, float y);
-	int SetSexo(unsigned char key);
-	void SetPersonaje(void);
-	void  TeclaEspecial(unsigned char key);
-	bool getDistancia(void);
-	int SetCarrera(unsigned char key);
-	float getAltura() { return altura; }
-	float getPosX(void) { return posicion.x; };
-	float getPosY(void) { return posicion.y; };
-	float getVelY(void) { return velocidad.y; };
 	void setVelY(float vy) { velocidad.y = vy; };
 	void setPosY(float y) { posicion.y = y; };
 	void setGravedad(float g) { aceleracion.y = g; };
 	void setguardamuñeco(int x) { guardamuñeco = x; }
+	void SetPersonaje(void);
+	void  TeclaEspecial(unsigned char key);
+	float getAltura() { return altura; }
+	float getPosX(void) { return posicion.x; };
+	float getPosY(void) { return posicion.y; };
+	float getVelY(void) { return velocidad.y; };
+	int SetSexo(unsigned char key);
+	int SetCarrera(unsigned char key);
 	int getguardamuñeco() { return guardamuñeco; }
 	int getfin() { return fin; }
+	bool getDistancia(void);
+
 	void setvq() { activo = &sprite_vq; }
 	void setfq() { activo = &sprite_fq; }
 	void setvd() { activo = &sprite_vd; }
@@ -37,20 +51,7 @@ public:
 	void setfm() { activo = &sprite_fm; }
 	void setva() { activo = &sprite_va; }
 	void setfa() { activo = &sprite_fa; }
+
 	friend class Interaccion;
 
-private:
-	int guardamuñeco;
-	float altura;
-	int jugador;
-	int sexo;// 1:varon, 0:hembra
-	int fin = 169;
-	int carrera;
-	int aux = 0;
-	Vector2D posicion;
-	Vector2D velocidad;
-	Vector2D aceleracion;
-	SpriteSequence sprite_vq, sprite_fq, sprite_vd, sprite_fd, sprite_ve, sprite_fe, sprite_vm, sprite_fm,
-		sprite_va, sprite_fa;
-	SpriteSequence* activo;
 };

@@ -8,19 +8,14 @@ using ETSIDI::SpriteSequence;
 
 class Reglas : public Proyectiles //DERIVA DE PROYECTILES
 {
-	friend class Interaccion; 
+	SpriteSequence sprite;
 
 public:
-	
-	Reglas();
-	~Reglas();
+
 	Reglas(float x, float y);
+	~Reglas();
 	void Dibuja();
-	void setRadio(float r);
-	float getRadio() { return radio; } 
-	void mueve();
-private:
-	SpriteSequence sprite;
-	float radio;
-	
+	void mueve (float t);
+	friend class Interaccion;
+		
 };

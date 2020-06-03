@@ -8,11 +8,6 @@ ListaCharcos::ListaCharcos()
 	}
 }
 
-ListaCharcos::~ListaCharcos()
-{
-
-}
-
 bool ListaCharcos::Agregar(Charcos *c)
 {
 	for (int i = 0; i < numero; i++)
@@ -39,25 +34,6 @@ void ListaCharcos::DestruirContenido()
 	numero = 0;
 }
 
-void ListaCharcos::Eliminar(int index) 
-{
-	if ((index < 0) || (index >= numero))
-		return;
-	delete lista[index];
-	numero--;
-	for (int i = index; i < numero; i++)
-		lista[i] = lista[i + 1];
-}
-
-void ListaCharcos::Eliminar(Charcos *c)
-{
-	for (int i=0;i<numero;i++)
-		if (lista[i] == c)
-		{
-			Eliminar(i);
-			return;
-		}
-}
 Charcos* ListaCharcos::operator [](int i)
 {
 	if (i >= numero)
@@ -67,3 +43,5 @@ Charcos* ListaCharcos::operator [](int i)
 
 	return lista[i];
 }
+
+

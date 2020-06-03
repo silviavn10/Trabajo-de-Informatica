@@ -1,9 +1,6 @@
 #include "CharcoCOVID.h"
 
-CharcoCOVID::~CharcoCOVID()
-{
 
-}
 CharcoCOVID::CharcoCOVID(float x) :spriteCOVID("bin/imagenes/charcoverde.png", 1)
 {
 	posicion.x = x;
@@ -11,6 +8,12 @@ CharcoCOVID::CharcoCOVID(float x) :spriteCOVID("bin/imagenes/charcoverde.png", 1
 	spriteCOVID.setCenter(1, 1);//Centro sprite
 	spriteCOVID.setSize(2, 1);//Tamaño sprite
 }
+
+CharcoCOVID::~CharcoCOVID()
+{
+
+}
+
 void CharcoCOVID::Dibuja()
 {
 	glPushMatrix();

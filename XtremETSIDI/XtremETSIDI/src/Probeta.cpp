@@ -1,25 +1,19 @@
 #include "Probeta.h"
 
-Probeta::Probeta() :sprite("bin/imagenes/probeta.png", 5) //Constructor de la probeta
+
+Probeta::Probeta(float x, float y) :sprite("bin/imagenes/probeta.png", 5)
 {
-	radio = 2.5f;  //Radio de la probeta
-	velocidad.x = 0;  //Velocidad en el sentido negativo del eje horizontal
-	aceleracion.y = -3.0f;
-	posicion.x = 15;
-	posicion.y = 7.0f;
+	posicion.x = x;
+	posicion.y = y;
+	posicion_z = 0.5;
+	velocidad.x = 0; 
+	aceleracion.y = -2.3f;
 	sprite.setCenter(1, 3);
 	sprite.setSize(1, 3);
 }
 Probeta::~Probeta() //Destructor
 {
 
-}
-Probeta::Probeta(float x, float y) :sprite("bin/imagenes/probeta.png", 5)
-{
-	posicion.x = x;
-	posicion.y = y;
-	sprite.setCenter(1, 3);
-	sprite.setSize(1, 3);
 }
 
 void Probeta::Dibuja() //Función para dibujar la probeta
@@ -29,14 +23,9 @@ void Probeta::Dibuja() //Función para dibujar la probeta
 	sprite.draw();  //Se dibuja la probeta, es una funcion interna de los sprites
 	glPopMatrix();
 }
-void Probeta::setRadio(float r)  //Funcion para inicializar al radio de la probeta, ya que es un atributo protected
+
+void Probeta::mueve(float t)
 {
-	if (r < 0.1F)  //Se asegura de que el radio no pueda ser menor de 0.1, poniendo este valor si lo fuera
-		r = 0.1F;
-	radio = r;
-}
-void Probeta::mueve()
-{
-	Proyectiles::mueve(0.025f);
+	Proyectiles::mueve(t);
 	sprite.loop();
 }

@@ -1,25 +1,22 @@
 #pragma once
 #include "Creditos.h"
-#include "Muñeco.h"
-#define MAX_CREDITOS 50
+#define MAX_CREDITOS 100
 
 class ListaCreditos
 {
+	Creditos** lista;
+	int numero;
+
 public:
 	ListaCreditos();
 	~ListaCreditos();
 	void Dibuja();
-	void Eliminar(Creditos* c);
-	void Eliminar(int index);
 	void DestruirContenido();
+	void Mueve(float t);
 	int getNumero() { return numero; };
 	bool Agregar(Creditos* c);
-	void Mueve(float t);
 	bool ListaCreditos::operator += (Creditos* c);
 	Creditos* operator[] (int index);
 	friend class Nivel;
 
-private:
-	Creditos* *lista;
-	int numero;
 };

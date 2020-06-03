@@ -1,8 +1,6 @@
 #include "Muñeco.h"
-#include <math.h>
-#include <iostream>
 #include "glut.h"
-using namespace std;
+
 
 Muñeco::Muñeco() :sprite_vq("bin/imagenes/muñeco_vq.png", 2), sprite_fq("bin/imagenes/muñeco_fq.png", 2),
 sprite_vd("bin/imagenes/muñeco_vd.png", 2), sprite_fd("bin/imagenes/muñeco_fd.png", 2),
@@ -11,15 +9,16 @@ sprite_vm("bin/imagenes/muñeco_vm.png", 2), sprite_fm("bin/imagenes/muñeco_fm.pn
 sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.png", 2)
 
 {
-	//activo = NULL;
-	posicion.x = 0;  //Posición inicial del muñeco en el eje horizontal (centro)
-	posicion.y = 2.5;  //Posición inicial del muñeco en el eje vertical (suelo)
-	altura = 1.5;  //Tamaño del muñeco (por definir)
-	aceleracion.y = -9.8f; //Gravedad para que caiga
-	sprite_vq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco vq 
-	sprite_vq.setSize(2.3, 2.3);  //Tamaño del sprite para el muñeco vq
-	sprite_fq.setCenter(0.9, 0.9);  //Centro del sprite para el muñeco fq
-	sprite_fq.setSize(2.3, 2.3);  //Tamaño del sprite para el muñeco fq
+	fin = 169;
+	aux = 0;
+	posicion.x = 0;                    //Posición inicial del muñeco en el eje horizontal (centro)
+	posicion.y = 2.5;                  //Posición inicial del muñeco en el eje vertical (suelo)
+	altura = 1.5;                      //Tamaño del muñeco 
+	aceleracion.y = -9.8f;             //Gravedad para que caiga
+	sprite_vq.setCenter(0.9, 0.9);     //Centro del sprite para el muñeco vq 
+	sprite_vq.setSize(2.3, 2.3);       //Tamaño del sprite para el muñeco vq
+	sprite_fq.setCenter(0.9, 0.9);  
+	sprite_fq.setSize(2.3, 2.3);  
 	sprite_vd.setCenter(0.9, 0.9);
 	sprite_vd.setSize(2.3, 2.3);
 	sprite_fd.setCenter(0.9, 0.9);
@@ -39,29 +38,26 @@ sprite_va("bin/imagenes/muñeco_va.png", 2), sprite_fa("bin/imagenes/muñeco_fa.pn
  
 }
 
-Muñeco::~Muñeco()
-{
-}
 
 void Muñeco::Mueve(float t) //Funcion para que el muñeco tenga movimiento
 {
 
 	posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
 	velocidad = velocidad + aceleracion * t;
-	if (posicion.x <= -8) posicion.x = -8; //si la posicion x es <=-8 (izq del todo) se limita la posicion
+	if (posicion.x <= -8) posicion.x = -8;         //si la posicion x es <=-8 (izq del todo) se limita la posicion
 	if (posicion.y <= 2.5) 
 	{
-		posicion.y = 2.5; //si la posicion y es menor que 2.5(suelo) se limita
+		posicion.y = 2.5;                          //si la posicion y es menor que 2.5(suelo) se limita
 		velocidad.y = 0; 
 	}
-	if (posicion.y >= 7) posicion.y = 7; //si la posicion y es mayor que 7(techo) se limita
+	if (posicion.y >= 7) 
+		posicion.y = 7;                            //si la posicion y es mayor que 7(techo) se limita
 	if (posicion.x >= fin)
 	{
 		posicion.x = fin;
 		velocidad.x = 0;
 	}
-	cout << velocidad.x << " " << velocidad.y<<endl;
-	cout << aceleracion.y << endl;
+
 	sprite_vq.loop();
 	sprite_fq.loop();
 	sprite_vd.loop();
@@ -83,9 +79,9 @@ int Muñeco::SetSexo(unsigned char key)
 
 	if (key == 'V' || key == 'v')
 		sexo = 1;
-	cout << sexo << endl;
 	return sexo;
-}
+} 
+
 int Muñeco::SetCarrera(unsigned char key)
 {
 	carrera = 5;
@@ -105,16 +101,17 @@ int Muñeco::SetCarrera(unsigned char key)
 		carrera = 4;
 
 	Muñeco::SetPersonaje();
-	cout << carrera << endl;
 
-	if (carrera == 5)
+	if (carrera == 5)               //comprobacion de que se escoge una de las carreras ofrecidas
 		return 0;
 	else return 1;
 }
+
+
 void Muñeco::SetPersonaje() {
 	switch (carrera)
 	{
-	case 0://Escogemos quimica
+	case 0:                          //Escogemos quimica
 		if (sexo == 1) {
 			setvq();
 			setguardamuñeco(0);
@@ -125,7 +122,7 @@ void Muñeco::SetPersonaje() {
 		}
 		break;
 
-	case 1: //Diseño
+	case 1:                           //Diseño
 		if (sexo == 1) {
 			setvd();
 			setguardamuñeco(2);
@@ -136,7 +133,7 @@ void Muñeco::SetPersonaje() {
 		}
 		break;
 
-	case 2: //Electrica
+	case 2:                           //Electrica
 		if (sexo == 1) {
 			setve();
 			setguardamuñeco(4);
@@ -148,7 +145,7 @@ void Muñeco::SetPersonaje() {
 
 		break;
 
-	case 3: //Mecanica
+	case 3:                           //Mecanica
 		if (sexo == 1) {
 			setvm();
 			setguardamuñeco(6);
@@ -160,7 +157,7 @@ void Muñeco::SetPersonaje() {
 
 		break;
 
-	case 4: //Electronica
+	case 4:                           //Electronica
 		if (sexo == 1) {
 			setva();
 			setguardamuñeco(8);
@@ -172,6 +169,7 @@ void Muñeco::SetPersonaje() {
 		break;
 	}
 }
+
 void Muñeco::Dibuja()
 {
 
@@ -180,28 +178,23 @@ void Muñeco::Dibuja()
 	if (velocidad.x > 0.06)activo->flip(false, false);
 	if (velocidad.x < -0.06)activo->flip(true, false);
 	activo->draw();
-
 	glPopMatrix();
 
 }
+
 void Muñeco::TeclaEspecial(unsigned char key) {
 
 	switch (key)
 	{
-		//Modificar los atributos 
 	case GLUT_KEY_LEFT:
 		SetVel(-5.0f, 0.0f);
-		if (velocidad.y != 0)
-			SetVel(5.0f, -7.0f);
 		break;
 	case GLUT_KEY_RIGHT:
 		SetVel(5.0f, 0.0f);
-		if (velocidad.y != 0)
-			SetVel(5.0f, -7.0f);
 		break;
 	case GLUT_KEY_UP:
-		if (getDistancia()) //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
-			SetVel(0.0f, 7.0f);//se mete si es true
+		if (getDistancia())          //para saber si puede saltar o no (solo puede saltar si esta en el suelo o en la plataforma)
+			SetVel(0.0f, 7.0f);      //se mete si es true
 		break;
 
 	}
@@ -215,8 +208,8 @@ void Muñeco::SetVel(float vx, float vy)
 }
 bool  Muñeco::getDistancia(void)
 {
-	if (Muñeco::posicion.y == 2.5 || aux == 1) {//si el muñeco esta en el suelo o encima de una plataforma
-		aux = 0;//interaccion
+	if (Muñeco::posicion.y == 2.5 || aux == 1) {  //si el muñeco esta en el suelo o encima de una plataforma
+		aux = 0;                                  //hay interaccion
 		return true;
 	}
 	return false;

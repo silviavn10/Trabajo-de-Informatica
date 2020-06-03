@@ -6,17 +6,17 @@ using ETSIDI::SpriteSequence;
 
 class Charcos
 {
-public:
-	Charcos();
-	~Charcos();
-	Charcos(float x);
-	virtual void Dibuja();
-	void SetPos(float ix, float iy);
-	float GetPosX();
-
 protected:
 	Vector2D posicion;
 	SpriteSequence sprite;
+
+public:
+	Charcos();
+	Charcos(float x);
+	~Charcos();
+	virtual void Dibuja();
+	void SetPos(float ix, float iy);
+	float GetPosX();
 
 };
 

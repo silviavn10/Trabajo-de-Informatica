@@ -57,9 +57,6 @@
     <ClCompile Include="src\ListaCreditos.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="src\OpenGL.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="src\Charcos.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -123,9 +120,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\ListaCreditos.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OpenGL.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="src\Charcos.h">

@@ -8,16 +8,15 @@ using ETSIDI::SpriteSequence;
 
 class COVID : public Proyectiles //DERIVA DE PROYECTILES
 {
-	friend class Interaccion; //Interaccion es una clase amiga de Meteorito
+	SpriteSequence sprite;
 
 public:
+
 	COVID();
 	~COVID();
-	COVID(float x, float y);
 	void Dibuja();
-	void mueve();
-private:
-	SpriteSequence sprite;
+	void mueve(float t);
+	friend class Interaccion;
 
 };
 

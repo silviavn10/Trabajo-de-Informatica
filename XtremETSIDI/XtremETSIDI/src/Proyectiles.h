@@ -4,23 +4,23 @@
 
 class Proyectiles //CLASE PADRE
 {
-public:
-	Proyectiles();
-	virtual ~Proyectiles();
-	virtual void mueve(float t);
-	Vector2D getPos();
-	void setVel(float vx, float vy);
-	void setVel(Vector2D vel);
-	void setPos(float x, float y);
-	void setPos(Vector2D pos);
-	void setPosX(float x);
-	float getPosX();
-	float getPosY();
-	float getPosZ();
-	void SetPosZ(float z);
+
 protected:
 	Vector2D posicion;
 	Vector2D velocidad;
 	Vector2D aceleracion;
-	float posicion_z = 0.5;
+	float posicion_z;
+
+public:
+	Proyectiles() {}
+	virtual ~Proyectiles() {}
+	virtual void mueve(float t);
+	void setVel(float vx, float vy);
+	void setPosX(float x);
+	void SetPosZ(float z);
+	float getPosX();
+	float getPosY();
+	float getPosZ();
+	virtual void Dibuja() = 0 {}  // Funcion virtual pura
+
 };
