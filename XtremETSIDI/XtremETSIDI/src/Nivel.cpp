@@ -25,7 +25,7 @@ void Nivel::Mueve()
 	{
 		aux = Interaccion::Colision(muñeco, *ListaCreditos[i]);
 		if (aux == true) {
-			puntos += 6;
+			puntos += 3;
 			if (puntos >= 60)
 				puntos = 60;
 			
